@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.constants;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.util.ArrayList;
 import java.util.List;

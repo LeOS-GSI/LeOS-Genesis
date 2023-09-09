@@ -20,7 +20,7 @@ import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.dataManager.models.bookmarkRowModel;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 
 import java.util.ArrayList;

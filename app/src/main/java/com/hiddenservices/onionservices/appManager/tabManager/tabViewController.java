@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hiddenservices.onionservices.constants.enums;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import java.util.List;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;

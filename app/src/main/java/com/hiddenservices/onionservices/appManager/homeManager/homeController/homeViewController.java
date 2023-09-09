@@ -45,7 +45,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hiddenservices.onionservices.BuildConfig;
+import com.leos.onionservices.BuildConfig;
 import com.hiddenservices.onionservices.appManager.activityContextManager;
 import com.hiddenservices.onionservices.appManager.editTextManager;
 import com.hiddenservices.onionservices.constants.*;
@@ -54,7 +54,7 @@ import com.hiddenservices.onionservices.dataManager.dataEnums;
 import com.hiddenservices.onionservices.libs.views.ColorAnimator;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.google.android.material.appbar.AppBarLayout;
 import org.mozilla.geckoview.GeckoView;
 import org.torproject.android.service.wrapper.orbotLocalConstants;

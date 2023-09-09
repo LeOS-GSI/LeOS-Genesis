@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 
 import java.util.List;
 

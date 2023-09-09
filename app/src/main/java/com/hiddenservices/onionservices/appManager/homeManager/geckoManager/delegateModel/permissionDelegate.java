@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.geckoSession;
 import java.lang.ref.WeakReference;
 import java.util.Locale;

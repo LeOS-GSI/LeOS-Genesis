@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import java.util.List;
 
 class settingHomeViewController {
