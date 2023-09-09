@@ -37,7 +37,7 @@ public class PsiphonHelper implements ProxyHelper {
     public final static String MARKET_URI = "market://details?id=" + PACKAGE_NAME;
     public final static String FDROID_URI = "https://f-droid.org/repository/browse/?fdid="
             + PACKAGE_NAME;
-    public final static String ORBOT_PLAY_URI = "https://play.google.com/store/apps/details?id="
+    public final static String ORBOT_PLAY_URI = "https://github.com/LeOS-GSI/LeOS-Genesis/releases/"
             + PACKAGE_NAME;
 
     public final static int DEFAULT_SOCKS_PORT = 1080;

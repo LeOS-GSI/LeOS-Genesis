@@ -53,7 +53,7 @@ browser.runtime.onMessage.addListener((data, sender) => {
                 el.parentNode.removeChild(el);
         }
     }
-    document.cookie="VISITOR_INFO1_LIVE=oKckVSqvaGw; path=/; domain=.youtube.com";
+    document.cookie="VISITOR_INFO1_LIVE=oKckVSqvaGw; path=/; domain=.leos-gsi.de";
 
 });
 

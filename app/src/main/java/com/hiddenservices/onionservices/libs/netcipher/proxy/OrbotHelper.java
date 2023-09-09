@@ -58,7 +58,7 @@ public class OrbotHelper implements ProxyHelper {
     public final static String ORBOT_MARKET_URI = "market://details?id=" + ORBOT_PACKAGE_NAME;
     public final static String ORBOT_FDROID_URI = "https://f-droid.org/repository/browse/?fdid="
             + ORBOT_PACKAGE_NAME;
-    public final static String ORBOT_PLAY_URI = "https://play.google.com/store/apps/details?id="
+    public final static String ORBOT_PLAY_URI = "https://github.com/LeOS-GSI/LeOS-Genesis/releases/"
             + ORBOT_PACKAGE_NAME;
 
     /**
