@@ -516,7 +516,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Filele recente</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Identitate nouă</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Politica de confidențialitate</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser politica de confidențialitate</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser politica de confidențialitate</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Raportați site-ul web</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Raportați site-ul ilegal</string>
     <string name="SETTING_SITEMAP" translatable="true">publică-ți site-ul web</string>

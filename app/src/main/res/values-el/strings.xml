@@ -517,7 +517,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Πρόσφατες καρτέλες</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Νέα ταυτότητα</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Πολιτική απορρήτου</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser πολιτική απορρήτου</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser πολιτική απορρήτου</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Αναφορά ιστότοπου</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Αναφορά παράνομου ιστότοπου</string>
     <string name="SETTING_SITEMAP" translatable="true">δημοσιεύστε τον ιστότοπό σας</string>

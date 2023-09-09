@@ -515,7 +515,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Den letzten Tabs</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Neue Identität</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Datenschutz-Bestimmungen</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser Datenschutzbestimmungen</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser Datenschutzbestimmungen</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Website melden</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Illegale Website melden</string>
     <string name="SETTING_SITEMAP" translatable="true">Veröffentlichen Sie Ihre Website</string>

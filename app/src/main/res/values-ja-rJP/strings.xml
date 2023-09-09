@@ -507,7 +507,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">最近のタブ</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">新しいアイデンティティ</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">個人情報保護方針</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser プライバシーポリシー</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser プライバシーポリシー</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">レポートのウェブサイト</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">違法なウェブサイトを報告する</string>
     <string name="SETTING_SITEMAP" translatable="true">あなたのウェブサイトを公開する</string>

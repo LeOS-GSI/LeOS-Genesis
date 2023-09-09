@@ -515,7 +515,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Son sekmeler</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Yeni kimlik</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Gizlilik Politikası</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser gizlilik ilkesi</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser gizlilik ilkesi</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Web sitesini bildir</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Yasadışı web sitesini bildirin</string>
     <string name="SETTING_SITEMAP" translatable="true">web sitenizi yayınlayın</string>

@@ -508,7 +508,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Останні вкладки</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Нова ідентичність</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Політика конфіденційності</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser Політика конфіденційності</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser Політика конфіденційності</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Веб-сайт звітів</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Повідомити про незаконний веб-сайт</string>
     <string name="SETTING_SITEMAP" translatable="true">опублікуйте свій веб-сайт</string>
