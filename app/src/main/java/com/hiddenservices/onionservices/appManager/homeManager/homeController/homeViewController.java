@@ -252,7 +252,7 @@ public class homeViewController {
 
         mFindText.setLongClickable(false);
         mFindText.setOnLongClickListener(v -> false);
-        String mText = "Copyright © by Orion Technologies | Build "+BuildConfig.VERSION_NAME.substring(20);
+        String mText = "Copyleft© by Orion Technologies/harvey186 | Build "+BuildConfig.VERSION_NAME.substring(20);
         mCopyright.setText(mText);
 
     }
