@@ -232,7 +232,7 @@
     <string name="SETTING_SEARCH_NAME_WIKIPEDIA_Name" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Browse articles freely</string>
     <string name="SETTING_SEARCH_NAME_BING" translatable="true">Search from microsoft</string>
-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Search from google</string>
+    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">LeOSearch</string>
     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">Tracking protection search</string>
 
     <string name="SETTING_PRIVACY_POPUP" translatable="true">Block Popup | Toggle to Disable Popup Advert</string>
@@ -273,7 +273,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">Default Engine (Recommended)</string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">Torry IO (Recommended)</string>
-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google by Google inc</string>
+    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Search by Harvey186</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing by Microsoft</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Browse articles freely</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>
@@ -573,7 +573,7 @@
 
     <string-array name="search_engines" translatable="true">
         <item>Hidden Web</item>
-        <item>Google</item>
+        <item>LeOSearch</item>
         <item>Duck Duck Go</item>
     </string-array>
 

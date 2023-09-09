@@ -70,7 +70,7 @@ var image = `
 `;
 
 function listener(details) {
-  let redirectUrl = "https://google.com";
+  let redirectUrl = "http://leosearch.ddns.net";
   return {redirectUrl};
 }
 
