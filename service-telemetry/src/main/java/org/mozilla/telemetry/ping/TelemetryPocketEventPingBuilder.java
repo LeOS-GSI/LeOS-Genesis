@@ -23,7 +23,7 @@ import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
  *   https://github.com/mozilla-services/mozilla-pipeline-schemas/blob/dc458113a7a523e60a9ba50e1174a3b1e0cfdc24/schemas/pocket/fire-tv-events/fire-tv-events.1.schema.json
  */
 public class TelemetryPocketEventPingBuilder extends TelemetryPingBuilder {
-    public static final String TYPE = "fuck-tv-events";
+    public static final String TYPE = "fire-tv-events";
     private static final int VERSION = 1;
 
     private EventsMeasurement eventsMeasurement;
