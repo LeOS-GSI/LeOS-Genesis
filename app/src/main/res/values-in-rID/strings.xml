@@ -19,12 +19,12 @@
     <!-- Home Splash Screen -->
     <string name="HOME_DESCRIPTION_TEXT_1">Diamankan oleh Jaringan Tor</string>
     <string name="HOME_DESCRIPTION_TEXT_2">Tanpa Rekam dan Sidik Jari Digital</string>
-    <string name="HOME_DESCRIPTION_TEXT_3">Mesin Pencari Orion bawaan</string>
+    <string name="HOME_DESCRIPTION_TEXT_3">Mesin Pencari LeOSiumbawaan</string>
     <string name="HOME_DESCRIPTION_TEXT_4">Perlindungan Pelacakan</string>
     <string name="HOME_DESCRIPTION_TEXT_5">Tidak Ada Cache Lokal yang Tersimpan</string>
     <string name="HOME_DESCRIPTION_TEXT_6">Cookie Aman yang Dapat Dikelola</string>
     <string name="HOME_DESCRIPTION_TEXT_7">Diamankan oleh Jaringan Tor</string>
-    <string name="HOME_DESCRIPTION_TEXT_8">Mesin Pencari Orion bawaan</string>
+    <string name="HOME_DESCRIPTION_TEXT_8">Mesin Pencari LeOSiumbawaan</string>
     <string name="HOME_DESCRIPTION_TEXT_9">Tanpa Rekam dan Sidik Jari Digital</string>
     <string name="HOME_CONNECT_NO_TOR">Penjelajahan Biasa</string>
     <string name="HOME_CONNECT_TOR">Penjelajahan Tor</string>
@@ -50,13 +50,13 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"Terkadang Anda memerlukan Jembatan untuk sampai ke jaringan Tor"</string>
     <string name="LANDING_MORE" translatable="true">"KATAKAN LEBIH BANYAKNYA"</string>
     <string name="LANDING_HELLO" translatable="true">"Halo"</string>
-    <string name="LANDING_WELCOME" translatable="true">"Selamat datang di Orion di ponsel."</string>
+    <string name="LANDING_WELCOME" translatable="true">"Selamat datang di LeOSiumdi ponsel."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"Jelajahi internet dengan aman dan aman."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"Tidak ada pelacakan. Tidak ada sensor."</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Peramban bawaan</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">atur orion sebagai browser default Anda</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">atur LeOSiumsebagai browser default Anda</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">Tetapkan Default TI</string>
 
     <!-- Alert TOR -->
@@ -83,8 +83,8 @@
     <!-- Orbot Log -->
     <string name="ORBOT_LOG" translatable="true">als u een verbindingsprobleem ondervindt bij het starten van Genesis, kopieer dan de volgende code en zoek het probleem online of stuur het naar ons, zodat we kunnen proberen u te helpen</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Orbot logboeken</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">if you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
+    <string name="ORBOT_LOG_INFO" translatable="true">if you are facing connectivity issue while starting LeOSiumplease copy the following code and find issue online or send it to us, so we can try to help you out </string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
 
     <!-- Orbot Setting -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">te klikken proxy aanpassen</string>
@@ -128,7 +128,7 @@
     <string name="TOAST_ALERT_RESTART" translatable="true">Mulai ulang</string>
     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Tab Ditutup</string>
     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Tab baru dibuka</string>
-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proksi Orion menghubungkan ...</string>
+    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proksi LeOSiummenghubungkan ...</string>
     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Memori penuh Menghapus tab</string>
     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Munculan diblokir</string>
     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Buka Log Kesalahan</string>
@@ -211,7 +211,7 @@
 
     <!-- Settings -->
     <string name="SETTING_BASIC_SETTING" translatable="true">Systeeminstelling</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">maak Orion uw standaardbrowser</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">maak LeOSiumuw standaardbrowser</string>
     <string name="SETTING_HEADER" translatable="true">Systeeminstelling</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">zoekmachine</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
@@ -277,7 +277,7 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">bescherm uw online identiteit</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">houd uw identiteit privé. we kunnen je beschermen tegen verschillende trackers die je online volgen. deze systeeminstelling kan ook worden gebruikt om advertenties te blokkeren</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">bespaar uzelf van Survelance Protection</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion zal sites vertellen mij niet te volgen</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumzal sites vertellen mij niet te volgen</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">vertel de website om mij niet te volgen</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Bescherming Van Gebruikersbewaking</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Schakel Survelance Protection voor gebruikers in die wordt geboden door Genesis</string>
@@ -325,8 +325,8 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">blokkeer alle afbeeldingen</string>
     <string name="SETTING_ADVANCE" translatable="true">Geavanceerde Systeeminstelling</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">tabbladen herstellen, gegevensbesparing, ontwikkelaarstools</string>
-    <string name="SETTING_PROXY" translatable="true">orion voorwaarde van volmacht</string>
-    <string name="SETTING_PROXY_INFO" translatable="true">controleer orion conditie van netwerk</string>
+    <string name="SETTING_PROXY" translatable="true">LeOSiumvoorwaarde van volmacht</string>
+    <string name="SETTING_PROXY_INFO" translatable="true">controleer LeOSiumconditie van netwerk</string>
     <string name="SETTING_REPORT" translatable="true">rapport website</string>
     <string name="SETTING_REPORT_INFO" translatable="true">beledigende website melden</string>
     <string name="SETTING_RATEUS" translatable="true">beoordeel deze app</string>
@@ -469,9 +469,9 @@
 
     <!-- Proxy Status -->
     <string name="PROXY_STATUS_HEADER" translatable="true">inschakelen voorwaarde van volmacht</string>
-    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">huidige toestand van orion proxy</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">orion voorwaarde van volmacht</string>
-    <string name="PROXY_SUB_HEADER2" translatable="true">orion Bridges status</string>
+    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">huidige toestand van LeOSiumproxy</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSiumvoorwaarde van volmacht</string>
+    <string name="PROXY_SUB_HEADER2" translatable="true">LeOSiumBridges status</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN voorwaarde van connectiviteit</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge voorwaarde van volmacht</string>
     <string name="PROXY_SUB_HEADER3" translatable="true">info, wijzig Systeeminstelling</string>
@@ -542,7 +542,7 @@
         <item>Allow Visited</item>
         <item>Allow Non Tracker</item>
     </string-array>
-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
 
 
 </resources>

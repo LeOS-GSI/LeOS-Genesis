@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! 뭔가 잘못 됐어</string>
     <string name="GENERAL_TODO" translatable="true">모두</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
     <string name="GENERAL_LOADING" translatable="true">디지털 자유</string>
     <string name="GENERAL_RELOAD" translatable="true">재 장전</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">다음 문제 중 하나에 직면하고 있습니다. 웹 페이지 또는 웹 사이트가 작동하지 않을 수 있습니다. 인터넷 연결 상태가 좋지 않을 수 있습니다. 프록시를 사용하고있을 수 있습니다. 웹 사이트가 방화벽에 의해 차단 될 수 있음</string>
@@ -54,7 +54,7 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"때때로 Tor 네트워크에 도달하려면 브리지가 필요합니다."</string>
     <string name="LANDING_MORE" translatable="true">"추가 정보"</string>
     <string name="LANDING_HELLO" translatable="true">"안녕하세요"</string>
-    <string name="LANDING_WELCOME" translatable="true">"모바일 Orion 에 오신 것을 환영합니다."</string>
+    <string name="LANDING_WELCOME" translatable="true">"모바일 LeOSium에 오신 것을 환영합니다."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"안전하고 안전하게 인터넷을 탐색하십시오."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"추적 없음. 검열 없음."</string>
 
@@ -65,7 +65,7 @@
 
     <!-- Alert TOR -->
     <string name="ALERT_TOR_HEADER" translatable="true">토르로 전환합니다</string>
-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">이를 사용하여 duckduckgo를 사용하여 일반 브라우징을 전환하거나 Orion 검색을 사용하여 고급 보안 다크 웹 브라우징을 진행할 수 있습니다</string>
+    <string name="ALERT_TOR_DESCRIPTION" translatable="true">이를 사용하여 duckduckgo를 사용하여 일반 브라우징을 전환하거나 LeOSium검색을 사용하여 고급 보안 다크 웹 브라우징을 진행할 수 있습니다</string>
     <string name="ALERT_TOR_TRIGGER" translatable="true">전환하십시오</string>
 
     <!-- Alert Secure -->
@@ -88,7 +88,7 @@
     <string name="ORBOT_LOG" translatable="true">프록시 로그</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">시스템 로그 정보</string>
     <string name="ORBOT_LOG_INFO" translatable="true">Genesis을 시작하는 동안 연결 문제가 발생하는 경우 다음 코드를 복사하여 온라인에서 문제를 찾거나 저희에게 보내 주시면 도움을 드릴 수 있습니다.</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">프록시 사용자 정의</string>
@@ -334,8 +334,8 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">모든 이미지 차단</string>
     <string name="SETTING_ADVANCE" translatable="true">고급 시스템 설정</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">복원 탭, 데이터 세이버, 개발자 도구</string>
-    <string name="SETTING_PROXY" translatable="true">orion 대리 조건</string>
-    <string name="SETTING_PROXY_INFO" translatable="true">orion 네트워크 상태 확인</string>
+    <string name="SETTING_PROXY" translatable="true">LeOSium대리 조건</string>
+    <string name="SETTING_PROXY_INFO" translatable="true">LeOSium네트워크 상태 확인</string>
     <string name="SETTING_REPORT" translatable="true">웹 사이트 신고</string>
     <string name="SETTING_REPORT_INFO" translatable="true">악성 웹 사이트 신고</string>
     <string name="SETTING_RATEUS" translatable="true">이 앱을 평가 해주십시오</string>
@@ -478,8 +478,8 @@
 
 
     <string name="PROXY_STATUS_HEADER" translatable="true">대리 조건</string>
-    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">orion 프록시의 현재 상태</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">orion 대리 조건</string>
+    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">LeOSium프록시의 현재 상태</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSium대리 조건</string>
     <string name="PROXY_SUB_HEADER2" translatable="true">orion</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN 연결 상태</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge 대리 조건</string>
@@ -493,7 +493,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">열린 탭이 여기에 표시됩니다.</string>
 
 

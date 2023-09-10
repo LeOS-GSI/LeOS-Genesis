@@ -6,9 +6,9 @@
     <string name="GENERAL_FIND_HINT" translatable="true">trova nella pagina</string>
     <string name="GENERAL_SEARCH_ENGINE" translatable="true">motore di ricerca</string>
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
-    <string name="GENERAL_ERROR_TITLE" translatable="true">opps! orion è andato storto</string>
+    <string name="GENERAL_ERROR_TITLE" translatable="true">opps! LeOSiumè andato storto</string>
     <string name="GENERAL_TODO" translatable="true">qualunque cosa</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
     <string name="GENERAL_LOADING" translatable="true">libertà digitale</string>
     <string name="GENERAL_RELOAD" translatable="true">ricaricare</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">stai affrontando uno dei seguenti problemi. la pagina web o il sito web potrebbero non funzionare. la tua connessione Internet potrebbe essere scarsa. potresti utilizzare un proxy. il sito Web potrebbe essere bloccato dal firewall</string>
@@ -23,12 +23,12 @@
     <!-- Home Splash Screen -->
     <string name="HOME_DESCRIPTION_TEXT_1">Protetto dalla rete Tor</string>
     <string name="HOME_DESCRIPTION_TEXT_2">Nessun record e impronte digitali</string>
-    <string name="HOME_DESCRIPTION_TEXT_3">Motore di ricerca Orion integrato</string>
+    <string name="HOME_DESCRIPTION_TEXT_3">Motore di ricerca LeOSiumintegrato</string>
     <string name="HOME_DESCRIPTION_TEXT_4">Protezione da tracciamento</string>
     <string name="HOME_DESCRIPTION_TEXT_5">Nessuna cache locale memorizzata</string>
     <string name="HOME_DESCRIPTION_TEXT_6">Cookie gestibili sicuri</string>
     <string name="HOME_DESCRIPTION_TEXT_7">Protetto dalla rete Tor</string>
-    <string name="HOME_DESCRIPTION_TEXT_8">Motore di ricerca Orion integrato</string>
+    <string name="HOME_DESCRIPTION_TEXT_8">Motore di ricerca LeOSiumintegrato</string>
     <string name="HOME_DESCRIPTION_TEXT_9">Nessun record e impronte digitali</string>
     <string name="HOME_CONNECT_NO_TOR">Navigazione normale</string>
     <string name="HOME_CONNECT_TOR">Navigazione Tor</string>
@@ -54,13 +54,13 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"A volte hai bisogno di un Bridge per arrivare a Tor network"</string>
     <string name="LANDING_MORE" translatable="true">"Dimmi Di Più"</string>
     <string name="LANDING_HELLO" translatable="true">"Ciao"</string>
-    <string name="LANDING_WELCOME" translatable="true">"Benvenuto al Orion sul cellulare."</string>
+    <string name="LANDING_WELCOME" translatable="true">"Benvenuto al LeOSiumsul cellulare."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"Naviga in Internet in modo sicuro e protetto."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"Nessun monitoraggio. Nessuna censura."</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Browser predefinito</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">imposta orion come browser predefinito</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">imposta LeOSiumcome browser predefinito</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">Imposta IT predefinito</string>
 
     <!-- Alert TOR -->
@@ -88,7 +88,7 @@
     <string name="ORBOT_LOG" translatable="true">registri proxy</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Informazioni sul registro di sistema</string>
     <string name="ORBOT_LOG_INFO" translatable="true">se stai riscontrando problemi di connettività durante l\'avvio di Genesis, copia il seguente codice e trova il problema online o invialo a noi, così possiamo provare ad aiutarti</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">personalizzazione proxy</string>
@@ -127,7 +127,7 @@
     <string name="TOAST_ALERT_RESTART" translatable="true">Riavvia</string>
     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">La Scheda è Chiusa</string>
     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Nuova scheda aperta</string>
-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy Orion che si connette...</string>
+    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy LeOSiumche si connette...</string>
     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">La memoria è piena ➔ Scheda Cancellazione</string>
     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup bloccato</string>
     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Apri Log Errori</string>
@@ -215,7 +215,7 @@
 
     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
     <string name="SETTING_BASIC_SETTING" translatable="true">Impostazioni di sistema</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">imposta Orion come browser predefinito</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">imposta LeOSiumcome browser predefinito</string>
     <string name="SETTING_HEADER" translatable="true">Impostazioni di sistema</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">motore di ricerca</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
@@ -287,7 +287,7 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">proteggere la tua identità online</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">mantieni la tua identità privata. possiamo proteggerti da diversi tracker che ti seguono online. questa impostazione di sistema può essere utilizzata anche per bloccare la pubblicità</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">salvati dalla protezione della sorveglianza degli utenti</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion dirà ai siti di non rintracciarmi</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumdirà ai siti di non rintracciarmi</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">dì al sito web di non seguirmi</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Protezione della sorveglianza degli utenti</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">abilitare la protezione della sorveglianza dell\'utente fornita da Genesis</string>
@@ -335,8 +335,8 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">blocca tutte le immagini</string>
     <string name="SETTING_ADVANCE" translatable="true">Impostazioni avanzate del sistema</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">ripristinare schede, risparmio dati, strumenti per sviluppatori</string>
-    <string name="SETTING_PROXY" translatable="true">orion condizione di delega</string>
-    <string name="SETTING_PROXY_INFO" translatable="true">controllare orion stato della rete</string>
+    <string name="SETTING_PROXY" translatable="true">LeOSiumcondizione di delega</string>
+    <string name="SETTING_PROXY_INFO" translatable="true">controllare LeOSiumstato della rete</string>
     <string name="SETTING_REPORT" translatable="true">sito web di report</string>
     <string name="SETTING_REPORT_INFO" translatable="true">segnalare un sito web offensivo</string>
     <string name="SETTING_RATEUS" translatable="true">valuta questa applicazione</string>
@@ -480,7 +480,7 @@
 
     <string name="PROXY_STATUS_HEADER" translatable="true">condizione di delega</string>
     <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">condizione attuale del proxy orion</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">orion condizione di delega</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSiumcondizione di delega</string>
     <string name="PROXY_SUB_HEADER2" translatable="true">orion</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN condizione di connettività</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge condizione di delega</string>
@@ -494,7 +494,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">le schede aperte verranno visualizzate qui</string>
 
 
