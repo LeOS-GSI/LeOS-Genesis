@@ -51,12 +51,12 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"Іноді вам потрібен Міст, щоб дістатися до мережі Tor"</string>
     <string name="LANDING_MORE" translatable="true">"РОЗКАЖІТЬ БІЛЬШЕ"</string>
     <string name="LANDING_HELLO" translatable="true">"Привіт"</string>
-    <string name="LANDING_WELCOME" translatable="true">"Ласкаво просимо до Orion на мобільному."</string>
+    <string name="LANDING_WELCOME" translatable="true">"Ласкаво просимо до LeOSiumна мобільному."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"Переглядайте Інтернет безпечно та надійно."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"Без відстеження. Без цензури."</string>
 
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Браузер за умовчанням</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">встановити orion як браузер за умовчанням</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">встановити LeOSiumяк браузер за умовчанням</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">Установити IT за замовчуванням</string>
 
     <!-- Alert TOR -->
@@ -83,7 +83,7 @@
     <!-- Orbot Log -->
     <string name="ORBOT_LOG" translatable="true">Журнали проксі</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Інформація про журнали</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting LeOSiumplease copy the following code and find issue online or send it to us, so we can try to help you out </string>
     <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">Буття в режимі очікування на даний момент</string>
 
     <!-- Orbot View -->
@@ -486,7 +486,7 @@
 
     <!-- Home View -->
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
-    <string name="HOME_LOADING" translatable="true">Idle | Orion on standby at the moment</string>
+    <string name="HOME_LOADING" translatable="true">Idle | LeOSiumon standby at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">Тут відкриються відкриті вкладки</string>
 
     <!-- Error Page -->

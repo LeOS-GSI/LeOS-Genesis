@@ -16,7 +16,7 @@
         android:icon="@mipmap/ic_launcher"
         tools:remove="android:appComponentFactory"
         tools:targetApi="p"
-        android:label="@string/app_name"
+        android:label="LeOS-Genisis"
         android:largeHeap="false"
         android:networkSecurityConfig="@xml/gx_network_security_config"
         android:requestLegacyExternalStorage="true"
@@ -130,12 +130,12 @@
             android:name="com.hiddenservices.onionservices.appManager.settingManager.searchEngineManager.settingSearchController"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:windowSoftInputMode="adjustPan" />
-
+<!--
         <activity
             android:name="com.hiddenservices.onionservices.appManager.settingManager.trackingManager.settingTrackingController"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:windowSoftInputMode="adjustPan" />
-
+ -->
         <activity
             android:name="com.hiddenservices.onionservices.appManager.homeManager.homeController.homeController"
             android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
