@@ -538,7 +538,7 @@
     <!-- Home View -->
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">Connect</string>
-    <string name="HOME_COPYRIGHT" translatable="false">Copyleft© by LeOSiumTechnologies/harvey186 | Built 1.6.1</string>
+    <string name="HOME_COPYRIGHT" translatable="false">Copyleft© by Orion Technologies/harvey186 | Built 1.6.1</string>
     <string name="HOME_LOADING" translatable="true">Idle | LeOSium on standby at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">Open tabs will show here</string>
 

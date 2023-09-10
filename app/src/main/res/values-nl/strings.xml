@@ -50,13 +50,13 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"Soms heb je een Bridge nodig om bij Tor-netwerk te komen"</string>
     <string name="LANDING_MORE" translatable="true">"VERTEL ME MEER"</string>
     <string name="LANDING_HELLO" translatable="true">"Hallo"</string>
-    <string name="LANDING_WELCOME" translatable="true">"Welkom bij LeOSiumop mobiel."</string>
+    <string name="LANDING_WELCOME" translatable="true">"Welkom bij Orion op mobiel."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"Browse veilig op internet."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"Geen tracking. Geen censuur."</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Standaardbrowser</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">stel LeOSiumin als uw standaardbrowser</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">stel orion in als uw standaardbrowser</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">IT-standaard instellen</string>
 
     <!-- Alert TOR -->
@@ -83,8 +83,8 @@
     <!-- Orbot Log -->
     <string name="ORBOT_LOG" translatable="true">Proxylogboeken</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Logboeken Info</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting LeOSiumplease copy the following code and find issue online or send it to us, so we can try to help you out </string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">LeOSiumop standby op dit moment</string>
+    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">Orion op standby op dit moment</string>
 
     <!-- Orbot View -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">Te Drukken Proxy-instellingen</string>
@@ -210,7 +210,7 @@
 
     <!-- Settings -->
     <string name="SETTING_BASIC_SETTING" translatable="true">Basisinstellingen</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Stel LeOSiumin als uw standaardbrowser</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Stel Orion in als uw standaardbrowser</string>
     <string name="SETTING_HEADER" translatable="true">Instellingen</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">Zoekmachine</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">Javascript</string>
@@ -275,7 +275,7 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">Bescherm uw online identiteit</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">Houd uw identiteit voor uzelf. We kunnen je beschermen tegen verschillende trackers die volgen wat je online doet. Trackingbeveiliging kan ook worden gebruikt om advertenties te blokkeren</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">Niet Volgen</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumzal sites vertellen dat u niet wilt worden gevolgd</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion zal sites vertellen dat u niet wilt worden gevolgd</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Volg geen marker voor website</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Bescherming Tegen Volgen</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Schakel trackingbeveiliging in die wordt geboden door Genesis</string>
@@ -323,7 +323,7 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">Blokkeer alle afbeeldingen</string>
     <string name="SETTING_ADVANCE" translatable="true">Geavanceerd</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">Herstel tabbladen, databesparing, ontwikkelaarstools</string>
-    <string name="SETTING_PROXY" translatable="true">LeOSiumProxy-status</string>
+    <string name="SETTING_PROXY" translatable="true">orion Proxy-status</string>
     <string name="SETTING_PROXY_INFO" translatable="true">Controleer uienetwerk of status</string>
     <string name="SETTING_REPORT" translatable="true">Rapport website</string>
     <string name="SETTING_REPORT_INFO" translatable="true">Beledigende website melden</string>
@@ -485,7 +485,7 @@
 
     <!-- Home View -->
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
-    <string name="HOME_LOADING" translatable="true">Idle | LeOSiumon standby at the moment</string>
+    <string name="HOME_LOADING" translatable="true">Idle | Orion on standby at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">Open tabbladen worden hier weergegeven</string>
 
     <!-- Error Page -->

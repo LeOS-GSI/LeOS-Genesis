@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">опп! что-то пошло не так</string>
     <string name="GENERAL_TODO" translatable="true">все</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
     <string name="GENERAL_LOADING" translatable="true">цифровая свобода</string>
     <string name="GENERAL_RELOAD" translatable="true">перезагрузить</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">вы столкнулись с одной из следующих проблем. веб-страница или веб-сайт могут не работать. ваше интернет-соединение может быть плохим. вы можете использовать прокси. веб-сайт может быть заблокирован брандмауэром</string>
@@ -54,12 +54,12 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">Иногда вам нужен Мост, чтобы попасть в сеть Tor.</string>
     <string name="LANDING_MORE" translatable="true">"РАССКАЗАТЬ БОЛЬШЕ"</string>
     <string name="LANDING_HELLO" translatable="true">«Привет»</string>
-    <string name="LANDING_WELCOME" translatable="true">«Добро пожаловать в LeOSiumна мобильном телефоне».</string>
+    <string name="LANDING_WELCOME" translatable="true">«Добро пожаловать в Orion на мобильном телефоне».</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">«Работайте в Интернете безопасно и надежно».</string>
     <string name="LANDING_NO_TRACKING" translatable="true">«Без отслеживания. Без цензуры».</string>
 
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Браузер по умолчанию</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">установите LeOSiumв качестве браузера по умолчанию</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">установите orion в качестве браузера по умолчанию</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">Установите ИТ по умолчанию</string>
 
     <!-- Alert TOR -->
@@ -87,7 +87,7 @@
     <string name="ORBOT_LOG" translatable="true">журналы прокси</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Информация системного журнала</string>
     <string name="ORBOT_LOG_INFO" translatable="true">Если вы столкнулись с проблемой подключения при запуске Genesis, скопируйте следующий код и найдите проблему в Интернете или отправьте ее нам, чтобы мы могли помочь вам</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">прокси настроить</string>
@@ -126,7 +126,7 @@
     <string name="TOAST_ALERT_RESTART" translatable="true">Перезагрузка</string>
     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Вкладка закрыта</string>
     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Открыта новая вкладка</string>
-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Прокси LeOSiumподключается ...</string>
+    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Прокси Orion подключается ...</string>
     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Память заполнена ➔ Вкладка «Очистка»</string>
     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Всплывающее окно заблокировано</string>
     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Открыть журнал ошибок</string>
@@ -214,7 +214,7 @@
 
     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
     <string name="SETTING_BASIC_SETTING" translatable="true">Системные настройки</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">сделайте LeOSiumбраузером по умолчанию</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">сделайте Orion браузером по умолчанию</string>
     <string name="SETTING_HEADER" translatable="true">Системные настройки</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">поисковый движок</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
@@ -286,7 +286,7 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">защитить свою личность в Интернете</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">сохраняйте свою личность в тайне. мы можем защитить вас от нескольких трекеров, которые следят за вами в Интернете. эту Системную настройку также можно использовать для блокировки рекламы</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">спасти себя от защиты от неожиданности пользователя</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumскажет сайтам не отслеживать меня</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion скажет сайтам не отслеживать меня</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">скажи сайту не отслеживать меня</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Защита пользователей от наблюдения</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">включить защиту от скрытности пользователей, предоставляемую Genesis</string>
@@ -334,8 +334,8 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">заблокировать все изображения</string>
     <string name="SETTING_ADVANCE" translatable="true">Расширенные настройки системы</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">восстановить вкладки, хранитель данных, инструменты разработчика</string>
-    <string name="SETTING_PROXY" translatable="true">LeOSiumсостояние прокси</string>
-    <string name="SETTING_PROXY_INFO" translatable="true">проверить LeOSiumсостояние сети</string>
+    <string name="SETTING_PROXY" translatable="true">orion состояние прокси</string>
+    <string name="SETTING_PROXY_INFO" translatable="true">проверить orion состояние сети</string>
     <string name="SETTING_REPORT" translatable="true">веб-сайт отчета</string>
     <string name="SETTING_REPORT_INFO" translatable="true">сообщить о нарушении веб-сайта</string>
     <string name="SETTING_RATEUS" translatable="true">Оцените это приложение</string>
@@ -479,7 +479,7 @@
 
     <string name="PROXY_STATUS_HEADER" translatable="true">состояние доверенности</string>
     <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">текущее состояние прокси orion</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSiumсостояние прокси</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">orion состояние прокси</string>
     <string name="PROXY_SUB_HEADER2" translatable="true">orion</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN состояние подключения</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge состояние прокси</string>
@@ -493,7 +493,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">открытые вкладки будут отображаться здесь</string>
 
 
@@ -514,7 +514,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Недавние вкладки</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Новая личность</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Политика конфиденциальности</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Политика конфиденциальности LeOSiumBrowser</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Политика конфиденциальности Orion Browser</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Веб-сайт отчета</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Сообщить о незаконном веб-сайте</string>
     <string name="SETTING_SITEMAP" translatable="true">опубликуйте свой сайт</string>

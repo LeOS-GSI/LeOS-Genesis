@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">อป! มีบางอย่างผิดพลาด</string>
     <string name="GENERAL_TODO" translatable="true">ทุกอย่าง</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
     <string name="GENERAL_LOADING" translatable="true">เสรีภาพดิจิทัล</string>
     <string name="GENERAL_RELOAD" translatable="true">โหลดใหม่</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">คุณกำลังประสบปัญหาอย่างใดอย่างหนึ่งต่อไปนี้ หน้าเว็บหรือเว็บไซต์อาจไม่ทำงาน การเชื่อมต่ออินเทอร์เน็ตของคุณอาจไม่ดี คุณอาจใช้พร็อกซี เว็บไซต์อาจถูกปิดกั้นโดยไฟร์วอลล์</string>
@@ -54,13 +54,13 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"บางครั้งคุณต้องการ สะพาน เพื่อไปที่ เครือข่ายทอร์"</string>
     <string name="LANDING_MORE" translatable="true">"บอกฉันเพิ่มเติม"</string>
     <string name="LANDING_HELLO" translatable="true">"สวัสดี"</string>
-    <string name="LANDING_WELCOME" translatable="true">"ยินดีต้อนรับสู่ LeOSiumบนมือถือ"</string>
+    <string name="LANDING_WELCOME" translatable="true">"ยินดีต้อนรับสู่ Orion บนมือถือ"</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"ท่องอินเทอร์เน็ตอย่างปลอดภัย"</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"ไม่มีการติดตาม ไม่มีการเซ็นเซอร์"</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">เบราว์เซอร์เริ่มต้น</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">ตั้ง LeOSiumเป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">ตั้ง orion เป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">ตั้งค่าเริ่มต้นไอที</string>
 
     <!-- Alert TOR -->
@@ -87,8 +87,8 @@
     <!-- Orbot Log -->
     <string name="ORBOT_LOG" translatable="true">บันทึกพร็อกซี</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">ข้อมูลบันทึกระบบ</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">หากคุณประสบปัญหาการเชื่อมต่อในขณะที่เริ่มต้น LeOSiumโปรดคัดลอกรหัสต่อไปนี้และค้นหาปัญหาทางออนไลน์หรือส่งมาให้เราเพื่อที่เราจะได้ช่วยเหลือคุณ</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
+    <string name="ORBOT_LOG_INFO" translatable="true">หากคุณประสบปัญหาการเชื่อมต่อในขณะที่เริ่มต้น Orion โปรดคัดลอกรหัสต่อไปนี้และค้นหาปัญหาทางออนไลน์หรือส่งมาให้เราเพื่อที่เราจะได้ช่วยเหลือคุณ</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">ปรับแต่งพร็อกซี</string>
@@ -127,7 +127,7 @@
     <string name="TOAST_ALERT_RESTART" translatable="true">เริ่มใหม่</string>
     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">แท็บถูกปิด</string>
     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">เปิดแท็บใหม่แล้ว</string>
-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">การเชื่อมต่อพร็อกซี LeOSium...</string>
+    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">การเชื่อมต่อพร็อกซี Orion ...</string>
     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">หน่วยความจำเต็ม ➔ กำลังล้างแท็บ</string>
     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">ป๊อปอัปถูกบล็อก</string>
     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">เปิดบันทึกข้อผิดพลาด</string>
@@ -214,7 +214,7 @@
 
     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
     <string name="SETTING_BASIC_SETTING" translatable="true">การตั้งค่าระบบ</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ทำให้ LeOSiumเป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ทำให้ Orion เป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
     <string name="SETTING_HEADER" translatable="true">การตั้งค่าระบบ</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">เครื่องมือค้นหา</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">จาวาสคริปต์</string>
@@ -286,7 +286,7 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">ปกป้องตัวตนออนไลน์ของคุณ</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">รักษาตัวตนของคุณไว้เป็นส่วนตัว เราสามารถปกป้องคุณจากเครื่องมือติดตามต่างๆที่ติดตามคุณทางออนไลน์ การตั้งค่าระบบนี้ยังสามารถใช้เพื่อบล็อกโฆษณา</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">ช่วยตัวเองจาก Survelance Protection ของผู้ใช้</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumจะบอกไซต์ต่างๆไม่ให้ติดตามฉัน</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion จะบอกไซต์ต่างๆไม่ให้ติดตามฉัน</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">บอกเว็บไซต์อย่าติดตามฉัน</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">การป้องกันการเฝ้าระวังผู้ใช้</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">เปิดใช้งาน Survelance Protection ของผู้ใช้โดย Genesis</string>
@@ -334,7 +334,7 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">บล็อกภาพทั้งหมด</string>
     <string name="SETTING_ADVANCE" translatable="true">การตั้งค่าระบบขั้นสูง</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">กู้คืนแท็บโปรแกรมประหยัดข้อมูลเครื่องมือสำหรับนักพัฒนา</string>
-    <string name="SETTING_PROXY" translatable="true">LeOSiumเงื่อนไขการมอบฉันทะ</string>
+    <string name="SETTING_PROXY" translatable="true">orion เงื่อนไขการมอบฉันทะ</string>
     <string name="SETTING_PROXY_INFO" translatable="true">ตรวจสอบสภาพเครือข่าย orion</string>
     <string name="SETTING_REPORT" translatable="true">รายงานเว็บไซต์</string>
     <string name="SETTING_REPORT_INFO" translatable="true">รายงานเว็บไซต์ที่ไม่เหมาะสม</string>
@@ -478,8 +478,8 @@
 
 
     <string name="PROXY_STATUS_HEADER" translatable="true">เงื่อนไขของพร็อกซี</string>
-    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">สภาพปัจจุบันของ LeOSiumproxy</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSiumเงื่อนไขของพร็อกซี</string>
+    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">สภาพปัจจุบันของ orion proxy</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">orion เงื่อนไขของพร็อกซี</string>
     <string name="PROXY_SUB_HEADER2" translatable="true">orion</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN เงื่อนไขการเชื่อมต่อ</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge เงื่อนไขของการมอบฉันทะ</string>
@@ -493,7 +493,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">แท็บที่เปิดจะแสดงที่นี่</string>
 
 

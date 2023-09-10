@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">وجه الفتاة! هناك خطأ ما</string>
     <string name="GENERAL_TODO" translatable="true">كل شىء</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumSearch Engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
     <string name="GENERAL_LOADING" translatable="true">الحرية الرقمية</string>
     <string name="GENERAL_RELOAD" translatable="true">إعادة تحميل</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">لديك واحدة من المشاكل التالية. قد لا تعمل صفحة الويب أو موقع الويب. قد يكون اتصالك بالإنترنت معطلاً. ربما كنت تستخدم وكيل. قد يتم حظر موقع الويب بواسطة جدار حماية</string>
@@ -54,7 +54,7 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"في بعض الأحيان تحتاج إلى جسر للذهاب إلى شبكة الرحلات."</string>
     <string name="LANDING_MORE" translatable="true">"اخبرني المزيد"</string>
     <string name="LANDING_HELLO" translatable="true">"سلام"</string>
-    <string name="LANDING_WELCOME" translatable="true">"مرحبًا بك في LeOSiumon Mobile."</string>
+    <string name="LANDING_WELCOME" translatable="true">"مرحبًا بك في Orion on Mobile."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"تصفح الإنترنت بأمان."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"لا تتبع ولا رقابة".</string>
 
@@ -86,7 +86,7 @@
     <!-- Orbot Logs -->
     <string name="ORBOT_LOG" translatable="true">سجلات الوكيل</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">معلومات سجل النظام</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">إذا كنت تواجه مشكلة في الاتصال عند بدء LeOSium، فالرجاء نسخ الكود التالي والعثور على المشكلة عبر الإنترنت أو إرسالها إلينا ، حتى نتمكن من محاولة مساعدتك</string>
+    <string name="ORBOT_LOG_INFO" translatable="true">إذا كنت تواجه مشكلة في الاتصال عند بدء Orion ، فالرجاء نسخ الكود التالي والعثور على المشكلة عبر الإنترنت أو إرسالها إلينا ، حتى نتمكن من محاولة مساعدتك</string>
     <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ "Orion" on standby at the moment</string>
 
     <!-- Orbot Settings -->
@@ -493,7 +493,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">ستظهر هنا علامات التبويب المفتوحة</string>
 
 

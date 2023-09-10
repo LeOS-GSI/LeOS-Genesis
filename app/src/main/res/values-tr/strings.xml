@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! bir şeyler ters gitti</string>
     <string name="GENERAL_TODO" translatable="true">her şey</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
     <string name="GENERAL_LOADING" translatable="true">dijital özgürlük</string>
     <string name="GENERAL_RELOAD" translatable="true">Tekrar yükle</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">aşağıdaki problemlerden biriyle karşı karşıyasınız. web sayfası veya web sitesi çalışmıyor olabilir. İnternet bağlantınız zayıf olabilir. bir proxy kullanıyor olabilirsiniz. web sitesi güvenlik duvarı tarafından engelleniyor olabilir</string>
@@ -38,7 +38,7 @@
     <string name="SHORTCUT_ERASE_LONG_LABEL" translatable="false">Taranan web sitesini sil</string>
     <string name="SHORTCUT_ERASE_AND_OPEN_SHORT_LABEL" translatable="false">Verilerinizi silin ve tarayıcıyı açın</string>
     <string name="SHORTCUT_ERASE_AND_OPEN_LONG_LABEL" translatable="false">Tarayıcı önbelleğini sil</string>
-    <string name="SHORTCUT_OPEN" translatable="false">LeOSiumtarayıcısını yeniden başlatın</string>
+    <string name="SHORTCUT_OPEN" translatable="false">Orion tarayıcısını yeniden başlatın</string>
     <string name="SHORTCUT_OPEN_LONG" translatable="false">Tarayıcınızı Yeniden Başlatın</string>
 
     <!-- Bookmark Setting -->
@@ -65,7 +65,7 @@
 
     <!-- Alert TOR -->
     <string name="ALERT_TOR_HEADER" translatable="true">Tor\'a Geç</string>
-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Bunu kullanarak, Duckduckgo\'yu kullanarak normal tarama arasında geçiş yapabilir veya LeOSiumaramayı kullanarak gelişmiş güvenli karanlık web taraması yapabilirsiniz</string>
+    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Bunu kullanarak, Duckduckgo\'yu kullanarak normal tarama arasında geçiş yapabilir veya Orion aramayı kullanarak gelişmiş güvenli karanlık web taraması yapabilirsiniz</string>
     <string name="ALERT_TOR_TRIGGER" translatable="true">Değiştir</string>
 
     <!-- Alert Secure -->
@@ -88,7 +88,7 @@
     <string name="ORBOT_LOG" translatable="true">proxy günlükleri</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Sistem Günlüğü bilgisi</string>
     <string name="ORBOT_LOG_INFO" translatable="true">Genesis\'e başlarken bağlantı sorunu yaşıyorsanız, lütfen aşağıdaki kodu kopyalayın ve çevrimiçi sorunu bulun veya bize gönderin, böylece size yardımcı olmaya çalışabiliriz</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">proxy özelleştirmek</string>
@@ -149,7 +149,7 @@
     <string name="TOAST_ALERT_RESTART" translatable="true">Yeniden Başlat</string>
     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Sekme Kapalı</string>
     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Yeni sekme açıldı</string>
-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOSiumproxy bağlanıyor...</string>
+    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy bağlanıyor...</string>
     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Bellek dolu ➔ Sekme temizleniyor</string>
     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Pop-up engellendi</string>
     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Hata Günlüklerini Aç</string>
@@ -287,10 +287,10 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">çevrimiçi kimliğinizi koruyun</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">kimliğinizi gizli tutun. Sizi çevrimiçi olarak takip eden birkaç izleyiciden koruyabiliriz. bu Sistem Ayarı, reklamı engellemek için de kullanılabilir</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">kendinizi kullanıcı Survelance Protection\'dan kurtarın</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOSiumsitelere beni izlememelerini söyleyecek</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion sitelere beni izlememelerini söyleyecek</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">web sitesine beni takip etmemesini söyle</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Kullanıcı Gözetim Koruması</string>
-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">LeOSiumtarafından sağlanan kullanıcı Survelance Protection\'ı etkinleştirin</string>
+    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Orion tarafından sağlanan kullanıcı Survelance Protection\'ı etkinleştirin</string>
     <string name="SETTING_PRIVACY_COOKIES" translatable="true">web sitesi çerezleri</string>
     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">güvenlik ihtiyaçlarınıza göre web sitesi çerez tercihlerini seçin</string>
     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">çıkışta özel verileri temizle</string>
@@ -335,8 +335,8 @@
     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">tüm resimleri engelle</string>
     <string name="SETTING_ADVANCE" translatable="true">Gelişmiş Sistem Ayarı</string>
     <string name="SETTING_ADVANCE_INFO" translatable="true">sekmeleri geri yükle, veri tasarrufu, geliştirici araçları</string>
-    <string name="SETTING_PROXY" translatable="true">LeOSiumvekalet koşulu</string>
-    <string name="SETTING_PROXY_INFO" translatable="true">LeOSiumağ durumunu kontrol et</string>
+    <string name="SETTING_PROXY" translatable="true">orion vekalet koşulu</string>
+    <string name="SETTING_PROXY_INFO" translatable="true">orion ağ durumunu kontrol et</string>
     <string name="SETTING_REPORT" translatable="true">web sitesini bildir</string>
     <string name="SETTING_REPORT_INFO" translatable="true">kötüye kullanılan web sitesini bildir</string>
     <string name="SETTING_RATEUS" translatable="true">bu uygulamayı oyla</string>
@@ -479,8 +479,8 @@
 
 
     <string name="PROXY_STATUS_HEADER" translatable="true">vekaletname durumu</string>
-    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">LeOSiumvekilinin mevcut durumu</string>
-    <string name="PROXY_SUB_HEADER1" translatable="true">LeOSiumvekalet koşulu</string>
+    <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">orion vekilinin mevcut durumu</string>
+    <string name="PROXY_SUB_HEADER1" translatable="true">orion vekalet koşulu</string>
     <string name="PROXY_SUB_HEADER2" translatable="true">orion</string>
     <string name="PROXY_VPN_STATUS" translatable="true">VPN bağlantı durumu</string>
     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge vekalet koşulu</string>
@@ -494,7 +494,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">açık sekmeler burada gösterilecek</string>
 
 

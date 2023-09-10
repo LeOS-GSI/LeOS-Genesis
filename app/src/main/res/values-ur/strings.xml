@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">اوپپس! کچھ غلط ہو گیا ہے</string>
     <string name="GENERAL_TODO" translatable="true">سب کچھ</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumSearch Engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
     <string name="GENERAL_LOADING" translatable="true">ڈیجیٹل آزادی</string>
     <string name="GENERAL_RELOAD" translatable="true">دوبارہ لوڈ کریں</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">آپ کو مندرجہ ذیل میں سے ایک مسئلہ درپیش ہے۔ ہوسکتا ہے کہ ویب صفحہ یا ویب سائٹ کام نہیں کررہی ہے۔ ہوسکتا ہے کہ آپ کا انٹرنیٹ کنیکشن خراب ہو۔ آپ شاید ایک پراکسی استعمال کر رہے ہوں گے۔ ہوسکتا ہے کہ ویب سائٹ فائر وال کے ذریعے مسدود کردی جائے</string>
@@ -54,7 +54,7 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"کبھی کبھی آپ کو ٹور نیٹ ورک جانے کے لئے برج کی ضرورت ہوتی ہے"</string>
     <string name="LANDING_MORE" translatable="true">"مجھے مزید بتائیں"</string>
     <string name="LANDING_HELLO" translatable="true">"ہیلو"</string>
-    <string name="LANDING_WELCOME" translatable="true">"موبائل پر LeOSiumمیں خوش آمدید۔"</string>
+    <string name="LANDING_WELCOME" translatable="true">"موبائل پر Orion میں خوش آمدید۔"</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"انٹرنیٹ کو محفوظ طریقے سے براؤز کریں۔"</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"کوئی ٹریکنگ نہیں۔ کوئی سنسرشپ نہیں ہے۔"</string>
 
@@ -64,7 +64,7 @@
 
     <!-- Alert TOR -->
     <string name="ALERT_TOR_HEADER" translatable="true">ٹور پر سوئچ کریں۔</string>
-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">اس کا استعمال کرتے ہوئے آپ duckduckgo کا استعمال کرتے ہوئے عام براؤزنگ کے درمیان سوئچ کر سکتے ہیں یا LeOSiumسرچ کا استعمال کرتے ہوئے محفوظ ڈارک ویب براؤزنگ کو آگے بڑھا سکتے ہیں۔</string>
+    <string name="ALERT_TOR_DESCRIPTION" translatable="true">اس کا استعمال کرتے ہوئے آپ duckduckgo کا استعمال کرتے ہوئے عام براؤزنگ کے درمیان سوئچ کر سکتے ہیں یا Orion سرچ کا استعمال کرتے ہوئے محفوظ ڈارک ویب براؤزنگ کو آگے بڑھا سکتے ہیں۔</string>
     <string name="ALERT_TOR_TRIGGER" translatable="true">اسے سوئچ کریں۔</string>
 
     <!-- Alert Secure -->
@@ -87,7 +87,7 @@
     <string name="ORBOT_LOG" translatable="true">پراکسی لاگز</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">سسٹم لاگ انفارمیشن</string>
     <string name="ORBOT_LOG_INFO" translatable="true">اگر آپ جینیسز کو شروع کرتے وقت رابطہ کے مسئلے کا سامنا کر رہے ہیں تو ، براہ کرم مندرجہ ذیل کوڈ کو کاپی کریں اور مسئلہ آن لائن تلاش کریں یا ہمیں بھیجیں ، لہذا ہم آپ کی مدد کرنے کی کوشش کر سکتے ہیں</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">پراکسی اپنی مرضی کے مطابق بنائیں</string>
@@ -492,7 +492,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">کھلی ٹیبز یہاں دکھائی دیں گی</string>
 
 

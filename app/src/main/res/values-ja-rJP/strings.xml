@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">おっと！何かがうまくいかなかった</string>
     <string name="GENERAL_TODO" translatable="true">すべて</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSiumsearch engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
     <string name="GENERAL_LOADING" translatable="true">デジタルの自由</string>
     <string name="GENERAL_RELOAD" translatable="true">リロード</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">次のいずれかの問題が発生しています。ウェブページまたはウェブサイトが機能していない可能性があります。インターネット接続が悪い可能性があります。プロキシを使用している可能性があります。ウェブサイトがファイアウォールによってブロックされている可能性があります</string>
@@ -54,18 +54,18 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">「Torネットワーク」にアクセスするために「ブリッジ」が必要になる場合があります</string>
     <string name="LANDING_MORE" translatable="true">「もっと教えて」</string>
     <string name="LANDING_HELLO" translatable="true">「こんにちは」</string>
-    <string name="LANDING_WELCOME" translatable="true">「モバイルで LeOSiumへようこそ。」</string>
+    <string name="LANDING_WELCOME" translatable="true">「モバイルで Orion へようこそ。」</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">「インターネットを安全かつ確実に閲覧してください。」</string>
     <string name="LANDING_NO_TRACKING" translatable="true">「追跡なし。検閲なし。」</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">デフォルトブラウザ</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">LeOSiumをデフォルトのブラウザとして設定します</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">orion をデフォルトのブラウザとして設定します</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">IT デフォルトを設定します</string>
 
     <!-- Alert TOR -->
     <string name="ALERT_TOR_HEADER" translatable="true">Torに切り替えます</string>
-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">これを使用すると、duckduckgo を使用した通常のブラウジングと、LeOSium検索を使用した高度な安全なダーク Web ブラウジングを切り替えることができます</string>
+    <string name="ALERT_TOR_DESCRIPTION" translatable="true">これを使用すると、duckduckgo を使用した通常のブラウジングと、Orion 検索を使用した高度な安全なダーク Web ブラウジングを切り替えることができます</string>
     <string name="ALERT_TOR_TRIGGER" translatable="true">切り替えます</string>
 
     <!-- Alert Secure -->
@@ -88,7 +88,7 @@
     <string name="ORBOT_LOG" translatable="true">プロキシログ</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">システムログ情報</string>
     <string name="ORBOT_LOG_INFO" translatable="true">Genesisの開始中に接続の問題が発生した場合は、次のコードをコピーしてオンラインで問題を見つけるか、送信してください。サポートを提供します。</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOSiumon standby at the moment</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">プロキシのカスタマイズ</string>
@@ -493,7 +493,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">LeOSiumis paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">開いているタブがここに表示されます</string>
 
 
