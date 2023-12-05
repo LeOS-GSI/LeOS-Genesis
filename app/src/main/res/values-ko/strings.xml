@@ -243,7 +243,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
+    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">탐색 한 웹 링크 표시</string>
@@ -379,7 +379,7 @@
     <string name="ALERT_SECURE" translatable="false">https://</string>
     <string name="ALERT_REPORT" translatable="true">보고서</string>
     <string name="ALERT_REPORT_URL" translatable="true">웹 사이트 신고</string>
-    <string name="ALERT_REPORT_URL_INFO" translatable="true">이 URL이 불법이거나 방해가된다고 생각되는 경우 Google에 신고하여 법적 조치를 취할 수 있습니다.</string>
+    <string name="ALERT_REPORT_URL_INFO" translatable="true">이 URL이 불법이거나 방해가된다고 생각되는 경우 LeOSearch에 신고하여 법적 조치를 취할 수 있습니다.</string>
     <string name="ALERT_REPORT_URL_SUCCESS" translatable="true">성공적으로보고되었습니다</string>
     <string name="ALERT_REPORT_URL_SUCCESS_INFO" translatable="true">URL이 성공적으로보고되었습니다. 무언가가 발견되면 법적 조치가 취해질 것입니다.</string>
     <string name="ALERT_LANGUAGE_SUPPORT_FAILURE" translatable="true">지원되지 않는 언어</string>
@@ -547,7 +547,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">최근 탭</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">새로운 정체성</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">개인 정보 정책</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser 개인 정보 보호 정책</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser 개인 정보 보호 정책</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">웹 사이트 신고</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">불법 웹 사이트 신고</string>
     <string name="SETTING_SITEMAP" translatable="true">웹 사이트 게시</string>

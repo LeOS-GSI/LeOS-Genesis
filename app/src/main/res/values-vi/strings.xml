@@ -241,7 +241,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
+    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">hiển thị các liên kết web đã duyệt</string>
@@ -513,7 +513,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Các tab gần đây</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nhận dạng mới</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Chính sách bảo mật</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser chính sách về quyền riêng tư</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser chính sách về quyền riêng tư</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Báo cáo trang web</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Báo cáo trang web bất hợp pháp</string>
     <string name="SETTING_SITEMAP" translatable="true">xuất bản trang web của bạn</string>

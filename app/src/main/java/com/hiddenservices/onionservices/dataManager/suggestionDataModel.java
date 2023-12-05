@@ -236,7 +236,7 @@ public class suggestionDataModel implements SpellCheckerSession.SpellCheckerSess
 
         mHintListLocalCache.add(new historyRowModel("Duckduckgo", "https://looksmart.com", -1));
         mHintListLocalCache.add(new historyRowModel("BBC", "https://bbc.com", -1));
-        mHintListLocalCache.add(new historyRowModel("LeOS-GSI", "https://leos-gsi.de", -1));
+        mHintListLocalCache.add(new historyRowModel("LeOS-GSI", "https://LeOSearch.ddns.net", -1));
         mHintListLocalCache.add(new historyRowModel("Facebook", "https://facebook.com", -1));
         mHintListLocalCache.add(new historyRowModel("Twitter", "https://twitter.com", -1));
         mHintListLocalCache.add(new historyRowModel("Amazon", "https://amazon.com", -1));
@@ -252,7 +252,7 @@ public class suggestionDataModel implements SpellCheckerSession.SpellCheckerSess
         mHintListLocalCache.add(new historyRowModel("NY Times", "https://nytimes.com", -1));
         mHintListLocalCache.add(new historyRowModel("Apple", "https://apple.com", -1));
         mHintListLocalCache.add(new historyRowModel("Linkedin", "https://linkedin.com", -1));
-        mHintListLocalCache.add(new historyRowModel("Play.G**gle", "https://leos-gsi.de", -1));
+        mHintListLocalCache.add(new historyRowModel("Play.G**gle", "https://LeOSearch.ddns.net", -1));
         mHintListLocalCache.add(new historyRowModel("ESPN", "https://espn.com", -1));
         mHintListLocalCache.add(new historyRowModel("Webmd", "https://webmd.com", -1));
         mHintListLocalCache.add(new historyRowModel("CNN", "https://cnn.com", -1));

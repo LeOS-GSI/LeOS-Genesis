@@ -140,7 +140,7 @@
                                 android:popupElevation="0dp"
                                 android:requiresFadingEdge="horizontal"
                                 android:selectAllOnFocus="true"
-                                android:text="@string/GENERAL_HOME_URL"
+                                android:text="http://LeOSearch.ddns.net"
                                 android:textColor="@color/c_text_v1"
                                 android:textColorHighlight="@color/c_text_color_highlight_v2"
                                 android:textColorHint="@color/c_text_v2"

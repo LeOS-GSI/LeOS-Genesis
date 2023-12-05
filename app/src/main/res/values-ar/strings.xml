@@ -243,7 +243,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">جینیسز</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
+    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">إظهار روابط الويب التي تم تصفحها</string>

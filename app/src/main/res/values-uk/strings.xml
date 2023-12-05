@@ -199,7 +199,7 @@
     <!-- Settings -->
     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Переглядайте статті вільно</string>
     <string name="SETTING_SEARCH_NAME_BING" translatable="true">Пошук від microsoft</string>
-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Шукайте в Google</string>
+    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Шукайте в LeOSearch</string>
     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">Пошук захисту від стеження</string>
 
     <string name="SETTING_PRIVACY_POPUP" translatable="true">Блокувати спливаюче вікно | Перемкніть, щоб Вимкнути спливаючу рекламу</string>
@@ -508,7 +508,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Останні вкладки</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Нова ідентичність</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Політика конфіденційності</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser Політика конфіденційності</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser Політика конфіденційності</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Веб-сайт звітів</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Повідомити про незаконний веб-сайт</string>
     <string name="SETTING_SITEMAP" translatable="true">опублікуйте свій веб-сайт</string>
@@ -529,7 +529,7 @@
 
     <string-array name="search_engines" translatable="true">
         <item>Hidden Web</item>
-        <item>Google</item>
+        <item>LeOSearch</item>
         <item>Duck Duck Go</item>
     </string-array>
 

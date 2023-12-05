@@ -244,7 +244,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
+    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">mostrar links da web navegados</string>
@@ -508,7 +508,7 @@
     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Guia recente</string>
     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nova identidade</string>
     <string name="SETTING_PRIVACY_POLICY" translatable="true">Política de privacidade</string>
-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOSium Browser política de privacidade</string>
+    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser política de privacidade</string>
     <string name="SETTING_REPORT_WEBSITE" translatable="true">Site Do Relatório</string>
     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Denunciar sites ilegais</string>
     <string name="SETTING_SITEMAP" translatable="true">publique seu site</string>
