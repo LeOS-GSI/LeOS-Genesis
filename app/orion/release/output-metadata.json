@@ -38,6 +38,22 @@
       "filters": [
         {
           "filterType": "ABI",
+<<<<<<< HEAD
+          "value": "arm64-v8a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 580,
+      "versionName": "Build | Dark-Origin 1.1.0.12",
+      "outputFile": "app-orion-arm64-v8a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+=======
+>>>>>>> origin/v1.6.1
           "value": "armeabi-v7a"
         }
       ],

@@ -809,7 +809,9 @@ public class homeController extends AppCompatActivity implements ComponentCallba
         if(mGeckoClient.getSession() == null){
             onNewTabInit();
         }
-        mGeckoClient.getSession().getMediaSessionDelegate().onTrigger(enums.MediaController.DESTROY);
+        if(mGeckoClient.getSession().getMediaSessionDelegate()!=null){
+            mGeckoClient.getSession().getMediaSessionDelegate().onTrigger(enums.MediaController.DESTROY);
+        }
         if (!isSessionClosed) {
             dataController.getInstance().invokeTab(dataEnums.eTabCommands.MOVE_TAB_TO_TOP, Collections.singletonList(mTempSession));
         }
@@ -1652,7 +1654,9 @@ public class homeController extends AppCompatActivity implements ComponentCallba
     }
 
     public void onNewTab(boolean isKeyboardOpenedTemp, boolean isKeyboardOpened) {
-        mGeckoClient.getSession().getMediaSessionDelegate().onTrigger(enums.MediaController.DESTROY);
+        if(mGeckoClient.getSession()!=null && mGeckoClient.getSession().getMediaSessionDelegate()!=null){
+            mGeckoClient.getSession().getMediaSessionDelegate().onTrigger(enums.MediaController.DESTROY);
+        }
         try {
             if(status.sLowMemory == enums.MemoryStatus.STABLE){
                 mRenderedBitmap = mGeckoView.capturePixels();

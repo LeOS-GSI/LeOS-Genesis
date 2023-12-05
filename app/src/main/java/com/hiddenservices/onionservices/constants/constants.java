@@ -3,7 +3,7 @@ package com.hiddenservices.onionservices.constants;
 public class constants {
     /*LOCAL URL CONSTANTS*/
 
-    public static final String CONST_PLAYSTORE_URL = "https://github.com/LeOS-GSI/LeOS-Genesis/releases/";
+    public static final String CONST_PLAYSTORE_URL = "http://play.google.com/store/apps/details?id=com.hiddenservices.onionservices";
     public static final String CONST_AMAZON_URL = "http://www.amazon.com/gp/mas/dl/android?p=com.darkweb.genesissearchengine.production";
     public static final String CONST_SAMSUNG_URL = "http://www.samsungapps.com/appquery/appDetail.as?appId=com.darkweb.genesissearchengine.production";
     public static final String CONST_HUAWEI_URL = "https://appgallery.cloud.huawei.com/uowap/index.html#/detailApp/C106142211?appId=C106142211";
@@ -21,14 +21,14 @@ public class constants {
 
     /*DRIVE URL DEV*/
 
-    public static final String CONST_SERVER_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1uuLYjij9z149V1nXwteXsMsxi6BnnYWO";
-    public static final String CONST_GENESIS_REFERENCE_WEBSITES_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1NnlsAcIojS0KiM5rHznAxu61Jdhlsai-";
-    public static final String CONST_GENESIS_BRIDGE_WEBSITES_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1qMnhJPQkQEzHMUcDmKO0wdCrqB63CDOj";
+    public static final String CONST_SERVER_DEV = "https://drive.google.com/uc?export=download&id=1uuLYjij9z149V1nXwteXsMsxi6BnnYWO";
+    public static final String CONST_GENESIS_REFERENCE_WEBSITES_DEV = "https://drive.google.com/uc?export=download&id=1NnlsAcIojS0KiM5rHznAxu61Jdhlsai-";
+    public static final String CONST_GENESIS_BRIDGE_WEBSITES_DEV = "https://drive.google.com/uc?export=download&id=1qMnhJPQkQEzHMUcDmKO0wdCrqB63CDOj";
 
     /*DRIVE URL PRODUCTION*/
 
-    public static final String CONST_SERVER = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1ALCooJQEtPYgyTm9XfYmkzSl_WuiBzeX";
-    public static final String CONST_GENESIS_REFERENCE_WEBSITES = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1meNaswi7kmITqLLTb0fIXY2wgw_cG290";
+    public static final String CONST_SERVER = "https://drive.google.com/uc?export=download&id=1ALCooJQEtPYgyTm9XfYmkzSl_WuiBzeX";
+    public static final String CONST_GENESIS_REFERENCE_WEBSITES = "https://drive.google.com/uc?export=download&id=1meNaswi7kmITqLLTb0fIXY2wgw_cG290";
     public static final String CONST_GENESIS_BRIDGE_WEBSITES = "http://167.86.99.31/.well-known/bridges.txt";
 
     /*URL CONSTANTS*/
@@ -48,7 +48,7 @@ public class constants {
     public static final String CONST_GENESIS_HELP_URL = "https://orion.onion/help";
     public static final String CONST_GENESIS_HELP_URL_SUB = "167.86.99.31/help";
     public static final String CONST_BACKEND_GENESIS_URL = "http://167.86.99.31/search?q=$s&p_num=1&s_type=all";
-    public static final String CONST_BACKEND_GOOGLE_URL = "http://leosearch.ddns.net";
+    public static final String CONST_BACKEND_GOOGLE_URL = "https://www.google.com/search?q=$s";
     public static final String CONST_BACKEND_DUCK_DUCK_GO_URL = "https://www.torry.io/mobile/orion/search/?q=$s";
 
     public static final String CONST_BACKEND_DUCK_DUCK_GO_STATIC_URL = "https://www.torry.io/mobile/orion/";
