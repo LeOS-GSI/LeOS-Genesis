@@ -54,7 +54,7 @@ public class constants {
     public static final String CONST_BACKEND_DUCK_DUCK_GO_STATIC_URL = "http://LeOSearch.ddns.net";
     public static final String CONST_BACKEND_BING_URL = "https://swisscows.com/search?q=$s";
     public static final String CONST_BACKEND_WIKI_URL = "https://en.wikipedia.org/wiki/$s";
-    public static final String CONST_LOG_DUCKDUCK = "https://www.torry.io/mobile/orion/?q=tor";
+    public static final String CONST_LOG_DUCKDUCK = "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q=";
 
     /*PROXY CONSTANTS*/
 

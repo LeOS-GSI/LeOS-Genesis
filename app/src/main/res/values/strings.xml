@@ -273,7 +273,7 @@
     <string name="SETTING_SEARCH_DEFAULT" translatable="false">Default Engine (Recommended)</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">LeOSearch (Recommended)</string>
     <string name="SETTING_SEARCH_GOOGLE" translatable="false">You  </string>
-    <string name="SETTING_SEARCH_GENESIS" translatable="false">LeOS-Genesis</string>
+    <string name="SETTING_SEARCH_GENESIS" translatable="false">DDG</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Swisscows</string>
     <string name="SETTING_SEARCH_BING" translatable="false">Browse articles freely</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>

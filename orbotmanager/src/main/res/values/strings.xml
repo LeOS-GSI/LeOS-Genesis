@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LeOSium</string>
-    <string name="orbot_vpn">LeOSium VPN</string>
-    <string name="app_description">LeOSium is a free proxy app that empowers other apps to use the internet more securely. LeOSium uses Tor to encrypt your Internet traffic and then hides it by bouncing through a series of computers around the world. Tor is free software and an open network that helps you defend against a form of network surveillance that threatens personal freedom and privacy, confidential business activities and relationships, and state security known as traffic analysis.</string>
-    <string name="status_starting_up">LeOSium is Starting&#8230;</string>
+    <string name="app_name">LeOS-Genesis</string>
+    <string name="orbot_vpn">LeOS-Genesis VPN</string>
+    <string name="app_description">LeOS-Genesis is a free proxy app that empowers other apps to use the internet more securely. LeOS-Genesis uses Tor to encrypt your Internet traffic and then hides it by bouncing through a series of computers around the world. Tor is free software and an open network that helps you defend against a form of network surveillance that threatens personal freedom and privacy, confidential business activities and relationships, and state security known as traffic analysis.</string>
+    <string name="status_starting_up">LeOS-Genesis is Starting&#8230;</string>
     <string name="status_activated">Connected to the Tor Network</string>
-    <string name="status_disabled">LeOSium is Deactivated</string>
+    <string name="status_disabled">LeOS-Genesis is Deactivated</string>
     <string name="open_orbot_to_connect_to_tor">Connecting with tor network</string>
-    <string name="status_shutting_down">LeOSium is Shutting Down</string>
+    <string name="status_shutting_down">LeOS-Genesis is Shutting Down</string>
     <string name="connect_to_tor">Connect to Tor</string>
 
     <string name="couldn_t_start_tor_process_">Couldn\'t start Tor process: </string>
