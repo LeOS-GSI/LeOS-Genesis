@@ -2,23 +2,23 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.ping;
+package org.leos.telemetry.ping;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.measurement.ArchMeasurement;
-import org.mozilla.telemetry.measurement.CreatedDateMeasurement;
-import org.mozilla.telemetry.measurement.DefaultSearchMeasurement;
-import org.mozilla.telemetry.measurement.DeviceMeasurement;
-import org.mozilla.telemetry.measurement.ExperimentsMeasurement;
-import org.mozilla.telemetry.measurement.FirstRunProfileDateMeasurement;
-import org.mozilla.telemetry.measurement.LocaleMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
-import org.mozilla.telemetry.measurement.SearchesMeasurement;
-import org.mozilla.telemetry.measurement.SequenceMeasurement;
-import org.mozilla.telemetry.measurement.SessionCountMeasurement;
-import org.mozilla.telemetry.measurement.SessionDurationMeasurement;
-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.measurement.ArchMeasurement;
+import org.leos.telemetry.measurement.CreatedDateMeasurement;
+import org.leos.telemetry.measurement.DefaultSearchMeasurement;
+import org.leos.telemetry.measurement.DeviceMeasurement;
+import org.leos.telemetry.measurement.ExperimentsMeasurement;
+import org.leos.telemetry.measurement.FirstRunProfileDateMeasurement;
+import org.leos.telemetry.measurement.LocaleMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
+import org.leos.telemetry.measurement.SearchesMeasurement;
+import org.leos.telemetry.measurement.SequenceMeasurement;
+import org.leos.telemetry.measurement.SessionCountMeasurement;
+import org.leos.telemetry.measurement.SessionDurationMeasurement;
+import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
 
 /**
  * This mobile-specific ping is intended to provide the most critical data in a concise format,

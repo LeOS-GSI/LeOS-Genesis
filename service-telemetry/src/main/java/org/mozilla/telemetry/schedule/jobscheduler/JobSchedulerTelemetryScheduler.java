@@ -2,15 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.schedule.jobscheduler;
+package org.leos.telemetry.schedule.jobscheduler;
 
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.schedule.TelemetryScheduler;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.schedule.TelemetryScheduler;
 
 /**
  * TelemetryScheduler implementation that uses Android's JobScheduler API to schedule ping uploads.

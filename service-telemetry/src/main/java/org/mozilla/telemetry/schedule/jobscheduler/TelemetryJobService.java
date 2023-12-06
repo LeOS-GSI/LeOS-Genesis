@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.schedule.jobscheduler;
+package org.leos.telemetry.schedule.jobscheduler;
 
 import android.annotation.SuppressLint;
 import android.app.job.JobParameters;
@@ -12,12 +12,12 @@ import android.os.AsyncTask;
 import androidx.annotation.VisibleForTesting;
 import android.util.Log;
 
-import org.mozilla.telemetry.Telemetry;
-import org.mozilla.telemetry.TelemetryHolder;
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.net.TelemetryClient;
-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
-import org.mozilla.telemetry.storage.TelemetryStorage;
+import org.leos.telemetry.Telemetry;
+import org.leos.telemetry.TelemetryHolder;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.net.TelemetryClient;
+import org.leos.telemetry.ping.TelemetryPingBuilder;
+import org.leos.telemetry.storage.TelemetryStorage;
 
 import java.util.Calendar;
 

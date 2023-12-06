@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.net
+package org.leos.telemetry.net
 
 import androidx.annotation.VisibleForTesting
 import mozilla.components.concept.fetch.Client
@@ -10,7 +10,7 @@ import mozilla.components.concept.fetch.MutableHeaders
 import mozilla.components.concept.fetch.Request
 import mozilla.components.concept.fetch.Response
 import mozilla.components.support.base.log.logger.Logger
-import org.mozilla.telemetry.config.TelemetryConfiguration
+import org.leos.telemetry.config.TelemetryConfiguration
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Calendar

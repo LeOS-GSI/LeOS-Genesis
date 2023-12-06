@@ -2,17 +2,17 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.storage;
+package org.leos.telemetry.storage;
 
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 import android.util.Log;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.ping.TelemetryPing;
-import org.mozilla.telemetry.serialize.TelemetryPingSerializer;
-import org.mozilla.telemetry.util.FileUtils;
-import org.mozilla.telemetry.util.IOUtils;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.ping.TelemetryPing;
+import org.leos.telemetry.serialize.TelemetryPingSerializer;
+import org.leos.telemetry.util.FileUtils;
+import org.leos.telemetry.util.IOUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

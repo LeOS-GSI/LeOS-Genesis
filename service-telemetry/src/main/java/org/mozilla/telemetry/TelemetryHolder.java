@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry;
+package org.leos.telemetry;
 
 /**
  * Holder of a static reference to the Telemetry instance. This is required for background services

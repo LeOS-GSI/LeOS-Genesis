@@ -2,28 +2,28 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry;
+package org.leos.telemetry;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.event.TelemetryEvent;
-import org.mozilla.telemetry.measurement.ClientIdMeasurement;
-import org.mozilla.telemetry.measurement.DefaultSearchMeasurement;
-import org.mozilla.telemetry.measurement.EventsMeasurement;
-import org.mozilla.telemetry.measurement.ExperimentsMapMeasurement;
-import org.mozilla.telemetry.net.TelemetryClient;
-import org.mozilla.telemetry.ping.TelemetryCorePingBuilder;
-import org.mozilla.telemetry.ping.TelemetryEventPingBuilder;
-import org.mozilla.telemetry.ping.TelemetryMobileEventPingBuilder;
-import org.mozilla.telemetry.ping.TelemetryPing;
-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
-import org.mozilla.telemetry.ping.TelemetryPocketEventPingBuilder;
-import org.mozilla.telemetry.schedule.TelemetryScheduler;
-import org.mozilla.telemetry.storage.TelemetryStorage;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.event.TelemetryEvent;
+import org.leos.telemetry.measurement.ClientIdMeasurement;
+import org.leos.telemetry.measurement.DefaultSearchMeasurement;
+import org.leos.telemetry.measurement.EventsMeasurement;
+import org.leos.telemetry.measurement.ExperimentsMapMeasurement;
+import org.leos.telemetry.net.TelemetryClient;
+import org.leos.telemetry.ping.TelemetryCorePingBuilder;
+import org.leos.telemetry.ping.TelemetryEventPingBuilder;
+import org.leos.telemetry.ping.TelemetryMobileEventPingBuilder;
+import org.leos.telemetry.ping.TelemetryPing;
+import org.leos.telemetry.ping.TelemetryPingBuilder;
+import org.leos.telemetry.ping.TelemetryPocketEventPingBuilder;
+import org.leos.telemetry.schedule.TelemetryScheduler;
+import org.leos.telemetry.storage.TelemetryStorage;
 
 import java.util.Collection;
 import java.util.HashMap;

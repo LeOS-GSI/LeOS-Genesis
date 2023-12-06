@@ -2,9 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.storage;
+package org.leos.telemetry.storage;
 
-import org.mozilla.telemetry.ping.TelemetryPing;
+import org.leos.telemetry.ping.TelemetryPing;
 
 public interface TelemetryStorage {
     interface TelemetryStorageCallback {

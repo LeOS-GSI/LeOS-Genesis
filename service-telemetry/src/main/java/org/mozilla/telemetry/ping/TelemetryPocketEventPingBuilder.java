@@ -2,19 +2,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.ping;
+package org.leos.telemetry.ping;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.measurement.CreatedTimestampMeasurement;
-import org.mozilla.telemetry.measurement.DeviceMeasurement;
-import org.mozilla.telemetry.measurement.EventsMeasurement;
-import org.mozilla.telemetry.measurement.LocaleMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
-import org.mozilla.telemetry.measurement.PocketIdMeasurement;
-import org.mozilla.telemetry.measurement.ProcessStartTimestampMeasurement;
-import org.mozilla.telemetry.measurement.SequenceMeasurement;
-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.measurement.CreatedTimestampMeasurement;
+import org.leos.telemetry.measurement.DeviceMeasurement;
+import org.leos.telemetry.measurement.EventsMeasurement;
+import org.leos.telemetry.measurement.LocaleMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
+import org.leos.telemetry.measurement.PocketIdMeasurement;
+import org.leos.telemetry.measurement.ProcessStartTimestampMeasurement;
+import org.leos.telemetry.measurement.SequenceMeasurement;
+import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
 
 /**
  * A telemetry ping builder for events of type "fire-tv-events".

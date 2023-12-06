@@ -2,12 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.measurement;
+package org.leos.telemetry.measurement;
 
 import android.content.SharedPreferences;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.ping.TelemetryPingBuilder;
 
 public class SequenceMeasurement extends TelemetryMeasurement {
     private static final String FIELD_NAME = "seq";

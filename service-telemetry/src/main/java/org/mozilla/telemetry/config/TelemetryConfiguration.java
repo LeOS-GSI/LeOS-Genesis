@@ -2,13 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.config;
+package org.leos.telemetry.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.mozilla.telemetry.measurement.SettingsMeasurement;
-import org.mozilla.telemetry.util.ContextUtils;
+import org.leos.telemetry.measurement.SettingsMeasurement;
+import org.leos.telemetry.util.ContextUtils;
 
 import java.io.File;
 import java.util.Collections;

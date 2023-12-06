@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.event;
+package org.leos.telemetry.event;
 
 import android.os.SystemClock;
 import androidx.annotation.CheckResult;
@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.mozilla.telemetry.TelemetryHolder;
-import org.mozilla.telemetry.util.StringUtils;
+import org.leos.telemetry.TelemetryHolder;
+import org.leos.telemetry.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;

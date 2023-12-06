@@ -2,22 +2,22 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.ping;
+package org.leos.telemetry.ping;
 
 import org.json.JSONObject;
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.measurement.ArchMeasurement;
-import org.mozilla.telemetry.measurement.CreatedDateMeasurementNew;
-import org.mozilla.telemetry.measurement.CreatedTimestampMeasurementNew;
-import org.mozilla.telemetry.measurement.DeviceMeasurement;
-import org.mozilla.telemetry.measurement.FirstRunProfileDateMeasurement;
-import org.mozilla.telemetry.measurement.LocaleMeasurement;
-import org.mozilla.telemetry.measurement.MetricsMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
-import org.mozilla.telemetry.measurement.ProcessStartTimestampMeasurement;
-import org.mozilla.telemetry.measurement.SequenceMeasurement;
-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.measurement.ArchMeasurement;
+import org.leos.telemetry.measurement.CreatedDateMeasurementNew;
+import org.leos.telemetry.measurement.CreatedTimestampMeasurementNew;
+import org.leos.telemetry.measurement.DeviceMeasurement;
+import org.leos.telemetry.measurement.FirstRunProfileDateMeasurement;
+import org.leos.telemetry.measurement.LocaleMeasurement;
+import org.leos.telemetry.measurement.MetricsMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemMeasurement;
+import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
+import org.leos.telemetry.measurement.ProcessStartTimestampMeasurement;
+import org.leos.telemetry.measurement.SequenceMeasurement;
+import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
 
 /**
  * A telemetry ping builder for events of type "mobile-metrics".

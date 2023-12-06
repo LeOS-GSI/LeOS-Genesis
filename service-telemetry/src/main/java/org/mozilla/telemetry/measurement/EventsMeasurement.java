@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.measurement;
+package org.leos.telemetry.measurement;
 
 import android.content.SharedPreferences;
 import androidx.annotation.VisibleForTesting;
@@ -10,9 +10,9 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.event.TelemetryEvent;
-import org.mozilla.telemetry.util.IOUtils;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.event.TelemetryEvent;
+import org.leos.telemetry.util.IOUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

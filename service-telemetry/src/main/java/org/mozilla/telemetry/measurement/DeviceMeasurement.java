@@ -2,13 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.measurement;
+package org.leos.telemetry.measurement;
 
 import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 
-import org.mozilla.telemetry.util.StringUtils;
+import org.leos.telemetry.util.StringUtils;
 
 public class DeviceMeasurement extends TelemetryMeasurement {
     private static final String FIELD_NAME = "device";

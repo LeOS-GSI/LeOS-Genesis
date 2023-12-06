@@ -2,16 +2,16 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.mozilla.telemetry.ping;
+package org.leos.telemetry.ping;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 
-import org.mozilla.telemetry.config.TelemetryConfiguration;
-import org.mozilla.telemetry.measurement.ClientIdMeasurement;
-import org.mozilla.telemetry.measurement.TelemetryMeasurement;
-import org.mozilla.telemetry.measurement.VersionMeasurement;
+import org.leos.telemetry.config.TelemetryConfiguration;
+import org.leos.telemetry.measurement.ClientIdMeasurement;
+import org.leos.telemetry.measurement.TelemetryMeasurement;
+import org.leos.telemetry.measurement.VersionMeasurement;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
