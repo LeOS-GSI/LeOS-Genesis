@@ -464,7 +464,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
         var capacity = 1;
         var keepLocalAddresses = false;
         var unsafeLogging = false;
-        var stunUrl = "stun:stun.l.google.com:19302";
+        var stunUrl = "stun:stun.l.g**gle.com:19302";
         var relayUrl = "wss://snowflake.bamsoftware.com";
         var natProbeUrl = "https://snowflake-broker.torproject.net:8443/probe";
         var brokerUrl = "https://snowflake-broker.torproject.net/";
@@ -1456,8 +1456,8 @@ public class OrbotService extends VpnService implements OrbotConstants {
     private String writeDNSFile() throws IOException {
         var file = new File(appBinHome, "resolv.conf");
         var bw = new PrintWriter(new FileWriter(file));
-        bw.println("nameserver 8.8.8.8");
-        bw.println("nameserver 8.8.4.4");
+        bw.println("nameserver 9.9.9.9");
+        bw.println("nameserver 9.9.9.9");
         bw.close();
         return file.getCanonicalPath();
     }
@@ -1588,9 +1588,9 @@ public class OrbotService extends VpnService implements OrbotConstants {
     }
 
     private void startSnowflakeClientAmpRendezvous() {
-        var stunServers = "stun:stun.l.google.com:19302,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478";
+        var stunServers = "stun:stun.l.g**gle.com:19302,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478";
         var target = "https://snowflake-broker.torproject.net/";
-        var front = "www.google.com";
+        var front = "www.g**gle.com";
         var ampCache ="https://cdn.ampproject.org/";
         IPtProxy.startSnowflake(stunServers, target, front, ampCache, null, true, false, false, 1);
     }

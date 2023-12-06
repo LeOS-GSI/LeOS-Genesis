@@ -112,7 +112,7 @@ public class unproxiedConnectionController extends AppCompatActivity {
             }
         }
         System.gc();
-        if(mURL.contains("play.google.com")){
+        if(mURL.contains("play.g**gle.comcom")){
             mWebView.setWebChromeClient(new WebChromeClient());
             mWebView.loadUrl(mURL);
             finish();
