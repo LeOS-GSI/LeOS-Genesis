@@ -15,7 +15,7 @@ import android.util.Base64;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.FileProvider;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.dataModel.geckoDataModel;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.delegateModel.promptDelegate;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.downloadManager.geckoDownloadManager;

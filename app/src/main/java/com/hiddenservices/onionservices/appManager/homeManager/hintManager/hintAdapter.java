@@ -26,7 +26,7 @@ import com.hiddenservices.onionservices.constants.enums;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 import com.hiddenservices.onionservices.eventObserver;
 import java.util.Collections;
 import java.util.List;

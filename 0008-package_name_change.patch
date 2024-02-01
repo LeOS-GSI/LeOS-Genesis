@@ -1,0 +1,999 @@
+From 0bc7d8006aa4443c37632e5605b410d4ce74367c Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Thu, 1 Feb 2024 16:15:14 +0100
+Subject: [PATCH] package_name_cahnge
+
+---
+ app/build.gradle                                            | 2 +-
+ .../onionservices/appManager/activityContextManager.java    | 2 +-
+ .../bookmarkManager/bookmarkHome/bookmarkAdapter.java       | 2 +-
+ .../bookmarkManager/bookmarkHome/bookmarkAdapterView.java   | 2 +-
+ .../bookmarkManager/bookmarkHome/bookmarkController.java    | 2 +-
+ .../bookmarkHome/bookmarkViewController.java                | 2 +-
+ .../bookmarkSettings/bookmarkSettingController.java         | 2 +-
+ .../bookmarkSettings/bookmarkSettingViewController.java     | 2 +-
+ .../appManager/bridgeManager/bridgeController.java          | 2 +-
+ .../appManager/bridgeManager/bridgeViewController.java      | 2 +-
+ .../externalCommandManager/externalShortcutController.java  | 2 +-
+ .../externalURLNavigationContoller.java                     | 2 +-
+ .../onionservices/appManager/helpManager/helpAdapter.java   | 2 +-
+ .../appManager/helpManager/helpController.java              | 2 +-
+ .../appManager/helpManager/helpViewController.java          | 2 +-
+ .../appManager/historyManager/historyAdapter.java           | 2 +-
+ .../appManager/historyManager/historyAdapterView.java       | 2 +-
+ .../appManager/historyManager/historyController.java        | 2 +-
+ .../appManager/historyManager/historyViewController.java    | 2 +-
+ .../geckoManager/delegateModel/mediaDelegate.java           | 2 +-
+ .../geckoManager/helperClasses/downloadHandler.java         | 2 +-
+ .../geckoManager/helperClasses/errorHandler.java            | 2 +-
+ .../appManager/homeManager/hintManager/hintAdapter.java     | 2 +-
+ .../homeManager/homeController/homeController.java          | 2 +-
+ .../homeManager/homeController/homeViewController.java      | 4 ++--
+ .../appManager/languageManager/languageAdapter.java         | 2 +-
+ .../appManager/languageManager/languageController.java      | 2 +-
+ .../appManager/languageManager/languageViewController.java  | 2 +-
+ .../appManager/orbotLogManager/orbotLogAdapter.java         | 2 +-
+ .../appManager/orbotLogManager/orbotLogController.java      | 2 +-
+ .../appManager/orbotManager/orbotController.java            | 2 +-
+ .../settingAccessibilityController.java                     | 2 +-
+ .../settingAccessibilityViewController.java                 | 2 +-
+ .../advanceManager/settingAdvanceController.java            | 2 +-
+ .../settingManager/advanceManager/settingAdvanceModel.java  | 2 +-
+ .../advanceManager/settingAdvanceViewController.java        | 2 +-
+ .../settingManager/clearManager/settingClearController.java | 2 +-
+ .../clearManager/settingClearViewController.java            | 2 +-
+ .../generalManager/settingGeneralController.java            | 2 +-
+ .../generalManager/settingGeneralViewController.java        | 2 +-
+ .../settingManager/logManager/settingLogController.java     | 2 +-
+ .../notificationManager/settingNotificationController.java  | 2 +-
+ .../settingNotificationViewController.java                  | 2 +-
+ .../privacyManager/settingPrivacyController.java            | 2 +-
+ .../settingManager/privacyManager/settingPrivacyModel.java  | 2 +-
+ .../privacyManager/settingPrivacyViewController.java        | 2 +-
+ .../proxyStatusManager/proxyStatusController.java           | 2 +-
+ .../proxyStatusManager/proxyStatusViewController.java       | 2 +-
+ .../searchEngineManager/settingSearchController.java        | 2 +-
+ .../searchEngineManager/settingSearchViewController.java    | 2 +-
+ .../settingHomeManager/settingHomeController.java           | 2 +-
+ .../settingHomeManager/settingHomeViewController.java       | 2 +-
+ .../trackingManager/settingTrackingController.java          | 2 +-
+ .../trackingManager/settingTrackingModel.java               | 2 +-
+ .../trackingManager/settingTrackingViewController.java      | 2 +-
+ .../onionservices/appManager/tabManager/tabAdapter.java     | 2 +-
+ .../onionservices/appManager/tabManager/tabController.java  | 2 +-
+ .../appManager/tabManager/tabViewController.java            | 2 +-
+ .../unproxiedConnectionController.java                      | 2 +-
+ .../unproxiedConnectionViewController.java                  | 2 +-
+ .../onionservices/helperManager/helperMethod.java           | 4 ++--
+ .../onionservices/helperManager/sharedUIMethod.java         | 2 +-
+ .../libs/netcipher/client/StrongHttpsClient.java            | 2 +-
+ .../downloadPluginManager/downloadReciever.java             | 2 +-
+ .../pluginManager/messagePluginManager/messageManager.java  | 2 +-
+ .../onionservices/widgetManager/widgetController.java       | 2 +-
+ .../onionservices/widgetManager/widgetViewController.java   | 2 +-
+ app/variables.gradle                                        | 6 ++----
+ ...0.salive => kotlin-compiler-11539246524435986546.salive} | 0
+ 69 files changed, 71 insertions(+), 73 deletions(-)
+ rename build/kotlin/sessions/{kotlin-compiler-14477216097185993290.salive => kotlin-compiler-11539246524435986546.salive} (100%)
+
+diff --git a/app/build.gradle b/app/build.gradle
+index 2afb90e..aaede7b 100755
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -54,7 +54,7 @@ android {
+             reset()
+             universalApk false
+             //noinspection ChromeOsAbiSupport # CHROME OS NOT SUPPORTED YET
+-            include project.ext.chrome, project.ext.abi_x86, project.ext.abi_x86_x64, project.ext.abi_arm64, project.ext.abi_armeabi        }
++            include project.ext.chrome, project.ext.abi_arm64, project.ext.abi_armeabi        }
+     }
+     bundle {
+         abi {
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/activityContextManager.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/activityContextManager.java
+index 5441893..34ec854 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/activityContextManager.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/activityContextManager.java
+@@ -4,7 +4,7 @@ import static com.hiddenservices.onionservices.constants.constants.CONST_PACKAGE
+ import android.content.Context;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.appManager.bookmarkManager.bookmarkHome.bookmarkController;
+ import com.hiddenservices.onionservices.appManager.bridgeManager.bridgeController;
+ import com.hiddenservices.onionservices.appManager.historyManager.historyController;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapter.java
+index cf63840..a741938 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapter.java
+@@ -18,7 +18,7 @@ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.dataManager.models.bookmarkRowModel;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapterView.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapterView.java
+index 03c2cff..ef5a563 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapterView.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkAdapterView.java
+@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkController.java
+index 0719553..da48ce9 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkController.java
+@@ -39,7 +39,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkViewController.java
+index 5ea5eaa..e86d81a 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkHome/bookmarkViewController.java
+@@ -30,7 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ import java.util.Objects;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingController.java
+index 263670b..814710e 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingController.java
+@@ -20,7 +20,7 @@ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingViewController.java
+index 8425f9a..b9b539b 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bookmarkManager/bookmarkSettings/bookmarkSettingViewController.java
+@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeController.java
+index a5e3648..77c8196 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeController.java
+@@ -25,7 +25,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeViewController.java
+index e1cd9ac..ed446b3 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/bridgeManager/bridgeViewController.java
+@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalShortcutController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalShortcutController.java
+index 47c9e95..2d53b72 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalShortcutController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalShortcutController.java
+@@ -10,7 +10,7 @@ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.dataManager.dataController;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+ import org.torproject.android.service.wrapper.orbotLocalConstants;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalURLNavigationContoller.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalURLNavigationContoller.java
+index 6d9a79b..651ba05 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalURLNavigationContoller.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/externalCommandManager/externalURLNavigationContoller.java
+@@ -10,7 +10,7 @@ import android.os.Handler;
+ import androidx.annotation.RequiresApi;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.appManager.activityContextManager;
+ import com.hiddenservices.onionservices.appManager.unproxiedConnectionManager.unproxiedConnectionController;
+ import com.hiddenservices.onionservices.appManager.homeManager.homeController.homeController;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpAdapter.java
+index d2a050d..adedf49 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpAdapter.java
+@@ -14,7 +14,7 @@ import android.widget.TextView;
+ import androidx.annotation.NonNull;
+ import androidx.recyclerview.widget.RecyclerView;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpController.java
+index 5772845..e000667 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpController.java
+@@ -26,7 +26,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.ArrayList;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpViewController.java
+index 35de4e8..d01ff6f 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/helpManager/helpViewController.java
+@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
+ import androidx.recyclerview.widget.RecyclerView;
+ 
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapter.java
+index 010bd66..569e992 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapter.java
+@@ -21,7 +21,7 @@ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.dataManager.models.historyRowModel;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapterView.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapterView.java
+index e326eb8..31be7c8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapterView.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyAdapterView.java
+@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyController.java
+index 0a0660a..86abacb 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyController.java
+@@ -37,7 +37,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyViewController.java
+index f5a1334..757a410 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/historyManager/historyViewController.java
+@@ -30,7 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ import java.util.Objects;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/delegateModel/mediaDelegate.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/delegateModel/mediaDelegate.java
+index de57906..959c2f7 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/delegateModel/mediaDelegate.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/delegateModel/mediaDelegate.java
+@@ -17,7 +17,7 @@ import android.widget.RemoteViews;
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.core.app.NotificationCompat;
+ import androidx.core.app.NotificationManagerCompat;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.constants.enums;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/downloadHandler.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/downloadHandler.java
+index d7c6213..758e8f8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/downloadHandler.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/downloadHandler.java
+@@ -15,7 +15,7 @@ import android.util.Base64;
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.core.app.NotificationCompat;
+ import androidx.core.content.FileProvider;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.dataModel.geckoDataModel;
+ import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.delegateModel.promptDelegate;
+ import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.downloadManager.geckoDownloadManager;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/errorHandler.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/errorHandler.java
+index 4b272f9..cafac9e 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/errorHandler.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/geckoManager/helperClasses/errorHandler.java
+@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import org.mozilla.geckoview.WebRequestError;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/hintManager/hintAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/hintManager/hintAdapter.java
+index f1a3b35..94c10c9 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/hintManager/hintAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/hintManager/hintAdapter.java
+@@ -26,7 +26,7 @@ import com.hiddenservices.onionservices.constants.enums;
+ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeController.java
+index 3a162d0..5fbb090 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeController.java
+@@ -86,7 +86,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.pluginManager.pluginReciever.defaultNotificationReciever;
+ import com.widget.onionservices.widgetManager.widgetController;
+ import org.mozilla.geckoview.ContentBlocking;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeViewController.java
+index de1015c..a62a0da 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/homeManager/homeController/homeViewController.java
+@@ -43,7 +43,7 @@ import androidx.core.graphics.ColorUtils;
+ import androidx.core.widget.NestedScrollView;
+ import androidx.fragment.app.FragmentContainerView;
+ import androidx.recyclerview.widget.RecyclerView;
+-import com.hiddenservices.onionservices.BuildConfig;
++import com.leos.onionservices.BuildConfig;
+ import com.hiddenservices.onionservices.appManager.activityContextManager;
+ import com.hiddenservices.onionservices.appManager.editTextManager;
+ import com.hiddenservices.onionservices.constants.*;
+@@ -52,7 +52,7 @@ import com.hiddenservices.onionservices.dataManager.dataEnums;
+ import com.hiddenservices.onionservices.libs.views.ColorAnimator;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.appbar.AppBarLayout;
+ import org.mozilla.geckoview.GeckoView;
+ import org.torproject.android.service.wrapper.orbotLocalConstants;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageAdapter.java
+index e6e5bd4..70deeef 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageAdapter.java
+@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.ArrayList;
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageController.java
+index be467e7..fffc984 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageController.java
+@@ -23,7 +23,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageViewController.java
+index 1e9ae97..97de70f 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/languageManager/languageViewController.java
+@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate;
+ import androidx.core.content.ContextCompat;
+ 
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogAdapter.java
+index 556eecd..cc686ff 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogAdapter.java
+@@ -15,7 +15,7 @@ import com.hiddenservices.onionservices.appManager.activityContextManager;
+ import com.hiddenservices.onionservices.appManager.tabManager.tabEnums;
+ import com.hiddenservices.onionservices.constants.constants;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import org.torproject.android.service.wrapper.logRowModel;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogController.java
+index dc9a321..9ad059b 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotLogManager/orbotLogController.java
+@@ -25,7 +25,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.floatingactionbutton.FloatingActionButton;
+ 
+ import org.torproject.android.service.wrapper.logRowModel;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotManager/orbotController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotManager/orbotController.java
+index 0bda262..c6ee9eb 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotManager/orbotController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/orbotManager/orbotController.java
+@@ -18,7 +18,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityController.java
+index 3a128dd..93446ec 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityController.java
+@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityViewController.java
+index c68966d..07c3df9 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/accessibilityManager/settingAccessibilityViewController.java
+@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
+ import com.hiddenservices.onionservices.constants.constants;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceController.java
+index 5e9e600..c3ae2e8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceController.java
+@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceModel.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceModel.java
+index 1a63e4d..534a144 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceModel.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceModel.java
+@@ -4,7 +4,7 @@ import android.view.View;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceViewController.java
+index 0f12820..461dfd2 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/advanceManager/settingAdvanceViewController.java
+@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearController.java
+index 7e9f62b..0581c0b 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearController.java
+@@ -25,7 +25,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import org.mozilla.geckoview.ContentBlocking;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearViewController.java
+index 7928a07..df1f3e5 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/clearManager/settingClearViewController.java
+@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate;
+ import androidx.core.content.ContextCompat;
+ 
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralController.java
+index 2cea928..2e2d7be 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralController.java
+@@ -24,7 +24,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralViewController.java
+index 09d03cf..47e503e 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/generalManager/settingGeneralViewController.java
+@@ -16,7 +16,7 @@ import com.hiddenservices.onionservices.constants.enums;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/logManager/settingLogController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/logManager/settingLogController.java
+index be42b74..d525a1a 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/logManager/settingLogController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/logManager/settingLogController.java
+@@ -19,7 +19,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationController.java
+index 45c9ee7..5fa5e7f 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationController.java
+@@ -19,7 +19,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationViewController.java
+index af9478f..7da25b1 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/notificationManager/settingNotificationViewController.java
+@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ class settingNotificationViewController {
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyController.java
+index 7be2825..b43cce9 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyController.java
+@@ -21,7 +21,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyModel.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyModel.java
+index 113d254..7082d0b 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyModel.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyModel.java
+@@ -4,7 +4,7 @@ import android.view.View;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyViewController.java
+index 0f9ec31..7059669 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/privacyManager/settingPrivacyViewController.java
+@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusController.java
+index 2c2136c..c3998dc 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusController.java
+@@ -15,7 +15,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusViewController.java
+index 6f2aa78..2fecdda 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/proxyStatusManager/proxyStatusViewController.java
+@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.appcompat.app.AppCompatDelegate;
+ import androidx.core.content.ContextCompat;
+ 
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.constants.strings;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchController.java
+index f80a981..951ba81 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchController.java
+@@ -23,7 +23,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ 
+ import java.util.ArrayList;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchViewController.java
+index 65fc995..e965ef2 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/searchEngineManager/settingSearchViewController.java
+@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
+ import com.hiddenservices.onionservices.constants.constants;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ import java.util.ArrayList;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeController.java
+index 949b9f4..71909a4 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeController.java
+@@ -30,7 +30,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeViewController.java
+index 32dec5e..e42f6d6 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/settingHomeManager/settingHomeViewController.java
+@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatDelegate;
+ import androidx.core.content.ContextCompat;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.List;
+ 
+ class settingHomeViewController {
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingController.java
+index 0834f7d..21b2403 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingController.java
+@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.ArrayList;
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingModel.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingModel.java
+index b27f689..aca40b1 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingModel.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingModel.java
+@@ -4,7 +4,7 @@ import android.view.View;
+ 
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import org.mozilla.geckoview.ContentBlocking;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingViewController.java
+index 4b7459f..39711e4 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/settingManager/trackingManager/settingTrackingViewController.java
+@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate;
+ import androidx.core.content.ContextCompat;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import org.mozilla.geckoview.ContentBlocking;
+ import java.util.ArrayList;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabAdapter.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabAdapter.java
+index 30af4d6..87054c0 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabAdapter.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabAdapter.java
+@@ -26,7 +26,7 @@ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.dataManager.models.tabRowModel;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabController.java
+index 2923af2..07e92c1 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabController.java
+@@ -35,7 +35,7 @@ import com.hiddenservices.onionservices.dataManager.models.tabRowModel;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabViewController.java
+index 544e0de..1d1ff5c 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/tabManager/tabViewController.java
+@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
+ import com.hiddenservices.onionservices.constants.enums;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.util.List;
+ 
+ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
+index 4a0da29..74657a8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
+@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
+ import android.webkit.WebView;
+ import android.widget.ProgressBar;
+ import android.widget.TextView;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.eventObserver;
+ import java.util.Collections;
+ import java.util.List;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionViewController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionViewController.java
+index 32a917e..36dd1af 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionViewController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionViewController.java
+@@ -5,7 +5,7 @@ import android.widget.ProgressBar;
+ import android.widget.TextView;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/helperManager/helperMethod.java b/app/src/main/java/com/hiddenservices/onionservices/helperManager/helperMethod.java
+index e8ce5e2..fa630b8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/helperManager/helperMethod.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/helperManager/helperMethod.java
+@@ -43,7 +43,7 @@ import androidx.core.app.ShareCompat;
+ import androidx.core.content.ContextCompat;
+ import androidx.core.content.FileProvider;
+ import androidx.core.graphics.ColorUtils;
+-import com.hiddenservices.onionservices.BuildConfig;
++import com.leos.onionservices.BuildConfig;
+ import com.hiddenservices.onionservices.appManager.activityContextManager;
+ import com.hiddenservices.onionservices.appManager.kotlinHelperLibraries.DefaultBrowser;
+ import com.hiddenservices.onionservices.constants.constants;
+@@ -52,7 +52,7 @@ import com.hiddenservices.onionservices.constants.keys;
+ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.libs.trueTime.trueTimeEncryption;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import java.io.BufferedReader;
+ import java.io.BufferedWriter;
+ import java.io.File;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/helperManager/sharedUIMethod.java b/app/src/main/java/com/hiddenservices/onionservices/helperManager/sharedUIMethod.java
+index 5e283e4..51971a8 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/helperManager/sharedUIMethod.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/helperManager/sharedUIMethod.java
+@@ -15,7 +15,7 @@ import com.hiddenservices.onionservices.appManager.activityContextManager;
+ import com.hiddenservices.onionservices.appManager.activityThemeManager;
+ import com.hiddenservices.onionservices.pluginManager.pluginController;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.Collections;
+ 
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/libs/netcipher/client/StrongHttpsClient.java b/app/src/main/java/com/hiddenservices/onionservices/libs/netcipher/client/StrongHttpsClient.java
+index 376bf2b..d794c25 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/libs/netcipher/client/StrongHttpsClient.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/libs/netcipher/client/StrongHttpsClient.java
+@@ -19,7 +19,7 @@ package com.hiddenservices.onionservices.libs.netcipher.client;
+ 
+ import android.content.Context;
+ 
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.io.IOException;
+ import java.io.InputStream;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/pluginManager/downloadPluginManager/downloadReciever.java b/app/src/main/java/com/hiddenservices/onionservices/pluginManager/downloadPluginManager/downloadReciever.java
+index 08b538a..6de960b 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/pluginManager/downloadPluginManager/downloadReciever.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/pluginManager/downloadPluginManager/downloadReciever.java
+@@ -20,7 +20,7 @@ import com.hiddenservices.onionservices.constants.status;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.libs.netcipher.client.StrongHttpsClient;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+ import org.torproject.android.service.wrapper.orbotLocalConstants;
+ import java.io.File;
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/pluginManager/messagePluginManager/messageManager.java b/app/src/main/java/com/hiddenservices/onionservices/pluginManager/messagePluginManager/messageManager.java
+index 41e7b7b..b348f39 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/pluginManager/messagePluginManager/messageManager.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/pluginManager/messagePluginManager/messageManager.java
+@@ -32,7 +32,7 @@ import com.hiddenservices.onionservices.constants.strings;
+ import com.hiddenservices.onionservices.eventObserver;
+ import com.hiddenservices.onionservices.helperManager.helperMethod;
+ import com.hiddenservices.onionservices.pluginManager.pluginEnums;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.google.android.material.switchmaterial.SwitchMaterial;
+ import org.mozilla.geckoview.ContentBlocking;
+ import java.util.Arrays;
+diff --git a/app/src/main/java/com/widget/onionservices/widgetManager/widgetController.java b/app/src/main/java/com/widget/onionservices/widgetManager/widgetController.java
+index 1a0bfd4..0dfa920 100644
+--- a/app/src/main/java/com/widget/onionservices/widgetManager/widgetController.java
++++ b/app/src/main/java/com/widget/onionservices/widgetManager/widgetController.java
+@@ -8,7 +8,7 @@ import android.content.Intent;
+ import android.os.Build;
+ import android.os.Bundle;
+ import android.widget.RemoteViews;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ import com.widget.onionservices.helperMethod.helperMethod;
+ import java.util.Arrays;
+ import java.util.Collections;
+diff --git a/app/src/main/java/com/widget/onionservices/widgetManager/widgetViewController.java b/app/src/main/java/com/widget/onionservices/widgetManager/widgetViewController.java
+index 86447b0..6fe1b32 100644
+--- a/app/src/main/java/com/widget/onionservices/widgetManager/widgetViewController.java
++++ b/app/src/main/java/com/widget/onionservices/widgetManager/widgetViewController.java
+@@ -6,7 +6,7 @@ import android.view.View;
+ import android.widget.RemoteViews;
+ 
+ import com.hiddenservices.onionservices.eventObserver;
+-import com.hiddenservices.onionservices.R;
++import com.leos.onionservices.R;
+ 
+ import java.util.List;
+ 
+diff --git a/app/variables.gradle b/app/variables.gradle
+index 399f188..1d06857 100755
+--- a/app/variables.gradle
++++ b/app/variables.gradle
+@@ -1,5 +1,5 @@
+ /* Version */
+-project.ext.vname = 'Build | Dark-Origin 2.0.0'
++project.ext.vname = 'Build | LeOS-Genesis v1.6.3'
+ project.ext.vcode = 580
+ project.ext.buildType = 'release'
+ project.ext.jvmTarget = "1.8"
+@@ -38,12 +38,10 @@ project.ext.min_sdk_version = 21
+ project.ext.target_sdk_version = 34
+ project.ext.build_tool_version = '34'
+ project.ext.ndk_version = '24.0.8215888'
+-project.ext.application_id = "com.hiddenservices.onionservices"
++project.ext.application_id = "com.leos.onionservices"
+ project.ext.debugSymbolLevel = 'FULL'
+ 
+ /* Splits */
+-project.ext.abi_x86 = "x86_64"
+-project.ext.abi_x86_x64 = "x86"
+ project.ext.abi_arm64 = "arm64-v8a"
+ project.ext.abi_armeabi = "armeabi-v7a"
+ project.ext.chrome = "chromeOS"
+diff --git a/build/kotlin/sessions/kotlin-compiler-14477216097185993290.salive b/build/kotlin/sessions/kotlin-compiler-11539246524435986546.salive
+similarity index 100%
+rename from build/kotlin/sessions/kotlin-compiler-14477216097185993290.salive
+rename to build/kotlin/sessions/kotlin-compiler-11539246524435986546.salive
+-- 
+2.34.1
+

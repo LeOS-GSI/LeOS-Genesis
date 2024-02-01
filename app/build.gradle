@@ -54,7 +54,7 @@ android {
             reset()
             universalApk false
             //noinspection ChromeOsAbiSupport # CHROME OS NOT SUPPORTED YET
-            include project.ext.chrome, project.ext.abi_x86, project.ext.abi_x86_x64, project.ext.abi_arm64, project.ext.abi_armeabi        }
+            include project.ext.chrome, project.ext.abi_arm64, project.ext.abi_armeabi        }
     }
     bundle {
         abi {

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 
 import com.hiddenservices.onionservices.eventObserver;
-import com.hiddenservices.onionservices.R;
+import com.leos.onionservices.R;
 
 import java.util.List;
 
