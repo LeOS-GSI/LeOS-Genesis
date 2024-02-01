@@ -12,9 +12,6 @@ import com.hiddenservices.onionservices.constants.constants;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-
-import org.mozilla.geckoview.AllowOrDeny;
-import org.mozilla.geckoview.GeckoResult;
 import org.mozilla.geckoview.GeckoSession;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
@@ -28,7 +25,6 @@ public class progressDelegate implements GeckoSession.ProgressDelegate {
     private geckoDataModel mGeckoDataModel;
     private SecurityInformation securityInfo = null;
     private GeckoSession.SessionState mSessionState;
-    private boolean mIsLoaded = false;
     private int mProgress = 5;
 
     /*Initializations*/
@@ -89,7 +85,9 @@ public class progressDelegate implements GeckoSession.ProgressDelegate {
         if(var2.startsWith("jar:file")){
             return;
         }
-        mEvent.invokeObserver(Arrays.asList(var2, mGeckoDataModel.mSessionID, var2, mGeckoDataModel.mCurrentURL_ID, mGeckoDataModel.mTheme, null), homeEnums.eGeckoCallback.ON_UPDATE_SEARCH_BAR);
+        if(!var2.contains("about:blank")){
+            mEvent.invokeObserver(Arrays.asList(var2, mGeckoDataModel.mSessionID, var2, mGeckoDataModel.mCurrentURL_ID, mGeckoDataModel.mTheme, null), homeEnums.eGeckoCallback.ON_UPDATE_SEARCH_BAR);
+        }
 
         //if (mIsLoaded) {
             if (!mGeckoDataModel.mCurrentURL.equals("about:config") && !var2.equals("about:blank") && !var2.startsWith("jar:file")) {

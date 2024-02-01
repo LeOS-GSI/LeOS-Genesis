@@ -5,7 +5,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
 
@@ -23,11 +23,13 @@ public class unproxiedConnectionViewController extends AppCompatActivity {
         setContentView(R.layout.activity_adview_controller);
     }
 
-    unproxiedConnectionViewController(AppCompatActivity pContext, eventObserver.eventListener pEvent, ProgressBar pProgressBar, TextView p4Header) {
+    unproxiedConnectionViewController(AppCompatActivity pContext, eventObserver.eventListener ignoredPEvent, ProgressBar pProgressBar, TextView p4Header) {
         this.mContext = pContext;
         this.mProgressBar = pProgressBar;
         this.mHeader = p4Header;
+    }
 
+    protected void onInit(){
         initViews();
     }
 

@@ -4,12 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +25,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.torproject.android.service.wrapper.logRowModel;
@@ -128,7 +126,10 @@ public class orbotLogController extends AppCompatActivity implements ViewTreeObs
         mOrbotLogFloatingToolbar = findViewById(R.id.pOrbotLogFloatingToolbar);
 
         mOrbotLogViewController = new orbotLogViewController(this, new orbotLogViewCallback(), mOrbotLogLoadingText, mOrbotLogRecycleView, mOrbotLogNestedScroll, mOrbotLogFloatingToolbar);
+        mOrbotLogViewController.onInit();
+
         mOrbotModel = new orbotLogModel(this, new orbotModelCallback());
+        mOrbotModel.onInit();
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -186,7 +187,6 @@ public class orbotLogController extends AppCompatActivity implements ViewTreeObs
             });
         }
 
-        Log.i("SUPERFUCK1", "1");
         mOrbotLogViewController.onTrigger(M_FLOAT_BUTTON_UPDATE);
         mOrbotLogRecycleView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         orbotLogStatus.sOrientation = getResources().getConfiguration().orientation;
@@ -195,14 +195,11 @@ public class orbotLogController extends AppCompatActivity implements ViewTreeObs
     @Override
     public void onScrollChanged() {
         if (mOrbotLogNestedScroll.getChildAt(0).getBottom() <= (mOrbotLogNestedScroll.getHeight() + mOrbotLogNestedScroll.getScrollY())) {
-            Log.i("SUPERFUCK1", "2");
             mOrbotLogViewController.onTrigger(M_FLOAT_BUTTON_UPDATE);
             if (!mIsRecycleviewInteracting) {
-                Log.i("asdjaslkdjlasd", "asd");
                 orbotLogStatus.sUIInteracted = false;
             }
         } else if (mOrbotLogNestedScroll.getScrollY() == 0) {
-            Log.i("SUPERFUCK1111", "2");
             helperMethod.onDelayHandler(orbotLogController.this, 300, () -> {
                 if (mOrbotLogNestedScroll.getScrollY() == 0) {
                     mOrbotLogViewController.onTrigger(M_SHOW_FLOATING_TOOLBAR);
@@ -247,14 +244,12 @@ public class orbotLogController extends AppCompatActivity implements ViewTreeObs
             mIsRecycleviewInteracting = false;
 
             if (mOrbotLogNestedScroll.canScrollVertically(enums.ScrollDirection.VERTICAL)) {
-                Log.i("asdjaslkdjlasd", "asd3");
                 orbotLogStatus.sUIInteracted = true;
             }
         } else if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE) {
             mIsRecycleviewInteracting = true;
         }
 
-        Log.i("SUPERFUCK1", "5");
         mOrbotLogViewController.onTrigger(M_FLOAT_BUTTON_UPDATE);
 
         return false;
@@ -359,6 +354,7 @@ public class orbotLogController extends AppCompatActivity implements ViewTreeObs
     @Override
     public void onBackPressed() {
         onCloseTriggered(null);
+        super.onBackPressed();
     }
 
     @Override

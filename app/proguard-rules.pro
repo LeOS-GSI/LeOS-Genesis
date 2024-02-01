@@ -8,7 +8,7 @@
 -keepattributes Annotation
 -keepattributes *Annotation*,EnclosingMethod,Signature
 -keepclasseswithmembers class * { public <init>(android.content.Context, android.util.AttributeSet, int); }
-
+-ignorewarnings
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*,!code/allocation/variable
 
 -dontwarn javax.annotation.**
@@ -22,11 +22,3 @@
 -dontobfuscate
 -dontoptimize
 -dontpreverify
-
-# -dontwarn okhttp3.internal.platform.ConscryptPlatform
-# -dontwarn org.conscrypt.ConscryptHostnameVerifier
-# -keep class org.orbotproject.android.service.vpn.Tun2Socks {
-#     void logTun2Socks(java.lang.String, java.lang.String, java.lang.String);
-# }
-
-

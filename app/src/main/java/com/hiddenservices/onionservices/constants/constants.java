@@ -3,7 +3,7 @@ package com.hiddenservices.onionservices.constants;
 public class constants {
     /*LOCAL URL CONSTANTS*/
 
-    public static final String CONST_PLAYSTORE_URL = "http://play.g**gle.comcom/store/apps/details?id=com.hiddenservices.onionservices";
+    public static final String CONST_PLAYSTORE_URL = "https://github.com/LeOS-GSI/LeOS-Genesis/releases/";
     public static final String CONST_AMAZON_URL = "http://www.amazon.com/gp/mas/dl/android?p=com.darkweb.genesissearchengine.production";
     public static final String CONST_SAMSUNG_URL = "http://www.samsungapps.com/appquery/appDetail.as?appId=com.darkweb.genesissearchengine.production";
     public static final String CONST_HUAWEI_URL = "https://appgallery.cloud.huawei.com/uowap/index.html#/detailApp/C106142211?appId=C106142211";
@@ -12,23 +12,22 @@ public class constants {
 
     public static final String CONST_PRIVACY_POLICY_URL_NON_TOR = "resource://android/assets/policy/policy.html";
 
-    public static final String CONST_PRIVACY_POLICY_URL = "http://167.86.99.31/privacy";
-    public static final String CONST_REPORT_URL = "http://167.86.99.31/report?url=";
-    public static final String CONST_SITEMAP = "http://167.86.99.31/sitemap";
+    public static final String CONST_REPORT_URL = "http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion/legal/";
+    public static final String CONST_SITEMAP = "http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion/add/";
     public static final String CONST_PACKAGE_NAME = "com.hiddenservices.onionservices";
     public static final String CONST_GENESIS_ONION = "orion.onion";
     public static final String CONST_GENESIS_ONION_V2 = "167.86.99.31";
 
     /*DRIVE URL DEV*/
 
-    public static final String CONST_SERVER_DEV = "https://drive.g**gle.comcom/uc?export=download&id=1uuLYjij9z149V1nXwteXsMsxi6BnnYWO";
-    public static final String CONST_GENESIS_REFERENCE_WEBSITES_DEV = "https://drive.g**gle.comcom/uc?export=download&id=1NnlsAcIojS0KiM5rHznAxu61Jdhlsai-";
-    public static final String CONST_GENESIS_BRIDGE_WEBSITES_DEV = "https://drive.g**gle.comcom/uc?export=download&id=1qMnhJPQkQEzHMUcDmKO0wdCrqB63CDOj";
+    public static final String CONST_SERVER_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1uuLYjij9z149V1nXwteXsMsxi6BnnYWO";
+    public static final String CONST_GENESIS_REFERENCE_WEBSITES_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1NnlsAcIojS0KiM5rHznAxu61Jdhlsai-";
+    public static final String CONST_GENESIS_BRIDGE_WEBSITES_DEV = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1qMnhJPQkQEzHMUcDmKO0wdCrqB63CDOj";
 
     /*DRIVE URL PRODUCTION*/
 
-    public static final String CONST_SERVER = "https://drive.g**gle.comcom/uc?export=download&id=1ALCooJQEtPYgyTm9XfYmkzSl_WuiBzeX";
-    public static final String CONST_GENESIS_REFERENCE_WEBSITES = "https://drive.g**gle.comcom/uc?export=download&id=1meNaswi7kmITqLLTb0fIXY2wgw_cG290";
+    public static final String CONST_SERVER = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1ALCooJQEtPYgyTm9XfYmkzSl_WuiBzeX";
+    public static final String CONST_GENESIS_REFERENCE_WEBSITES = "https://LeOS-Cloud.ddns.net/uc?export=download&id=1meNaswi7kmITqLLTb0fIXY2wgw_cG290";
     public static final String CONST_GENESIS_BRIDGE_WEBSITES = "http://167.86.99.31/.well-known/bridges.txt";
 
     /*URL CONSTANTS*/
@@ -50,18 +49,16 @@ public class constants {
     public static final String CONST_BACKEND_GENESIS_URL = "http://167.86.99.31/search?q=$s&p_num=1&s_type=all";
     public static final String CONST_BACKEND_GOOGLE_URL = "https://you.com/search?q=$s";
     public static final String CONST_BACKEND_DUCK_DUCK_GO_URL = "http://LeOSearch.ddns.net";
-
     public static final String CONST_BACKEND_DUCK_DUCK_GO_STATIC_URL = "http://LeOSearch.ddns.net";
     public static final String CONST_BACKEND_BING_URL = "https://swisscows.com/search?q=$s";
     public static final String CONST_BACKEND_WIKI_URL = "https://en.wikipedia.org/wiki/$s";
-    public static final String CONST_LOG_DUCKDUCK = "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q=";
+    public static final String CONST_LOG_DUCKDUCK = "https://duckduckgo.com/?q=tor&va=v&t=ha&ia=web";
 
     /*PROXY CONSTANTS*/
 
     public static final String CONST_PROXY_SOCKS = "127.0.0.1";
     public static final int CONST_PROXY_SOCKS_VERSION = 5;
     public static final boolean CONST_PROXY_SOCKS_REMOTE_DNS = true;
-    public static final boolean CONST_PROXY_CACHE = true;
 
     /*LOG CONSTANTS*/
 
@@ -80,10 +77,6 @@ public class constants {
     public static final int CONST_MAX_BOOKMARK_SIZE = 500;
     public static final String CONST_DATABASE_NAME = "orion_dbase";
     public static final String CONST_PERCENTAGE_SIGN = "%";
-
-    /*Notification Manager*/
-
-    public static final int mUserEngagementNotificationID = 1001;
 
     /*Language CONSTANTS*/
 

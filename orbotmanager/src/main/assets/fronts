@@ -3,4 +3,4 @@ snowflake-front cdn.sstatic.net
 snowflake-stun stun:stun.stunprotocol.org:3478
 moat-cdn https://d50gd378qj74g.cloudfront.net/
 moat-url https://moat.torproject.org.global.prod.fastly.net/
-moat-front fastly.jsdelivr.net
+moat-front cdn.sstatic.net

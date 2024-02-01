@@ -1,20 +1,15 @@
 package com.hiddenservices.onionservices.appManager.settingManager.generalManager;
 
 import static com.hiddenservices.onionservices.pluginManager.pluginEnums.eMessageManager.M_LOW_MEMORY;
-import static com.hiddenservices.onionservices.pluginManager.pluginEnums.eMessageManager.M_MAX_TAB_REACHED;
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.app.NotificationManagerCompat;
-
 import com.hiddenservices.onionservices.appManager.activityContextManager;
 import com.hiddenservices.onionservices.appManager.helpManager.helpController;
 import com.hiddenservices.onionservices.appManager.languageManager.languageController;
@@ -29,9 +24,8 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -92,7 +86,10 @@ public class settingGeneralController extends AppCompatActivity {
         mOpenURLInNewTab = findViewById(R.id.pOpenURLInNewTab);
 
         mSettingGeneralViewController = new settingGeneralViewController(this, new settingGeneralViewCallback(), mFullScreenMode, mThemeLight, mThemeDark, mThemeDefault, mHomePageText, mOpenURLInNewTab);
+        mSettingGeneralViewController.onInit();
+
         mSettingGeneralModel = new settingGeneralModel(new settingGeneralModelCallback());
+        mSettingGeneralModel.onInit();
     }
 
     /*View Callbacks*/
@@ -126,8 +123,11 @@ public class settingGeneralController extends AppCompatActivity {
                 if (mIsThemeChangable) {
                     status.mThemeApplying = true;
 
-
                     activityContextManager.getInstance().getHomeController().onReInitTheme();
+                    if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.O || android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.O_MR1) {
+                        activityContextManager.getInstance().onGoHome();
+                        onBackPressed();
+                    }
                     new Handler().postDelayed(() ->
                     {
                         try {
@@ -163,7 +163,7 @@ public class settingGeneralController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         activityContextManager.getInstance().getHomeController().onKillMedia();
         if (status.mThemeApplying) {
             // activityContextManager.getInstance().onStack(this);
@@ -181,6 +181,7 @@ public class settingGeneralController extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
+        super.onBackPressed();
     }
 
     /*External Redirection*/

@@ -4,9 +4,22 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.leos.onionservices",
+  "applicationId": "com.hiddenservices.onionservices",
   "variantName": "orionRelease",
   "elements": [
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 580,
+      "versionName": "Build | Dark-Origin 2.0.0",
+      "outputFile": "app-orion-armeabi-v7a-release.apk"
+    },
     {
       "type": "ONE_OF_MANY",
       "filters": [
@@ -16,22 +29,9 @@
         }
       ],
       "attributes": [],
-      "versionCode": 581,
-      "versionName": "Build 1.6.1",
+      "versionCode": 580,
+      "versionName": "Build | Dark-Origin 2.0.0",
       "outputFile": "app-orion-x86_64-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "x86"
-        }
-      ],
-      "attributes": [],
-      "versionCode": 581,
-      "versionName": "Build 1.6.1",
-      "outputFile": "app-orion-x86-release.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -42,8 +42,8 @@
         }
       ],
       "attributes": [],
-      "versionCode": 581,
-      "versionName": "Build 1.6.1",
+      "versionCode": 580,
+      "versionName": "Build | Dark-Origin 2.0.0",
       "outputFile": "app-orion-arm64-v8a-release.apk"
     },
     {
@@ -51,13 +51,13 @@
       "filters": [
         {
           "filterType": "ABI",
-          "value": "armeabi-v7a"
+          "value": "x86"
         }
       ],
       "attributes": [],
-      "versionCode": 581,
-      "versionName": "Build 1.6.1",
-      "outputFile": "app-orion-armeabi-v7a-release.apk"
+      "versionCode": 580,
+      "versionName": "Build | Dark-Origin 2.0.0",
+      "outputFile": "app-orion-x86-release.apk"
     }
   ],
   "elementType": "File"

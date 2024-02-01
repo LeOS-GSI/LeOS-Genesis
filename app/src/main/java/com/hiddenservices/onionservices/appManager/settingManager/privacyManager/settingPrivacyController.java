@@ -21,7 +21,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
@@ -74,7 +74,10 @@ public class settingPrivacyController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mSettingPrivacyViewController = new settingPrivacyViewController(this, new settingPrivacyController.settingAccessibilityViewCallback(), mJavaScript, mDoNotTrack, mClearDataOnExit, mCookie, mPopup);
+        mSettingPrivacyViewController.onInit();
+
         mSettingPrivacyModel = new settingPrivacyModel(new settingPrivacyController.settingAccessibilityModelCallback());
+        mSettingPrivacyModel.onInit();
     }
 
     /*View Callbacks*/
@@ -101,7 +104,7 @@ public class settingPrivacyController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         if (mSettingChanged) {
             activityContextManager.getInstance().setCurrentActivity(this);
         }
@@ -123,6 +126,7 @@ public class settingPrivacyController extends AppCompatActivity {
             }
         }
         finish();
+        super.onBackPressed();
     }
 
     @Override

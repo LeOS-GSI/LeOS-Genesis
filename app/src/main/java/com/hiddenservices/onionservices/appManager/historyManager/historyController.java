@@ -37,7 +37,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -112,6 +112,7 @@ public class historyController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mHistoryViewController = new historyViewController(mEmptyListNotification, mSearchInput, mRecycleView, mClearButton, this, mMenuButton, mSearchButton, mTitle);
+        mHistoryViewController.onInit();
     }
 
     public void initializeList() {
@@ -150,9 +151,6 @@ public class historyController extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-            }
         });
 
         mClearButton.requestFocusFromTouch();
@@ -269,7 +267,7 @@ public class historyController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         status.sSettingIsAppPaused = false;
@@ -305,6 +303,7 @@ public class historyController extends AppCompatActivity {
             activityContextManager.getInstance().onRemoveStack(this);
             finish();
         }
+        super.onBackPressed();
     }
 
     /*External XML Listeners*/

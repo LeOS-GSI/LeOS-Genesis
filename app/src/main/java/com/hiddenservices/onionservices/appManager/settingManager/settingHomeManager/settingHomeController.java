@@ -30,10 +30,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import com.hiddenservices.onionservices.R;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -55,6 +52,7 @@ public class settingHomeController extends AppCompatActivity {
 
     public settingHomeController() {
         mSettingModel = new settingHomeModel(new settingModelCallback());
+        mSettingModel.onInit();
     }
 
     @Override
@@ -89,15 +87,17 @@ public class settingHomeController extends AppCompatActivity {
     public void onInitTheme() {
 
         if (status.mThemeApplying) {
-            if (status.sTheme == enums.Theme.THEME_DARK) {
-                setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else if (status.sTheme == enums.Theme.THEME_LIGHT) {
-                setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            } else {
-                if (!status.sDefaultNightMode) {
+            if (android.os.Build.VERSION.SDK_INT != android.os.Build.VERSION_CODES.O && android.os.Build.VERSION.SDK_INT != android.os.Build.VERSION_CODES.O_MR1) {
+                if (status.sTheme == enums.Theme.THEME_DARK) {
+                    setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else if (status.sTheme == enums.Theme.THEME_LIGHT) {
                     setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 } else {
-                    setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    if (!status.sDefaultNightMode) {
+                        setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    } else {
+                        setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    }
                 }
             }
         }
@@ -110,17 +110,10 @@ public class settingHomeController extends AppCompatActivity {
         mOption16 = findViewById(R.id.pOption16);
 
         mSettingViewController = new settingHomeViewController(this, new settingViewCallback(), mOption15, mOption16);
+        mSettingViewController.onInit();
     }
 
     private void listenersInitializations() {
-    }
-
-    public void cicadaClipboard(View view) {
-        pluginController.getInstance().onMessageManagerInvoke(Collections.singletonList(this), M_OPEN_CICADA);
-    }
-
-    public void onSupport(View view) {
-        //pluginController.getInstance().onAdsInvoke(Collections.singletonList(this), pluginEnums.eAdManager.M_SHOW_INTERSTITIAL);
     }
 
     /*View Callbacks*/
@@ -156,7 +149,7 @@ public class settingHomeController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         if (status.mThemeApplying) {
             // activityContextManager.getInstance().onStack(this);
         }
@@ -176,6 +169,7 @@ public class settingHomeController extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
+        super.onBackPressed();
     }
 
     @Override
@@ -248,17 +242,13 @@ public class settingHomeController extends AppCompatActivity {
     }
 
     public void onReportWebsite(View view) {
-        try {
-            finish();
-            activityContextManager.getInstance().getHomeController().onLoadURL(helperMethod.setGenesisVerificationToken(constants.CONST_REPORT_URL + URLEncoder.encode(activityContextManager.getInstance().getHomeController().onGetCurrentURL(), "UTF-8")));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        finish();
+        activityContextManager.getInstance().getHomeController().onLoadURL(constants.CONST_REPORT_URL);
     }
 
     public void onSitemap(View view) {
         finish();
-        activityContextManager.getInstance().getHomeController().onLoadURL(helperMethod.setGenesisVerificationToken(constants.CONST_SITEMAP));
+        activityContextManager.getInstance().getHomeController().onLoadURL(constants.CONST_SITEMAP);
     }
 
     public void onReset(View view) {
@@ -272,7 +262,7 @@ public class settingHomeController extends AppCompatActivity {
         if (!status.sTorBrowsing) {
             activityContextManager.getInstance().getHomeController().onLoadURL(constants.CONST_PRIVACY_POLICY_URL_NON_TOR);
         } else {
-            activityContextManager.getInstance().getHomeController().onLoadURL(helperMethod.setGenesisVerificationToken(constants.CONST_PRIVACY_POLICY_URL));
+            activityContextManager.getInstance().getHomeController().onLoadURL(constants.CONST_PRIVACY_POLICY_URL_NON_TOR);
         }
     }
 

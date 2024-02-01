@@ -1,0 +1,1021 @@
+From 940c6894d45723d53561eea9027335ece6fb98e7 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Thu, 1 Feb 2024 11:03:21 +0100
+Subject: [PATCH] 0002-mozilla_telemetry_remove
+
+---
+ service-telemetry/build.gradle                |  2 +-
+ .../java/org/mozilla/telemetry/Telemetry.java | 32 +++++++++----------
+ .../mozilla/telemetry/TelemetryHolder.java    |  2 +-
+ .../config/TelemetryConfiguration.java        |  6 ++--
+ .../telemetry/event/TelemetryEvent.java       |  6 ++--
+ .../measurement/ArchMeasurement.java          |  2 +-
+ .../measurement/ClientIdMeasurement.java      |  4 +--
+ .../measurement/CreatedDateMeasurement.java   |  2 +-
+ .../CreatedDateMeasurementNew.java            |  2 +-
+ .../CreatedTimestampMeasurement.java          |  2 +-
+ .../CreatedTimestampMeasurementNew.java       |  2 +-
+ .../measurement/DefaultSearchMeasurement.java |  2 +-
+ .../measurement/DeviceMeasurement.java        |  4 +--
+ .../measurement/EventsMeasurement.java        |  8 ++---
+ .../measurement/ExperimentsMapMeasurement.kt  |  2 +-
+ .../measurement/ExperimentsMeasurement.java   |  2 +-
+ .../FirstRunProfileDateMeasurement.java       |  4 +--
+ .../measurement/LocaleMeasurement.java        |  2 +-
+ .../measurement/MetricsMeasurement.java       |  2 +-
+ .../OperatingSystemMeasurement.java           |  2 +-
+ .../OperatingSystemVersionMeasurement.java    |  2 +-
+ .../measurement/PocketIdMeasurement.java      |  4 +--
+ .../ProcessStartTimestampMeasurement.java     |  4 +--
+ .../measurement/SearchesMeasurement.java      |  4 +--
+ .../measurement/SequenceMeasurement.java      |  6 ++--
+ .../measurement/SessionCountMeasurement.java  |  4 +--
+ .../SessionDurationMeasurement.java           |  4 +--
+ .../measurement/SettingsMeasurement.java      |  4 +--
+ .../measurement/StaticMeasurement.java        |  2 +-
+ .../measurement/TelemetryMeasurement.java     |  2 +-
+ .../TimezoneOffsetMeasurement.java            |  2 +-
+ .../measurement/VersionMeasurement.java       |  2 +-
+ .../mozilla/telemetry/net/TelemetryClient.kt  |  4 +--
+ .../ping/TelemetryCorePingBuilder.java        | 32 +++++++++----------
+ .../ping/TelemetryEventPingBuilder.java       |  6 ++--
+ .../ping/TelemetryMobileEventPingBuilder.java |  6 ++--
+ .../TelemetryMobileMetricsPingBuilder.java    | 28 ++++++++--------
+ .../mozilla/telemetry/ping/TelemetryPing.java |  2 +-
+ .../telemetry/ping/TelemetryPingBuilder.java  | 10 +++---
+ .../ping/TelemetryPocketEventPingBuilder.java | 26 +++++++--------
+ .../schedule/TelemetryScheduler.java          |  4 +--
+ .../JobSchedulerTelemetryScheduler.java       |  6 ++--
+ .../jobscheduler/TelemetryJobService.java     | 14 ++++----
+ .../serialize/JSONPingSerializer.java         |  4 +--
+ .../serialize/TelemetryPingSerializer.java    |  4 +--
+ .../storage/FileTelemetryStorage.java         | 12 +++----
+ .../telemetry/storage/TelemetryStorage.java   |  4 +--
+ .../mozilla/telemetry/util/ContextUtils.java  |  2 +-
+ .../org/mozilla/telemetry/util/FileUtils.java |  2 +-
+ .../org/mozilla/telemetry/util/IOUtils.java   |  2 +-
+ .../mozilla/telemetry/util/StringUtils.java   |  2 +-
+ 51 files changed, 150 insertions(+), 150 deletions(-)
+
+diff --git a/service-telemetry/build.gradle b/service-telemetry/build.gradle
+index aa3ee4a7..45055d92 100644
+--- a/service-telemetry/build.gradle
++++ b/service-telemetry/build.gradle
+@@ -26,7 +26,7 @@ android {
+     kotlinOptions {
+         jvmTarget = '1.8'
+     }
+-    namespace 'org.mozilla.telemetry'
++    namespace 'org.leos.telemetry'
+ }
+ 
+ dependencies {
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/Telemetry.java b/service-telemetry/src/main/java/org/mozilla/telemetry/Telemetry.java
+index 1eadb4bc..016eae31 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/Telemetry.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/Telemetry.java
+@@ -2,28 +2,28 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry;
++package org.leos.telemetry;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.Nullable;
+ import androidx.annotation.RestrictTo;
+ import androidx.annotation.VisibleForTesting;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.event.TelemetryEvent;
+-import org.mozilla.telemetry.measurement.ClientIdMeasurement;
+-import org.mozilla.telemetry.measurement.DefaultSearchMeasurement;
+-import org.mozilla.telemetry.measurement.EventsMeasurement;
+-import org.mozilla.telemetry.measurement.ExperimentsMapMeasurement;
+-import org.mozilla.telemetry.net.TelemetryClient;
+-import org.mozilla.telemetry.ping.TelemetryCorePingBuilder;
+-import org.mozilla.telemetry.ping.TelemetryEventPingBuilder;
+-import org.mozilla.telemetry.ping.TelemetryMobileEventPingBuilder;
+-import org.mozilla.telemetry.ping.TelemetryPing;
+-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
+-import org.mozilla.telemetry.ping.TelemetryPocketEventPingBuilder;
+-import org.mozilla.telemetry.schedule.TelemetryScheduler;
+-import org.mozilla.telemetry.storage.TelemetryStorage;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.event.TelemetryEvent;
++import org.leos.telemetry.measurement.ClientIdMeasurement;
++import org.leos.telemetry.measurement.DefaultSearchMeasurement;
++import org.leos.telemetry.measurement.EventsMeasurement;
++import org.leos.telemetry.measurement.ExperimentsMapMeasurement;
++import org.leos.telemetry.net.TelemetryClient;
++import org.leos.telemetry.ping.TelemetryCorePingBuilder;
++import org.leos.telemetry.ping.TelemetryEventPingBuilder;
++import org.leos.telemetry.ping.TelemetryMobileEventPingBuilder;
++import org.leos.telemetry.ping.TelemetryPing;
++import org.leos.telemetry.ping.TelemetryPingBuilder;
++import org.leos.telemetry.ping.TelemetryPocketEventPingBuilder;
++import org.leos.telemetry.schedule.TelemetryScheduler;
++import org.leos.telemetry.storage.TelemetryStorage;
+ 
+ import java.util.Collection;
+ import java.util.HashMap;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/TelemetryHolder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/TelemetryHolder.java
+index c777eb04..a3e1e6c9 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/TelemetryHolder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/TelemetryHolder.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry;
++package org.leos.telemetry;
+ 
+ /**
+  * Holder of a static reference to the Telemetry instance. This is required for background services
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/config/TelemetryConfiguration.java b/service-telemetry/src/main/java/org/mozilla/telemetry/config/TelemetryConfiguration.java
+index 68d6cf2b..d26b33ec 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/config/TelemetryConfiguration.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/config/TelemetryConfiguration.java
+@@ -2,13 +2,13 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.config;
++package org.leos.telemetry.config;
+ 
+ import android.content.Context;
+ import android.content.SharedPreferences;
+ 
+-import org.mozilla.telemetry.measurement.SettingsMeasurement;
+-import org.mozilla.telemetry.util.ContextUtils;
++import org.leos.telemetry.measurement.SettingsMeasurement;
++import org.leos.telemetry.util.ContextUtils;
+ 
+ import java.io.File;
+ import java.util.Collections;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/event/TelemetryEvent.java b/service-telemetry/src/main/java/org/mozilla/telemetry/event/TelemetryEvent.java
+index 5fe6c6fc..a202a844 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/event/TelemetryEvent.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/event/TelemetryEvent.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.event;
++package org.leos.telemetry.event;
+ 
+ import android.os.SystemClock;
+ import androidx.annotation.CheckResult;
+@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
+ import androidx.annotation.RestrictTo;
+ import org.json.JSONArray;
+ import org.json.JSONObject;
+-import org.mozilla.telemetry.TelemetryHolder;
+-import org.mozilla.telemetry.util.StringUtils;
++import org.leos.telemetry.TelemetryHolder;
++import org.leos.telemetry.util.StringUtils;
+ 
+ import java.util.HashMap;
+ import java.util.Map;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ArchMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ArchMeasurement.java
+index 2d53f6c7..d41dac71 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ArchMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ArchMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.os.Build;
+ import androidx.annotation.VisibleForTesting;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ClientIdMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ClientIdMeasurement.java
+index d3f9eaba..8f1ded1a 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ClientIdMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ClientIdMeasurement.java
+@@ -2,11 +2,11 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.UUID;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurement.java
+index 527c355f..6ad9da84 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import java.text.DateFormat;
+ import java.text.SimpleDateFormat;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurementNew.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurementNew.java
+index 452988a6..272bdac1 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurementNew.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedDateMeasurementNew.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import java.text.DateFormat;
+ import java.text.SimpleDateFormat;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurement.java
+index c96b8517..78c31bdd 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ public class CreatedTimestampMeasurement extends TelemetryMeasurement {
+     private static final String FIELD_NAME = "created";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurementNew.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurementNew.java
+index c552b35d..8bb38356 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurementNew.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/CreatedTimestampMeasurementNew.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ /**
+  * The field 'created' from CreatedTimestampMeasurement will be deprecated for the `createdTimestamp` field
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DefaultSearchMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DefaultSearchMeasurement.java
+index ce6e5558..4b123c35 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DefaultSearchMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DefaultSearchMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import org.json.JSONObject;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DeviceMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DeviceMeasurement.java
+index e7981ac9..0a8dc8a0 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DeviceMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/DeviceMeasurement.java
+@@ -2,13 +2,13 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.os.Build;
+ import androidx.annotation.NonNull;
+ import androidx.annotation.VisibleForTesting;
+ 
+-import org.mozilla.telemetry.util.StringUtils;
++import org.leos.telemetry.util.StringUtils;
+ 
+ public class DeviceMeasurement extends TelemetryMeasurement {
+     private static final String FIELD_NAME = "device";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/EventsMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/EventsMeasurement.java
+index 42d552d4..2d81b22a 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/EventsMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/EventsMeasurement.java
+@@ -2,15 +2,15 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ import androidx.annotation.VisibleForTesting;
+ import org.json.JSONArray;
+ import org.json.JSONException;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.event.TelemetryEvent;
+-import org.mozilla.telemetry.util.IOUtils;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.event.TelemetryEvent;
++import org.leos.telemetry.util.IOUtils;
+ import java.io.BufferedReader;
+ import java.io.BufferedWriter;
+ import java.io.File;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMapMeasurement.kt b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMapMeasurement.kt
+index c4a1a78a..9eff49f8 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMapMeasurement.kt
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMapMeasurement.kt
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement
++package org.leos.telemetry.measurement
+ 
+ import org.json.JSONObject
+ import kotlin.collections.forEach as withEach
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMeasurement.java
+index a0141482..a416e218 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ExperimentsMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import org.json.JSONArray;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/FirstRunProfileDateMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/FirstRunProfileDateMeasurement.java
+index 57cc2e59..b5520f20 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/FirstRunProfileDateMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/FirstRunProfileDateMeasurement.java
+@@ -2,12 +2,12 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ import androidx.annotation.VisibleForTesting;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.concurrent.TimeUnit;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/LocaleMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/LocaleMeasurement.java
+index fa1f66bb..e1aea829 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/LocaleMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/LocaleMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import java.util.Locale;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/MetricsMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/MetricsMeasurement.java
+index 8ac2e14c..7513dea3 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/MetricsMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/MetricsMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import org.json.JSONObject;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemMeasurement.java
+index 2907bfa7..2b70a9a7 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ public class OperatingSystemMeasurement extends StaticMeasurement {
+     private static final String FIELD_NAME = "os";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemVersionMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemVersionMeasurement.java
+index d35f3da0..da839c49 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemVersionMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/OperatingSystemVersionMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.os.Build;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/PocketIdMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/PocketIdMeasurement.java
+index 23c29d76..a4376b57 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/PocketIdMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/PocketIdMeasurement.java
+@@ -2,11 +2,11 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.UUID;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ProcessStartTimestampMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ProcessStartTimestampMeasurement.java
+index dd6a220d..90f9a831 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ProcessStartTimestampMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/ProcessStartTimestampMeasurement.java
+@@ -2,9 +2,9 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ public class ProcessStartTimestampMeasurement extends TelemetryMeasurement {
+     private static final String FIELD_NAME = "processStartTimestamp";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SearchesMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SearchesMeasurement.java
+index a2b42b95..c3daf667 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SearchesMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SearchesMeasurement.java
+@@ -2,14 +2,14 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ import androidx.annotation.NonNull;
+ 
+ import org.json.JSONException;
+ import org.json.JSONObject;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.Collections;
+ import java.util.HashSet;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SequenceMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SequenceMeasurement.java
+index 9f90665b..0ca2d38a 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SequenceMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SequenceMeasurement.java
+@@ -2,12 +2,12 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.ping.TelemetryPingBuilder;
+ 
+ public class SequenceMeasurement extends TelemetryMeasurement {
+     private static final String FIELD_NAME = "seq";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionCountMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionCountMeasurement.java
+index 6bfa955e..cafd2b83 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionCountMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionCountMeasurement.java
+@@ -2,11 +2,11 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ public class SessionCountMeasurement extends TelemetryMeasurement {
+     private static final String FIELD_NAME = "sessions";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionDurationMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionDurationMeasurement.java
+index 133e7c7e..3b0fdce1 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionDurationMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SessionDurationMeasurement.java
+@@ -2,12 +2,12 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.content.SharedPreferences;
+ import androidx.annotation.VisibleForTesting;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.concurrent.TimeUnit;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SettingsMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SettingsMeasurement.java
+index 36c0c818..c54dcf05 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SettingsMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/SettingsMeasurement.java
+@@ -2,13 +2,13 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import android.preference.PreferenceManager;
+ 
+ import org.json.JSONException;
+ import org.json.JSONObject;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ import java.util.Map;
+ import java.util.Set;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/StaticMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/StaticMeasurement.java
+index ffc52ce4..dfea9574 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/StaticMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/StaticMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ public class StaticMeasurement extends TelemetryMeasurement {
+     private final Object value;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TelemetryMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TelemetryMeasurement.java
+index 410074d5..a2d91e73 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TelemetryMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TelemetryMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ public abstract class TelemetryMeasurement {
+     private final String fieldName;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TimezoneOffsetMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TimezoneOffsetMeasurement.java
+index f9e6c063..b0b00dec 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TimezoneOffsetMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/TimezoneOffsetMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.VisibleForTesting;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/VersionMeasurement.java b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/VersionMeasurement.java
+index 9a269d69..7f27b76d 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/VersionMeasurement.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/measurement/VersionMeasurement.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.measurement;
++package org.leos.telemetry.measurement;
+ 
+ public class VersionMeasurement extends StaticMeasurement {
+     private static final String FIELD_NAME = "v";
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/net/TelemetryClient.kt b/service-telemetry/src/main/java/org/mozilla/telemetry/net/TelemetryClient.kt
+index 883c8ed8..a943e764 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/net/TelemetryClient.kt
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/net/TelemetryClient.kt
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.net
++package org.leos.telemetry.net
+ 
+ import androidx.annotation.VisibleForTesting
+ import mozilla.components.concept.fetch.Client
+@@ -10,7 +10,7 @@ import mozilla.components.concept.fetch.MutableHeaders
+ import mozilla.components.concept.fetch.Request
+ import mozilla.components.concept.fetch.Response
+ import mozilla.components.support.base.log.logger.Logger
+-import org.mozilla.telemetry.config.TelemetryConfiguration
++import org.leos.telemetry.config.TelemetryConfiguration
+ import java.io.IOException
+ import java.text.SimpleDateFormat
+ import java.util.Calendar
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryCorePingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryCorePingBuilder.java
+index cca7b681..f37d6399 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryCorePingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryCorePingBuilder.java
+@@ -2,23 +2,23 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.ArchMeasurement;
+-import org.mozilla.telemetry.measurement.CreatedDateMeasurement;
+-import org.mozilla.telemetry.measurement.DefaultSearchMeasurement;
+-import org.mozilla.telemetry.measurement.DeviceMeasurement;
+-import org.mozilla.telemetry.measurement.ExperimentsMeasurement;
+-import org.mozilla.telemetry.measurement.FirstRunProfileDateMeasurement;
+-import org.mozilla.telemetry.measurement.LocaleMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
+-import org.mozilla.telemetry.measurement.SearchesMeasurement;
+-import org.mozilla.telemetry.measurement.SequenceMeasurement;
+-import org.mozilla.telemetry.measurement.SessionCountMeasurement;
+-import org.mozilla.telemetry.measurement.SessionDurationMeasurement;
+-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.ArchMeasurement;
++import org.leos.telemetry.measurement.CreatedDateMeasurement;
++import org.leos.telemetry.measurement.DefaultSearchMeasurement;
++import org.leos.telemetry.measurement.DeviceMeasurement;
++import org.leos.telemetry.measurement.ExperimentsMeasurement;
++import org.leos.telemetry.measurement.FirstRunProfileDateMeasurement;
++import org.leos.telemetry.measurement.LocaleMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
++import org.leos.telemetry.measurement.SearchesMeasurement;
++import org.leos.telemetry.measurement.SequenceMeasurement;
++import org.leos.telemetry.measurement.SessionCountMeasurement;
++import org.leos.telemetry.measurement.SessionDurationMeasurement;
++import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
+ 
+ /**
+  * This mobile-specific ping is intended to provide the most critical data in a concise format,
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryEventPingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryEventPingBuilder.java
+index f6db8c1a..6bb46130 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryEventPingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryEventPingBuilder.java
+@@ -2,10 +2,10 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.*;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.*;
+ 
+ /**
+  * A telemetry ping builder for pings of type "focus-event".
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileEventPingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileEventPingBuilder.java
+index 2a9e11a8..405b3cab 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileEventPingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileEventPingBuilder.java
+@@ -2,10 +2,10 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.*;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.*;
+ 
+ /**
+  * A telemetry ping builder for events of type "mobile-event".
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileMetricsPingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileMetricsPingBuilder.java
+index 7b923efd..54725445 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileMetricsPingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryMobileMetricsPingBuilder.java
+@@ -2,22 +2,22 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+ import org.json.JSONObject;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.ArchMeasurement;
+-import org.mozilla.telemetry.measurement.CreatedDateMeasurementNew;
+-import org.mozilla.telemetry.measurement.CreatedTimestampMeasurementNew;
+-import org.mozilla.telemetry.measurement.DeviceMeasurement;
+-import org.mozilla.telemetry.measurement.FirstRunProfileDateMeasurement;
+-import org.mozilla.telemetry.measurement.LocaleMeasurement;
+-import org.mozilla.telemetry.measurement.MetricsMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
+-import org.mozilla.telemetry.measurement.ProcessStartTimestampMeasurement;
+-import org.mozilla.telemetry.measurement.SequenceMeasurement;
+-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.ArchMeasurement;
++import org.leos.telemetry.measurement.CreatedDateMeasurementNew;
++import org.leos.telemetry.measurement.CreatedTimestampMeasurementNew;
++import org.leos.telemetry.measurement.DeviceMeasurement;
++import org.leos.telemetry.measurement.FirstRunProfileDateMeasurement;
++import org.leos.telemetry.measurement.LocaleMeasurement;
++import org.leos.telemetry.measurement.MetricsMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
++import org.leos.telemetry.measurement.ProcessStartTimestampMeasurement;
++import org.leos.telemetry.measurement.SequenceMeasurement;
++import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
+ 
+ /**
+  * A telemetry ping builder for events of type "mobile-metrics".
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPing.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPing.java
+index 719808db..d5888d83 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPing.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPing.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+ import java.util.Map;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPingBuilder.java
+index 73d2d458..5501080b 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPingBuilder.java
+@@ -2,16 +2,16 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
++package org.leos.telemetry.ping;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.RestrictTo;
+ import androidx.annotation.VisibleForTesting;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.ClientIdMeasurement;
+-import org.mozilla.telemetry.measurement.TelemetryMeasurement;
+-import org.mozilla.telemetry.measurement.VersionMeasurement;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.ClientIdMeasurement;
++import org.leos.telemetry.measurement.TelemetryMeasurement;
++import org.leos.telemetry.measurement.VersionMeasurement;
+ 
+ import java.util.LinkedHashMap;
+ import java.util.LinkedList;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPocketEventPingBuilder.java b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPocketEventPingBuilder.java
+index 1eb2d6d0..1d6274ab 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPocketEventPingBuilder.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/ping/TelemetryPocketEventPingBuilder.java
+@@ -2,19 +2,19 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.ping;
+-
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.measurement.CreatedTimestampMeasurement;
+-import org.mozilla.telemetry.measurement.DeviceMeasurement;
+-import org.mozilla.telemetry.measurement.EventsMeasurement;
+-import org.mozilla.telemetry.measurement.LocaleMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemMeasurement;
+-import org.mozilla.telemetry.measurement.OperatingSystemVersionMeasurement;
+-import org.mozilla.telemetry.measurement.PocketIdMeasurement;
+-import org.mozilla.telemetry.measurement.ProcessStartTimestampMeasurement;
+-import org.mozilla.telemetry.measurement.SequenceMeasurement;
+-import org.mozilla.telemetry.measurement.TimezoneOffsetMeasurement;
++package org.leos.telemetry.ping;
++
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.measurement.CreatedTimestampMeasurement;
++import org.leos.telemetry.measurement.DeviceMeasurement;
++import org.leos.telemetry.measurement.EventsMeasurement;
++import org.leos.telemetry.measurement.LocaleMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemMeasurement;
++import org.leos.telemetry.measurement.OperatingSystemVersionMeasurement;
++import org.leos.telemetry.measurement.PocketIdMeasurement;
++import org.leos.telemetry.measurement.ProcessStartTimestampMeasurement;
++import org.leos.telemetry.measurement.SequenceMeasurement;
++import org.leos.telemetry.measurement.TimezoneOffsetMeasurement;
+ 
+ /**
+  * A telemetry ping builder for events of type "fire-tv-events".
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/TelemetryScheduler.java b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/TelemetryScheduler.java
+index 72c9b150..a0b8b7de 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/TelemetryScheduler.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/TelemetryScheduler.java
+@@ -2,9 +2,9 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.schedule;
++package org.leos.telemetry.schedule;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.config.TelemetryConfiguration;
+ 
+ public interface TelemetryScheduler {
+     void scheduleUpload(TelemetryConfiguration configuration);
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/JobSchedulerTelemetryScheduler.java b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/JobSchedulerTelemetryScheduler.java
+index 29f3683c..465b999d 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/JobSchedulerTelemetryScheduler.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/JobSchedulerTelemetryScheduler.java
+@@ -2,15 +2,15 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.schedule.jobscheduler;
++package org.leos.telemetry.schedule.jobscheduler;
+ 
+ import android.app.job.JobInfo;
+ import android.app.job.JobScheduler;
+ import android.content.ComponentName;
+ import android.content.Context;
+ 
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.schedule.TelemetryScheduler;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.schedule.TelemetryScheduler;
+ 
+ /**
+  * TelemetryScheduler implementation that uses Android's JobScheduler API to schedule ping uploads.
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/TelemetryJobService.java b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/TelemetryJobService.java
+index d71ee742..c0f7b726 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/TelemetryJobService.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/schedule/jobscheduler/TelemetryJobService.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.schedule.jobscheduler;
++package org.leos.telemetry.schedule.jobscheduler;
+ 
+ import android.annotation.SuppressLint;
+ import android.app.job.JobParameters;
+@@ -10,12 +10,12 @@ import android.app.job.JobService;
+ import android.content.SharedPreferences;
+ import android.os.AsyncTask;
+ import androidx.annotation.VisibleForTesting;
+-import org.mozilla.telemetry.Telemetry;
+-import org.mozilla.telemetry.TelemetryHolder;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.net.TelemetryClient;
+-import org.mozilla.telemetry.ping.TelemetryPingBuilder;
+-import org.mozilla.telemetry.storage.TelemetryStorage;
++import org.leos.telemetry.Telemetry;
++import org.leos.telemetry.TelemetryHolder;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.net.TelemetryClient;
++import org.leos.telemetry.ping.TelemetryPingBuilder;
++import org.leos.telemetry.storage.TelemetryStorage;
+ import java.util.Calendar;
+ import mozilla.components.support.base.log.logger.Logger;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/JSONPingSerializer.java b/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/JSONPingSerializer.java
+index 6d044701..cddc8a89 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/JSONPingSerializer.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/JSONPingSerializer.java
+@@ -2,11 +2,11 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.serialize;
++package org.leos.telemetry.serialize;
+ 
+ import org.json.JSONException;
+ import org.json.JSONObject;
+-import org.mozilla.telemetry.ping.TelemetryPing;
++import org.leos.telemetry.ping.TelemetryPing;
+ 
+ import java.util.Map;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/TelemetryPingSerializer.java b/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/TelemetryPingSerializer.java
+index d514e991..2d14ffab 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/TelemetryPingSerializer.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/serialize/TelemetryPingSerializer.java
+@@ -2,9 +2,9 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.serialize;
++package org.leos.telemetry.serialize;
+ 
+-import org.mozilla.telemetry.ping.TelemetryPing;
++import org.leos.telemetry.ping.TelemetryPing;
+ 
+ public interface TelemetryPingSerializer {
+     String serialize(TelemetryPing ping);
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/storage/FileTelemetryStorage.java b/service-telemetry/src/main/java/org/mozilla/telemetry/storage/FileTelemetryStorage.java
+index 68d94ae8..8caaf27e 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/storage/FileTelemetryStorage.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/storage/FileTelemetryStorage.java
+@@ -2,15 +2,15 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.storage;
++package org.leos.telemetry.storage;
+ 
+ import androidx.annotation.RestrictTo;
+ import androidx.annotation.VisibleForTesting;
+-import org.mozilla.telemetry.config.TelemetryConfiguration;
+-import org.mozilla.telemetry.ping.TelemetryPing;
+-import org.mozilla.telemetry.serialize.TelemetryPingSerializer;
+-import org.mozilla.telemetry.util.FileUtils;
+-import org.mozilla.telemetry.util.IOUtils;
++import org.leos.telemetry.config.TelemetryConfiguration;
++import org.leos.telemetry.ping.TelemetryPing;
++import org.leos.telemetry.serialize.TelemetryPingSerializer;
++import org.leos.telemetry.util.FileUtils;
++import org.leos.telemetry.util.IOUtils;
+ import java.io.BufferedReader;
+ import java.io.BufferedWriter;
+ import java.io.File;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/storage/TelemetryStorage.java b/service-telemetry/src/main/java/org/mozilla/telemetry/storage/TelemetryStorage.java
+index affa1f96..1f68912c 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/storage/TelemetryStorage.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/storage/TelemetryStorage.java
+@@ -2,9 +2,9 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.storage;
++package org.leos.telemetry.storage;
+ 
+-import org.mozilla.telemetry.ping.TelemetryPing;
++import org.leos.telemetry.ping.TelemetryPing;
+ 
+ public interface TelemetryStorage {
+     interface TelemetryStorageCallback {
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/util/ContextUtils.java b/service-telemetry/src/main/java/org/mozilla/telemetry/util/ContextUtils.java
+index 527abb99..78adf557 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/util/ContextUtils.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/util/ContextUtils.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.util;
++package org.leos.telemetry.util;
+ 
+ import android.content.Context;
+ import android.content.pm.ApplicationInfo;
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/util/FileUtils.java b/service-telemetry/src/main/java/org/mozilla/telemetry/util/FileUtils.java
+index e89c53d0..a7cfd530 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/util/FileUtils.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/util/FileUtils.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.util;
++package org.leos.telemetry.util;
+ 
+ import androidx.annotation.RestrictTo;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/util/IOUtils.java b/service-telemetry/src/main/java/org/mozilla/telemetry/util/IOUtils.java
+index 44241a2a..5166b741 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/util/IOUtils.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/util/IOUtils.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.util;
++package org.leos.telemetry.util;
+ 
+ import androidx.annotation.RestrictTo;
+ 
+diff --git a/service-telemetry/src/main/java/org/mozilla/telemetry/util/StringUtils.java b/service-telemetry/src/main/java/org/mozilla/telemetry/util/StringUtils.java
+index 226dacc8..4507cf28 100644
+--- a/service-telemetry/src/main/java/org/mozilla/telemetry/util/StringUtils.java
++++ b/service-telemetry/src/main/java/org/mozilla/telemetry/util/StringUtils.java
+@@ -2,7 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-package org.mozilla.telemetry.util;
++package org.leos.telemetry.util;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.RestrictTo;
+-- 
+2.34.1
+

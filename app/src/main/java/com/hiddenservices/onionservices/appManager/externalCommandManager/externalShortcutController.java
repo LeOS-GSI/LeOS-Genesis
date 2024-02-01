@@ -10,14 +10,13 @@ import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.dataManager.dataController;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
 import org.torproject.android.service.wrapper.orbotLocalConstants;
 import static com.hiddenservices.onionservices.constants.constants.CONST_EXTERNAL_SHORTCUT_COMMAND_ERASE;
 import static com.hiddenservices.onionservices.constants.keys.EXTERNAL_SHORTCUT_COMMAND;
 
-import java.util.concurrent.Callable;
 
 public class externalShortcutController extends AppCompatActivity {
 

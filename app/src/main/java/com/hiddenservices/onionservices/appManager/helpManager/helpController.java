@@ -26,7 +26,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,6 +80,7 @@ public class helpController extends AppCompatActivity {
 
     private void initializeViews() {
         mHelpViewController = new helpViewController();
+        mHelpViewController.onInit();
         mProgressBar = findViewById(R.id.pProgressBar);
         mRecycleView = findViewById(R.id.pRecycleView);
         mRetryContainer = findViewById(R.id.pRetryContainer);
@@ -235,7 +236,7 @@ public class helpController extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         super.onResume();
     }

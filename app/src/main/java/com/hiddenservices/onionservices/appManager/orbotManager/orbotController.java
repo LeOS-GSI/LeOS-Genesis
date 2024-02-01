@@ -18,7 +18,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Arrays;
@@ -71,7 +71,10 @@ public class orbotController extends AppCompatActivity {
 
         mOrbotViewController = new orbotViewController(mOrbotSettingBridgeSwitch, mOrbotSettingVPNSwitch, this, mOrbotSettingWarning);
         mOrbotViewController.onTrigger(orbotEnums.eOrbotViewCommands.M_INIT_UI, Arrays.asList(status.sVPNStatus, status.sBridgeStatus));
+        mOrbotViewController.onInit();
+
         mOrbotModel = new orbotModel(new orbotModelCallback());
+        mOrbotModel.onInit();
     }
 
     /* LISTENERS */
@@ -142,6 +145,7 @@ public class orbotController extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         onClose(null);
+        super.onBackPressed();
     }
 
 }

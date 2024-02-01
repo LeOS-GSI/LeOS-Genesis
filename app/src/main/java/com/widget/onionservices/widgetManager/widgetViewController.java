@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 
 import com.hiddenservices.onionservices.eventObserver;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 
@@ -14,15 +14,11 @@ public class widgetViewController extends AppWidgetProvider {
 
     /*Private Variables*/
 
-    private eventObserver.eventListener mEvent;
-    private Context mContext;
     private RemoteViews mViews;
 
     /*Initializations*/
 
-    widgetViewController(Context pContext, eventObserver.eventListener pEvent, RemoteViews pViews) {
-        this.mEvent = pEvent;
-        this.mContext = pContext;
+    widgetViewController(Context ignoredPContext, eventObserver.eventListener ignoredPEvent, RemoteViews pViews) {
         this.mViews = pViews;
     }
 

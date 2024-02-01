@@ -6,14 +6,11 @@ package org.leos.telemetry.storage;
 
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
-import android.util.Log;
-
 import org.leos.telemetry.config.TelemetryConfiguration;
 import org.leos.telemetry.ping.TelemetryPing;
 import org.leos.telemetry.serialize.TelemetryPingSerializer;
 import org.leos.telemetry.util.FileUtils;
 import org.leos.telemetry.util.IOUtils;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -28,7 +25,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
-
 import mozilla.components.support.base.log.logger.Logger;
 
 /**

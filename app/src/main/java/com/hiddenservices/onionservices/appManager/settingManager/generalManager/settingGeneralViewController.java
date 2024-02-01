@@ -16,7 +16,7 @@ import com.hiddenservices.onionservices.constants.enums;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Collections;
@@ -48,11 +48,12 @@ class settingGeneralViewController {
         this.mThemeDefault = pThemeDefault;
         this.mHomePageText = pHomePageText;
         this.mOpenURLInNewTab = pOpenURLInNewTab;
+    }
 
+    protected void onInit(){
         initViews();
         initPostUI();
     }
-
 
     private void initPostUI() {
         Window window = mContext.getWindow();

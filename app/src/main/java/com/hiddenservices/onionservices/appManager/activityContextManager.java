@@ -4,7 +4,7 @@ import static com.hiddenservices.onionservices.constants.constants.CONST_PACKAGE
 import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.hiddenservices.onionservices.appManager.bookmarkManager.bookmarkHome.bookmarkController;
 import com.hiddenservices.onionservices.appManager.bridgeManager.bridgeController;
 import com.hiddenservices.onionservices.appManager.historyManager.historyController;
@@ -22,17 +22,12 @@ public class activityContextManager {
 
     private static activityContextManager ourInstance = new activityContextManager();
 
-    public static activityContextManager getInstance() {
-        return ourInstance;
-    }
-
     /*Private Contexts*/
     private WeakReference<bridgeController> pBridgeController;
     private WeakReference<historyController> pHistoryController;
     private WeakReference<bookmarkController> pBookmarkController;
     private WeakReference<homeController> pHomeController;
     private WeakReference<tabController> pTabController;
-    private WeakReference<android.app.Activity> pCurrentActivity = null;
     private WeakReference<settingHomeController> pSettingController;
     private WeakReference<settingGeneralController> pSettingGeneralController;
     private WeakReference<orbotLogController> pOrbotLogController;
@@ -40,6 +35,10 @@ public class activityContextManager {
     private ArrayList<WeakReference<AppCompatActivity>> mStackList;
 
     /*Initialization*/
+
+    public static activityContextManager getInstance() {
+        return ourInstance;
+    }
 
     private activityContextManager() {
         mStackList = new ArrayList<>();
@@ -97,10 +96,6 @@ public class activityContextManager {
         this.pApplicationContext = new WeakReference(pContext);
     }
 
-    public Context getApplicationController() {
-        return pApplicationContext.get();
-    }
-
     public void setHomeController(homeController home_controller) {
         this.pHomeController = new WeakReference(home_controller);
     }
@@ -151,14 +146,6 @@ public class activityContextManager {
     }
 
     public void setCurrentActivity(android.app.Activity pCurrentActivity) {
-        this.pCurrentActivity = new WeakReference(pCurrentActivity);
-    }
-
-    public android.app.Activity getCurrentActivity() {
-        if (pCurrentActivity == null) {
-            return null;
-        }
-        return pCurrentActivity.get();
     }
 
     public void onStack(AppCompatActivity pActivity) {
@@ -197,17 +184,6 @@ public class activityContextManager {
         }
     }
 
-    public void onResetLanguage() {
-        for (int mCounter = 0; mCounter < mStackList.size(); mCounter++) {
-            try {
-                if (!mStackList.get(mCounter).get().isFinishing()) {
-                    activityThemeManager.getInstance().onConfigurationChanged(mStackList.get(mCounter).get());
-                }
-            } catch (Exception ignored) {
-            }
-        }
-    }
-
     public void onGoHome() {
         for (int mCounter = 0; mCounter < mStackList.size(); mCounter++) {
             try {
@@ -221,7 +197,7 @@ public class activityContextManager {
         }
     }
 
-    public void onCheckPurgeStack() {
+    public void onPurgeStack() {
         if(pHomeController==null || pHomeController.get() == null){
             for (int mCounter = 0; mCounter < mStackList.size(); mCounter++) {
                 try {

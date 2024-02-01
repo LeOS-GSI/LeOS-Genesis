@@ -6,14 +6,11 @@ package org.leos.telemetry.measurement;
 
 import android.content.SharedPreferences;
 import androidx.annotation.VisibleForTesting;
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.leos.telemetry.config.TelemetryConfiguration;
 import org.leos.telemetry.event.TelemetryEvent;
 import org.leos.telemetry.util.IOUtils;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

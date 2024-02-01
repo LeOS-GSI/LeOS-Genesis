@@ -23,7 +23,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
@@ -73,7 +73,10 @@ public class settingSearchController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mSettingSearchViewController = new settingSearchViewController(this, new settingSearchViewCallback(), mSearchEngines, mSearchHistory, mSearchSuggestions, mSearchSettingOption1);
+        mSettingSearchViewController.onInit();
+
         mSettingSearchModel = new settingSearchModel(new settingSearchModelCallback());
+        mSettingSearchModel.onInit();
     }
 
     /*View Callbacks*/
@@ -100,7 +103,7 @@ public class settingSearchController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();
@@ -119,6 +122,7 @@ public class settingSearchController extends AppCompatActivity {
     public void onBackPressed() {
         activityContextManager.getInstance().onRemoveStack(this);
         finish();
+        super.onBackPressed();
     }
 
     @Override

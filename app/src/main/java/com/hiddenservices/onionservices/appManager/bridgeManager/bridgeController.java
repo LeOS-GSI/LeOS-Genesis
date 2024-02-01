@@ -25,7 +25,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -76,6 +76,7 @@ public class bridgeController extends AppCompatActivity implements View.OnFocusC
             activityContextManager.getInstance().onStack(this);
         }
         mBridgeViewController = new bridgeViewController();
+        mBridgeViewController.onInit();
     }
 
     public void initializeConnections() {
@@ -93,6 +94,7 @@ public class bridgeController extends AppCompatActivity implements View.OnFocusC
         mBridgeViewController.initialization(mBridgeSettingBridgeSnowflake, mBridgeSettingCustomPort, mBridgeSettingBridgeRequest, this, mBridgeSettingObfs, mBridgeSettingBridgeChina, mBridgeSettingBridgeCustom, mBridgeSettingCustomBridgeBlocker);
         mBridgeViewController.onTrigger(bridgeEnums.eBridgeViewCommands.M_INIT_VIEWS, Arrays.asList(status.sBridgeCustomBridge, 0, status.sBridgeCustomType));
         mBridgeModel = new bridgeModel(new bridgeController.bridgeModelCallback(), this);
+        mBridgeModel.onInit();
     }
 
 
@@ -197,7 +199,7 @@ public class bridgeController extends AppCompatActivity implements View.OnFocusC
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
 
@@ -219,6 +221,7 @@ public class bridgeController extends AppCompatActivity implements View.OnFocusC
     @Override
     public void onBackPressed() {
         finish();
+        super.onBackPressed();
     }
 
 }

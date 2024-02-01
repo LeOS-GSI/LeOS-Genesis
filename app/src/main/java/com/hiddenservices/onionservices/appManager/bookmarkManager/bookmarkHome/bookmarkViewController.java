@@ -30,7 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 import java.util.Objects;
@@ -63,7 +63,9 @@ public class bookmarkViewController {
         this.mMenuButton = pMenuButton;
         this.mSearchButton = pSearchButton;
         this.mTitle = pTitle;
+    }
 
+    protected void onInit(){
         initPostUI();
     }
 
@@ -218,10 +220,6 @@ public class bookmarkViewController {
                     mClearButton.setVisibility(View.VISIBLE);
                 }
 
-                @Override
-                public boolean willChangeBounds() {
-                    return true;
-                }
             };
             a.setDuration(250);
             v.startAnimation(a);
@@ -257,10 +255,6 @@ public class bookmarkViewController {
                     }
                 }
 
-                @Override
-                public boolean willChangeBounds() {
-                    return true;
-                }
             };
             a.setDuration(250);
             v.startAnimation(a);

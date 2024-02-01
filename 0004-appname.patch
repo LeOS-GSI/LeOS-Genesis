@@ -1,0 +1,32 @@
+From 2063fa3152f3c3497ccd49d86dfd129b4b98701b Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Thu, 1 Feb 2024 11:10:28 +0100
+Subject: [PATCH] 0004-appname
+
+---
+ app/src/main/AndroidManifest.xml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+index 4521b873..664293b7 100755
+--- a/app/src/main/AndroidManifest.xml
++++ b/app/src/main/AndroidManifest.xml
+@@ -19,7 +19,7 @@
+         android:icon="@mipmap/ic_launcher"
+         tools:remove="android:appComponentFactory"
+         tools:targetApi="p"
+-        android:label="@string/app_name"
++        android:label="LeOS-Genesis"
+         android:largeHeap="false"
+         android:networkSecurityConfig="@xml/gx_network_security_config"
+         android:requestLegacyExternalStorage="true"
+@@ -309,4 +309,4 @@
+ 
+     </application>
+ 
+-</manifest>
+\ No newline at end of file
++</manifest>
+-- 
+2.34.1
+

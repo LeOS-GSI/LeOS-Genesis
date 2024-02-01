@@ -14,15 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.UiThread;
-
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.hiddenservices.onionservices.appManager.activityContextManager;
-
 import org.mozilla.gecko.util.ThreadUtils;
 import org.mozilla.geckoview.GeckoSession;
 
@@ -108,11 +105,6 @@ public class selectionDelegate implements ActionMode.Callback,
     }
 
     @SuppressWarnings("checkstyle:javadocmethod")
-    public selectionDelegate(final @NonNull Activity activity) {
-        this(activity, Build.VERSION.SDK_INT >= 23);
-    }
-
-    @SuppressWarnings("checkstyle:javadocmethod")
     public selectionDelegate(final @NonNull Activity activity,
                              final boolean useFloatingToolbar) {
         mActivity = activity;
@@ -132,15 +124,6 @@ public class selectionDelegate implements ActionMode.Callback,
         if (mActionMode != null) {
             mActionMode.invalidate();
         }
-    }
-
-    /**
-     * Get whether text actions from other apps are enabled.
-     *
-     * @return True if external actions are enabled.
-     */
-    public boolean areExternalActionsEnabled() {
-        return mExternalActionsEnabled;
     }
 
     /**
@@ -414,11 +397,11 @@ public class selectionDelegate implements ActionMode.Callback,
     public void onGetContentRect(final @Nullable ActionMode mode, final @Nullable View view,
                                  final @NonNull Rect outRect) {
         ThreadUtils.assertOnUiThread();
-        if (mSelection == null || mSelection.clientRect == null) {
+        if (mSelection == null || mSelection.screenRect == null) {
             return;
         }
         mSession.getClientToScreenMatrix(mTempMatrix);
-        mTempMatrix.mapRect(mTempRect, mSelection.clientRect);
+        mTempMatrix.mapRect(mTempRect, mSelection.screenRect);
         mTempRect.roundOut(outRect);
     }
 

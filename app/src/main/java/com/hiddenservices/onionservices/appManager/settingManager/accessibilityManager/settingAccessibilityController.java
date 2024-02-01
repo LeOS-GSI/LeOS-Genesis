@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Arrays;
@@ -78,7 +78,10 @@ public class settingAccessibilityController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mSettingAccessibilityViewController = new settingAccessibilityViewController(this, new settingAccessibilityController.settingAccessibilityViewCallback(), mZoom, mVoiceInput, mSeekBar, mSeekBarSample, mScalePercentage);
+        mSettingAccessibilityViewController.onInit();
+
         mSettingAccessibilityModel = new settingAccessibilityModel(new settingAccessibilityController.settingAccessibilityModelCallback());
+        mSettingAccessibilityModel.onInit();
     }
 
     private void initializeListeners() {
@@ -130,7 +133,7 @@ public class settingAccessibilityController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();

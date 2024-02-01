@@ -19,7 +19,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Arrays;
@@ -58,8 +58,10 @@ public class settingNotificationController extends AppCompatActivity {
         activityContextManager.getInstance().onStack(this);
         mNotificationManual = findViewById(R.id.pNotificationManual);
         mSettingNotificationViewController = new settingNotificationViewController(this, new settingNotificationViewCallback(), mNotificationManual);
+        mSettingNotificationViewController.onInit();
 
         mSettingNotificationModel = new settingNotificationModel(new settingNotificationModelCallback());
+        mSettingNotificationModel.onInit();
     }
 
     /*View Callbacks*/
@@ -86,7 +88,7 @@ public class settingNotificationController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();
@@ -109,6 +111,7 @@ public class settingNotificationController extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
+        super.onBackPressed();
     }
 
     @Override

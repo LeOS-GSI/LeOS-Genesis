@@ -7,15 +7,12 @@ import static com.hiddenservices.onionservices.constants.constants.CONST_GENESIS
 import static com.hiddenservices.onionservices.constants.constants.CONST_GENESIS_ERROR_CACHED_DARK;
 import static com.hiddenservices.onionservices.constants.constants.CONST_GENESIS_URL_CACHED;
 import static com.hiddenservices.onionservices.constants.constants.CONST_GENESIS_URL_CACHED_DARK;
-import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.UiThread;
 import androidx.appcompat.app.AppCompatActivity;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.dataModel.geckoDataModel;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.geckoSession;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.helperClasses.errorHandler;
-import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.helperClasses.intentHandler;
 import com.hiddenservices.onionservices.appManager.homeManager.geckoManager.helperClasses.preferencesHandler;
 import com.hiddenservices.onionservices.appManager.homeManager.homeController.homeEnums;
 import com.hiddenservices.onionservices.constants.constants;
@@ -32,7 +29,6 @@ import org.torproject.android.service.wrapper.orbotLocalConstants;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
-import java.util.List;
 
 public class navigationDelegate implements GeckoSession.NavigationDelegate {
 
@@ -63,12 +59,6 @@ public class navigationDelegate implements GeckoSession.NavigationDelegate {
     @Override
     public void onCanGoForward(@NonNull GeckoSession session, boolean var2) {
         mCanGoForward = var2;
-    }
-
-    @UiThread
-    public void onLocationChange(@NonNull GeckoSession session, @Nullable String url, final @NonNull List<GeckoSession.PermissionDelegate.ContentPermission> perms) {
-        url = "";
-
     }
 
     private String setGenesisVerificationToken(String pString) {
@@ -109,12 +99,7 @@ public class navigationDelegate implements GeckoSession.NavigationDelegate {
             mEvent.invokeObserver(Arrays.asList(mGeckoDataModel.mCurrentURL, mGeckoDataModel.mSessionID, mGeckoDataModel.mCurrentTitle, false), homeEnums.eGeckoCallback.M_LOAD_HOMEPAGE_GENESIS);
             return GeckoResult.fromValue(AllowOrDeny.DENY);
         }
-        if (!m_url.contains(constants.CONST_GENESIS_GMT_TIME_GET_KEY) && !m_url.startsWith(CONST_GENESIS_URL_CACHED) && !m_url.startsWith(CONST_GENESIS_URL_CACHED_DARK) && var1.uri.startsWith("http://167.86.99.31") && !var1.uri.contains(constants.CONST_GENESIS_LOCAL_TIME_GET_KEY) && !var1.uri.contains(constants.CONST_GENESIS_LOCAL_TIME_GET_KEY)) {
-
-            String mVerificationURL = setGenesisVerificationToken(m_url);
-            mGeckoSession.loadUri(mVerificationURL);
-            return GeckoResult.fromValue(AllowOrDeny.DENY);
-        } else if (m_url.startsWith("mailto")) {
+        if (m_url.startsWith("mailto")) {
             mEvent.invokeObserver(Arrays.asList(m_url, mGeckoDataModel.mSessionID), homeEnums.eGeckoCallback.M_ON_MAIL);
             return GeckoResult.fromValue(AllowOrDeny.ALLOW);
         } else if (m_url.contains("167.86.99.31/advert__")) {
@@ -188,7 +173,6 @@ public class navigationDelegate implements GeckoSession.NavigationDelegate {
                         }
                     }
                 } catch (Exception ex) {
-                    Log.i("asd", "asd : " + ex.getMessage());
                 }
 
                 return GeckoResult.fromValue("data:text/html," + handler.createErrorPage(var3.category, var3.code, mContext.get(), var2, mResourceURL));

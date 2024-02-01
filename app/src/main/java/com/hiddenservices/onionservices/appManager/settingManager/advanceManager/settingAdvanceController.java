@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
@@ -81,7 +81,10 @@ public class settingAdvanceController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mSettingAdvanceViewController = new settingAdvanceViewController(this, new settingAdvanceViewCallback(), mRestoreTabs, mShowWebFonts,mBackgroundMusic, mToolbarTheme, mImageOption, mTabLayoutOption);
+        mSettingAdvanceViewController.onInit();
+
         mSettingAdvanceModel = new settingAdvanceModel(new settingAdvanceModelCallback());
+        mSettingAdvanceModel.onInit();
     }
 
     public void onOpenInfo(View view) {
@@ -112,7 +115,7 @@ public class settingAdvanceController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();

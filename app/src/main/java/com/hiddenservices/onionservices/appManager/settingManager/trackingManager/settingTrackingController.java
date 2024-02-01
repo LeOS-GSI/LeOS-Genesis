@@ -22,7 +22,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,7 +65,10 @@ public class settingTrackingController extends AppCompatActivity {
 
         activityContextManager.getInstance().onStack(this);
         mSettingPrivacyViewController = new settingTrackingViewController(this, new settingTrackingController.settingAccessibilityViewCallback(), mTrackers);
+        mSettingPrivacyViewController.onInit();
+
         mSettingPrivacyModel = new settingTrackingModel(new settingTrackingController.settingAccessibilityModelCallback());
+        mSettingPrivacyModel.onInit();
     }
 
     /*View Callbacks*/
@@ -92,7 +95,7 @@ public class settingTrackingController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         if (mSettingChanged) {
             activityContextManager.getInstance().setCurrentActivity(this);
         }
@@ -113,6 +116,7 @@ public class settingTrackingController extends AppCompatActivity {
         }
         activityContextManager.getInstance().onRemoveStack(this);
         finish();
+        super.onBackPressed();
     }
 
     @Override

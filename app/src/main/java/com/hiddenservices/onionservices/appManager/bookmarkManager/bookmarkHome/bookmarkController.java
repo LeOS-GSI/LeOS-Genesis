@@ -39,7 +39,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -119,6 +119,7 @@ public class bookmarkController extends AppCompatActivity {
         mTitle = findViewById(R.id.pTitle);
 
         mbookmarkViewController = new bookmarkViewController(mEmptyListNotification, mSearchInput, mRecycleView, mClearButton, this, mMenuButton, mSearchButton, mTitle);
+        mbookmarkViewController.onInit();
     }
 
     public void initializeList() {
@@ -249,7 +250,7 @@ public class bookmarkController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         status.sSettingIsAppPaused = false;
@@ -278,6 +279,7 @@ public class bookmarkController extends AppCompatActivity {
             activityContextManager.getInstance().onRemoveStack(this);
             finish();
         }
+        super.onBackPressed();
     }
 
     @Override

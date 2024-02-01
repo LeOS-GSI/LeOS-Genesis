@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ class bookmarkSettingViewController {
     /* Private Variables */
 
     private AppCompatActivity mContext;
-    private eventObserver.eventListener mEvent;
 
     /* UI Variables */
 
@@ -25,13 +24,14 @@ class bookmarkSettingViewController {
 
     /* Initializations */
 
-    bookmarkSettingViewController(AppCompatActivity pContext, eventObserver.eventListener pEvent, EditText pBookmarName, TextView pBookmarURL) {
+    bookmarkSettingViewController(AppCompatActivity pContext, eventObserver.eventListener ignoredPEvent, EditText pBookmarName, TextView pBookmarURL) {
         this.mContext = pContext;
-        this.mEvent = pEvent;
 
         this.mBookmarName = pBookmarName;
         this.mBookmarURL = pBookmarURL;
+    }
 
+    protected void onInit(){
         initPostUI();
     }
 

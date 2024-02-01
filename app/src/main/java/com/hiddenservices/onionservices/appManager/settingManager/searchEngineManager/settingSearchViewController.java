@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.constants;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,6 @@ import java.util.List;
 class settingSearchViewController {
     /*Private Variables*/
 
-    private eventObserver.eventListener mEvent;
     private AppCompatActivity mContext;
     private ArrayList<RadioButton> mSearchEngines;
     private SwitchMaterial mSearchHistory;
@@ -30,14 +29,15 @@ class settingSearchViewController {
 
     /*Initializations*/
 
-    settingSearchViewController(settingSearchController pContext, eventObserver.eventListener pEvent, ArrayList<RadioButton> pSearchEngines, SwitchMaterial pSearchHistory, SwitchMaterial pSearchSuggestions, LinearLayout pSearchSettingOption1) {
-        this.mEvent = pEvent;
+    settingSearchViewController(settingSearchController pContext, eventObserver.eventListener ignoredPEvent, ArrayList<RadioButton> pSearchEngines, SwitchMaterial pSearchHistory, SwitchMaterial pSearchSuggestions, LinearLayout pSearchSettingOption1) {
         this.mContext = pContext;
         this.mSearchEngines = pSearchEngines;
         this.mSearchHistory = pSearchHistory;
         this.mSearchSuggestions = pSearchSuggestions;
         this.mSearchSettingOption1 = pSearchSettingOption1;
+    }
 
+    protected void onInit(){
         initViews();
         initPostUI();
     }
@@ -111,7 +111,7 @@ class settingSearchViewController {
         }
     }
 
-    public Object onTrigger(settingSearchEnums.eSearchViewController pCommands, List<Object> pData) {
+    public Object onTrigger(settingSearchEnums.eSearchViewController pCommands, List<Object> ignoredPData) {
         if (pCommands.equals(settingSearchEnums.eSearchViewController.M_INIT_SEARCH_ENGINE)) {
             initSearchEngine();
         } else if (pCommands.equals(settingSearchEnums.eSearchViewController.M_RESET_SEARCH_ENGINE)) {

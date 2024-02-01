@@ -23,7 +23,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">http://62.178.96.192:5000/</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">\u0020\u0020\u0020Opps! Something Went Wrong</string>
     <string name="GENERAL_TODO" translatable="false">TODO</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOSearch</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis Search Engine</string>
     <string name="GENERAL_LOADING" translatable="true">Online Freedom</string>
     <string name="GENERAL_RELOAD" translatable="true">Reload</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">These might be the problems you are facing \n\n• Webpage or Website might be down \n• Your Internet connection might be poor \n• You might be using a proxy \n• Website might be blocked by firewall</string>
@@ -39,12 +39,12 @@
     <!-- Home Splash Screen -->
     <string name="HOME_DESCRIPTION_TEXT_1">Secured by Tor Network</string>
     <string name="HOME_DESCRIPTION_TEXT_2">No Record and Digital Fingerprinting</string>
-    <string name="HOME_DESCRIPTION_TEXT_3">Builtin LeOSearch Engine</string>
+    <string name="HOME_DESCRIPTION_TEXT_3">Builtin LeOS-Genesis Search Engine</string>
     <string name="HOME_DESCRIPTION_TEXT_4">Tracking Protection</string>
     <string name="HOME_DESCRIPTION_TEXT_5">No Local Cache Stored</string>
     <string name="HOME_DESCRIPTION_TEXT_6">Secure Manageable Cookies</string>
     <string name="HOME_DESCRIPTION_TEXT_7">Secured by Tor Network</string>
-    <string name="HOME_DESCRIPTION_TEXT_8">Builtin LeOSearch</string>
+    <string name="HOME_DESCRIPTION_TEXT_8">Builtin LeOS-Genesis Search Engine</string>
     <string name="HOME_DESCRIPTION_TEXT_9">No Record and Digital Fingerprinting</string>
     <string name="HOME_CONNECT_NO_TOR">Secure w/o TOR</string>
     <string name="HOME_CONNECT_TOR">Dark Web - VPN</string>
@@ -85,7 +85,7 @@
 
     <!-- Alert TOR -->
     <string name="ALERT_TOR_HEADER" translatable="true">Switch Tor</string>
-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Using this you can switch between normal browsing using tory io or advance secure dark web browsing using LeOSearch</string>
+    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Using this you can switch between normal browsing using tory io or advance secure dark web browsing using LeOS-Genesis search</string>
     <string name="ALERT_TOR_TRIGGER" translatable="true">Switch</string>
 
     <!-- Alert Secure -->
@@ -102,7 +102,7 @@
     <string name="ALERT_SECURE_INFO_NONTRACKING_HEADER" translatable="true">Do Not Track</string>
     <string name="ALERT_SECURE_INFO_NONTRACKING_INFO" translatable="true">LeOS-Genesis will tell sites that you do not want to be tracked</string>
     <string name="ALERT_SECURE_INFO_TRACKING_HEADER" translatable="true">Tracking Protection</string>
-    <string name="ALERT_SECURE_INFO_TRACKING_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis Browser</string>
+    <string name="ALERT_SECURE_INFO_TRACKING_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis</string>
     <string name="ALERT_SECURE_INFO_CERTIFICATE" translatable="true">Certificate</string>
 
     <!-- Alert Certificate -->
@@ -275,8 +275,7 @@
     <string name="SETTING_SEARCH_GOOGLE" translatable="false">You  </string>
     <string name="SETTING_SEARCH_GENESIS" translatable="false">DDG</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Swisscows</string>
-    <string name="SETTING_SEARCH_BING" translatable="false">Browse articles freely</string>
-    <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>
+   <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>
     <string name="SETTING_SEARCH_SUGGESTIONS" translatable="true">Show search suggestions</string>
     <string name="SETTING_SEARCH_HISTORY_INFO" translatable="true">Suggestions from search history appear when you type in the search bar</string>
     <string name="SETTING_SEARCH_SUGGESTION_INFO" translatable="true">Focused suggestions appear when you type in the search bar</string>
@@ -319,7 +318,7 @@
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis will tell sites that you do not want to be tracked</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Do not track marker for website</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Tracking Protection</string>
-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis Browser</string>
+    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis</string>
     <string name="SETTING_PRIVACY_COOKIES" translatable="true">Cookies</string>
     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">Select cookies preferences according to your security needs</string>
     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">Clear private data on exit</string>
@@ -498,7 +497,7 @@
 
     <!-- Help -->
     <string name="HELP_RETRY" translatable="true">Retry</string>
-    <string name="HELP_RETRY_INFO" translatable="true">Opps! Network  connection error\LeOS-Genesis not connected</string>
+    <string name="HELP_RETRY_INFO" translatable="true">Opps! Network  connection error\nLeOS-Genesis not connected</string>
     <string name="HELP_TITLE" translatable="true">Support</string>
 
     <!-- Language Manager Manager -->
@@ -538,7 +537,7 @@
     <!-- Home View -->
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">Connect</string>
-    <string name="HOME_COPYRIGHT" translatable="false">Copyleft© by Orion Technologies/harvey186 | Built 1.6.1</string>
+    <string name="HOME_COPYRIGHT" translatable="false">Copyright © by Orion Technologies/harvey186 | Built 1.6.2</string>
     <string name="HOME_LOADING" translatable="true">Idle | LeOS-Genesis on standby at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">Open tabs will show here</string>
 

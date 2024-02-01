@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.hiddenservices.onionservices.appManager.activityContextManager;
@@ -79,7 +78,7 @@ public class geckoClients {
         return mSessionHidden;
     }
 
-    private geckoSession initSettings(GeckoView pGeckoView, eventObserver.eventListener pEvent, AppCompatActivity pContext, String pSessionID){
+    private geckoSession initSettings(GeckoView pGeckoView, eventObserver.eventListener ignoredPEvent, AppCompatActivity pContext, String pSessionID){
         geckoSession mSessionInitializer = new geckoSession(new geckoViewClientCallback(), pSessionID, pContext, pGeckoView);
         mSessionInitializer.getSettings().setUseTrackingProtection(status.sStatusDoNotTrack);
         mSessionInitializer.getSettings().setFullAccessibilityTree(true);
@@ -154,7 +153,6 @@ public class geckoClients {
             dataController.getInstance().initializeListData();
             onClearAll();
         }
-        //initializeIcon(context);
     }
 
     public void onReload(geckoView mNestedGeckoView, AppCompatActivity pcontext, boolean isThemeCall, boolean isDelayed) {
@@ -193,7 +191,6 @@ public class geckoClients {
         }
 
         url = helperMethod.completeURL(url);
-        Log.i("FERROR : ", "FERROR" + url);
         mSession.initURL(url);
         if (!url.startsWith(CONST_REPORT_URL) && (url.startsWith("resource://android/assets/homepage/") || url.startsWith("http://167.86.99.31/?pG") || url.startsWith("https://167.86.99.31?pG") || url.endsWith("167.86.99.31") || url.endsWith(constants.CONST_GENESIS_DOMAIN_URL_SLASHED))) {
             try {
@@ -429,13 +426,6 @@ public class geckoClients {
     }
 
     public void downloadFile(AppCompatActivity pcontext) {
-        if (helperMethod.checkPermissions(pcontext)) {
-            geckoDownloadManager mDownloadManager = mSession.getContentDelegate().getDownloadManager();
-            mSession.getDownloadHandler().downloadRequestedFile(mDownloadManager);
-        }
-    }
-
-    public void downloadFile(String mURL, AppCompatActivity pcontext) {
         if (helperMethod.checkPermissions(pcontext)) {
             geckoDownloadManager mDownloadManager = mSession.getContentDelegate().getDownloadManager();
             mSession.getDownloadHandler().downloadRequestedFile(mDownloadManager);

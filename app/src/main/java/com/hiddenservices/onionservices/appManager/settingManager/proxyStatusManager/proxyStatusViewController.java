@@ -4,14 +4,13 @@ import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.constants.strings;
@@ -33,7 +32,9 @@ class proxyStatusViewController {
         this.mOrbotStatus = pOrbotStatus;
         this.mVpnStatus = pVpnStatus;
         this.mBridgeStatus = pBridgeStatus;
+    }
 
+    protected void onInit(){
         initPostUI();
     }
 

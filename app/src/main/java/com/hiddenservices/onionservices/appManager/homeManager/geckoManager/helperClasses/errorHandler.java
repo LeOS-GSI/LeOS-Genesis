@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import org.mozilla.geckoview.WebRequestError;
 

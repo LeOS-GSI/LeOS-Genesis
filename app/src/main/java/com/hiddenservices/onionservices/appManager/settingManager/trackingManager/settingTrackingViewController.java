@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import org.mozilla.geckoview.ContentBlocking;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +20,16 @@ class settingTrackingViewController {
     /*Private Variables*/
 
     private AppCompatActivity mContext;
-    private eventObserver.eventListener mEvent;
     private ArrayList<RadioButton> mTracking;
 
     /*Initializations*/
 
-    settingTrackingViewController(AppCompatActivity pContext, eventObserver.eventListener pEvent, ArrayList<RadioButton> pTracking) {
-        this.mEvent = pEvent;
+    settingTrackingViewController(AppCompatActivity pContext, eventObserver.eventListener ignoredPEvent, ArrayList<RadioButton> pTracking) {
         this.mTracking = pTracking;
         this.mContext = pContext;
+    }
 
+    protected void onInit(){
         initViews();
         initPostUI();
     }

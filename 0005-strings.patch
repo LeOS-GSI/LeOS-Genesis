@@ -1,0 +1,2153 @@
+From abd9a534b320cc222eb67666c1ea308d59e073a7 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Thu, 1 Feb 2024 11:35:42 +0100
+Subject: [PATCH] 0005-strings
+
+---
+ app/src/main/assets/parser/content.js         |  4 +-
+ .../unproxiedConnectionController.java        |  4 +-
+ .../dataManager/suggestionDataModel.java      |  4 +-
+ .../res/layouts/home/layout/home_view.xml     |  4 +-
+ app/src/main/res/localization.xml             |  2 +-
+ app/src/main/res/values-ar/strings.xml        | 10 +--
+ app/src/main/res/values-ca/strings.xml        | 18 ++---
+ app/src/main/res/values-ch/strings.xml        | 22 +++---
+ app/src/main/res/values-de/strings.xml        | 24 +++---
+ app/src/main/res/values-el/strings.xml        | 18 ++---
+ app/src/main/res/values-fr/strings.xml        | 18 ++---
+ app/src/main/res/values-hu/strings.xml        | 22 +++---
+ app/src/main/res/values-in-rID/strings.xml    | 20 ++---
+ app/src/main/res/values-it/strings.xml        | 22 +++---
+ app/src/main/res/values-ja-rJP/strings.xml    | 16 ++--
+ app/src/main/res/values-ko/strings.xml        | 16 ++--
+ app/src/main/res/values-nl/strings.xml        | 18 ++---
+ app/src/main/res/values-pt/strings.xml        | 26 +++----
+ app/src/main/res/values-ro/strings.xml        | 18 ++---
+ app/src/main/res/values-ru/strings.xml        | 18 ++---
+ app/src/main/res/values-th/strings.xml        | 20 ++---
+ app/src/main/res/values-tr/strings.xml        | 22 +++---
+ app/src/main/res/values-uk/strings.xml        | 12 +--
+ app/src/main/res/values-ur/strings.xml        | 12 +--
+ app/src/main/res/values-vi/strings.xml        | 20 ++---
+ app/src/main/res/values-zh/strings.xml        | 16 ++--
+ app/src/main/res/values/strings.xml           | 77 +++++++++----------
+ orbotmanager/src/main/res/values/strings.xml  | 12 +--
+ 28 files changed, 247 insertions(+), 248 deletions(-)
+
+diff --git a/app/src/main/assets/parser/content.js b/app/src/main/assets/parser/content.js
+index 3e57c87b..730a307b 100755
+--- a/app/src/main/assets/parser/content.js
++++ b/app/src/main/assets/parser/content.js
+@@ -53,7 +53,7 @@ browser.runtime.onMessage.addListener((data, sender) => {
+                 el.parentNode.removeChild(el);
+         }
+     }
+-    document.cookie="VISITOR_INFO1_LIVE=oKckVSqvaGw; path=/; domain=.leos-gsi.de";
++    document.cookie="VISITOR_INFO1_LIVE=oKckVSqvaGw; path=/; domain=.LeOSearch.ddns.net";
+ 
+ });
+ 
+@@ -78,4 +78,4 @@ browser.webRequest.onBeforeRequest.addListener(
+   listener,
+   {urls: [pattern], types: ["image"]},
+   ["blocking"]
+-);
+\ No newline at end of file
++);
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
+index a360c846..4a0da291 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/appManager/unproxiedConnectionManager/unproxiedConnectionController.java
+@@ -71,7 +71,7 @@ public class unproxiedConnectionController extends AppCompatActivity {
+             }
+         }
+         System.gc();
+-        if(mURL.contains("play.google.com")){
++        if(mURL.contains("play.g**gle.com")){
+             mWebView.setWebChromeClient(new WebChromeClient());
+             mWebView.loadUrl(mURL);
+             finish();
+@@ -97,4 +97,4 @@ public class unproxiedConnectionController extends AppCompatActivity {
+         }
+     }
+ 
+-}
+\ No newline at end of file
++}
+diff --git a/app/src/main/java/com/hiddenservices/onionservices/dataManager/suggestionDataModel.java b/app/src/main/java/com/hiddenservices/onionservices/dataManager/suggestionDataModel.java
+index ac4cf191..7bbaa4fc 100644
+--- a/app/src/main/java/com/hiddenservices/onionservices/dataManager/suggestionDataModel.java
++++ b/app/src/main/java/com/hiddenservices/onionservices/dataManager/suggestionDataModel.java
+@@ -237,7 +237,7 @@ public class suggestionDataModel implements SpellCheckerSession.SpellCheckerSess
+         mHintListLocalCache.add(new historyRowModel("Gmail", "https://mail.gmail.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Duckduckgo", "https://looksmart.com", -1));
+         mHintListLocalCache.add(new historyRowModel("BBC", "https://bbc.com", -1));
+-        mHintListLocalCache.add(new historyRowModel("Youtube", "https://youtube.com", -1));
++        mHintListLocalCache.add(new historyRowModel("LeOS-GSI", "https://LeOSearch.ddns.net", -1));
+         mHintListLocalCache.add(new historyRowModel("Facebook", "https://facebook.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Twitter", "https://twitter.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Amazon", "https://amazon.com", -1));
+@@ -253,7 +253,7 @@ public class suggestionDataModel implements SpellCheckerSession.SpellCheckerSess
+         mHintListLocalCache.add(new historyRowModel("NY Times", "https://nytimes.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Apple", "https://apple.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Linkedin", "https://linkedin.com", -1));
+-        mHintListLocalCache.add(new historyRowModel("Play.Google", "https://play.google.com", -1));
++        mHintListLocalCache.add(new historyRowModel("Play.Google", "https://LeOSearch.ddns.net", -1));
+         mHintListLocalCache.add(new historyRowModel("ESPN", "https://espn.com", -1));
+         mHintListLocalCache.add(new historyRowModel("Webmd", "https://webmd.com", -1));
+         mHintListLocalCache.add(new historyRowModel("CNN", "https://cnn.com", -1));
+diff --git a/app/src/main/res/layouts/home/layout/home_view.xml b/app/src/main/res/layouts/home/layout/home_view.xml
+index e4c7be2c..1debbef6 100644
+--- a/app/src/main/res/layouts/home/layout/home_view.xml
++++ b/app/src/main/res/layouts/home/layout/home_view.xml
+@@ -140,7 +140,7 @@
+                                 android:popupElevation="0dp"
+                                 android:requiresFadingEdge="horizontal"
+                                 android:selectAllOnFocus="true"
+-                                android:text="@string/GENERAL_HOME_URL"
++                                android:text="http://LeOSearch.ddns.net"
+                                 android:textColor="@color/c_text_v1"
+                                 android:textColorHighlight="@color/c_text_color_highlight_v2"
+                                 android:textColorHint="@color/c_text_v2"
+@@ -919,4 +919,4 @@
+         app:layout_constraintVertical_weight="1"
+         tools:layout="@layout/tab_view" />
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++</androidx.constraintlayout.widget.ConstraintLayout>
+diff --git a/app/src/main/res/localization.xml b/app/src/main/res/localization.xml
+index f64bcfc1..292a7df1 100644
+--- a/app/src/main/res/localization.xml
++++ b/app/src/main/res/localization.xml
+@@ -81,7 +81,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">show browsed web links</string>
+diff --git a/app/src/main/res/values-ar/strings.xml b/app/src/main/res/values-ar/strings.xml
+index 56ee75d3..da333f7b 100644
+--- a/app/src/main/res/values-ar/strings.xml
++++ b/app/src/main/res/values-ar/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">وجه الفتاة! هناك خطأ ما</string>
+     <string name="GENERAL_TODO" translatable="true">كل شىء</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis Search Engine</string>
+     <string name="GENERAL_LOADING" translatable="true">الحرية الرقمية</string>
+     <string name="GENERAL_RELOAD" translatable="true">إعادة تحميل</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">لديك واحدة من المشاكل التالية. قد لا تعمل صفحة الويب أو موقع الويب. قد يكون اتصالك بالإنترنت معطلاً. ربما كنت تستخدم وكيل. قد يتم حظر موقع الويب بواسطة جدار حماية</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"في بعض الأحيان تحتاج إلى جسر للذهاب إلى شبكة الرحلات."</string>
+     <string name="LANDING_MORE" translatable="true">"اخبرني المزيد"</string>
+     <string name="LANDING_HELLO" translatable="true">"سلام"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"مرحبًا بك في Orion on Mobile."</string>
++    <string name="LANDING_WELCOME" translatable="true">"مرحبًا بك في LeOS-Genesis on Mobile."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"تصفح الإنترنت بأمان."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"لا تتبع ولا رقابة".</string>
+ 
+@@ -86,7 +86,7 @@
+     <!-- Orbot Logs -->
+     <string name="ORBOT_LOG" translatable="true">سجلات الوكيل</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">معلومات سجل النظام</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">إذا كنت تواجه مشكلة في الاتصال عند بدء Orion ، فالرجاء نسخ الكود التالي والعثور على المشكلة عبر الإنترنت أو إرسالها إلينا ، حتى نتمكن من محاولة مساعدتك</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">إذا كنت تواجه مشكلة في الاتصال عند بدء LeOS-Genesis ، فالرجاء نسخ الكود التالي والعثور على المشكلة عبر الإنترنت أو إرسالها إلينا ، حتى نتمكن من محاولة مساعدتك</string>
+     <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ "Orion" on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">جینیسز</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">إظهار روابط الويب التي تم تصفحها</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">ستظهر هنا علامات التبويب المفتوحة</string>
+ 
+ 
+diff --git a/app/src/main/res/values-ca/strings.xml b/app/src/main/res/values-ca/strings.xml
+index 8d4f4f77..16967ffc 100644
+--- a/app/src/main/res/values-ca/strings.xml
++++ b/app/src/main/res/values-ca/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! alguna cosa ha fallat</string>
+     <string name="GENERAL_TODO" translatable="true">tot</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">llibertat digital</string>
+     <string name="GENERAL_RELOAD" translatable="true">recarregar</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">us trobeu amb el problema següent. pot ser que la pàgina web o el lloc web no funcionin. és possible que la vostra connexió a Internet sigui deficient. és possible que utilitzeu un servidor intermediari. el tallafoc podria bloquejar el lloc web</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"De vegades cal un Bridge per arribar a la xarxa Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"EXPLICA\'M MÉS"</string>
+     <string name="LANDING_HELLO" translatable="true">"Hola"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Benvingut al Orion al mòbil".</string>
++    <string name="LANDING_WELCOME" translatable="true">"Benvingut al LeOS-Genesis al mòbil".</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Navegueu per Internet amb seguretat."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Sense seguiment. Sense censura".</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">registres de proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informació del registre del sistema</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">si teniu problemes de connectivitat mentre comenceu el Genesis, copieu el codi següent i cerqueu el problema en línia o envieu-nos-el perquè puguem intentar ajudar-vos</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">personalitzar el servidor intermediari</string>
+@@ -113,7 +113,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Reinicia</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">La Pestanya Està Tancada</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">S\'ha obert una nova pestanya</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Connexió de proxy Orion ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Connexió de proxy LeOS-Genesis ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">La memòria està plena tab Pestanya d\'esborrar</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup bloquejat</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Registres D\'errors Oberts</string>
+@@ -202,7 +202,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Configuració del sistema</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">fes de Orion el navegador predeterminat</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">fes de LeOS-Genesis el navegador predeterminat</string>
+     <string name="SETTING_HEADER" translatable="true">Configuració del sistema</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">motor de cerca</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -231,7 +231,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">mostra els enllaços web navegats</string>
+@@ -274,7 +274,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">protegir la vostra identitat en línia</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">mantingueu la vostra identitat privada. podem protegir-lo de diversos seguidors que el segueixen en línia. aquesta configuració del sistema també es pot utilitzar per bloquejar la publicitat</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">estalvieu-vos de l’usuari Survelance Protection</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion dirà als llocs que no em facin un seguiment</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis dirà als llocs que no em facin un seguiment</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">digueu al lloc web que no em faci un seguiment</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Protecció de vigilància de l\'usuari</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">habilitar la protecció contra la supervivència de l\'usuari proporcionada per Genesis</string>
+@@ -495,7 +495,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">les pestanyes obertes es mostraran aquí</string>
+ 
+ 
+@@ -517,7 +517,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Pestanyes recents</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nova identitat</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Política de privacitat</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Política de privadesa Orion Browser</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Política de privadesa LeOS-Genesis Browser</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Lloc web d\'informes</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Informeu d’un lloc web il·legal</string>
+     <string name="SETTING_SITEMAP" translatable="true">publiqueu el vostre lloc web</string>
+diff --git a/app/src/main/res/values-ch/strings.xml b/app/src/main/res/values-ch/strings.xml
+index f0256771..2e6cde83 100644
+--- a/app/src/main/res/values-ch/strings.xml
++++ b/app/src/main/res/values-ch/strings.xml
+@@ -1,14 +1,14 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+ 
+     <!-- Application Strings -->
+-    <string name="app_name" translatable="false">Orion Browser</string>
++    <string name="app_name" translatable="false">LeOS-Genesis Browser</string>
+     <string name="GENERAL_SEARCH_HINT" translatable="true">prohledat něco nebo napsat webový odkaz</string>
+     <string name="GENERAL_FIND_HINT" translatable="true">najít na stránce</string>
+     <string name="GENERAL_SEARCH_ENGINE" translatable="true">vyhledávač</string>
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">operace! něco se pokazilo</string>
+     <string name="GENERAL_TODO" translatable="true">všechno</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">digitální svoboda</string>
+     <string name="GENERAL_RELOAD" translatable="true">Znovu načíst</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">čelíte jednomu z následujících problémů. webová stránka nebo web nemusí fungovat. vaše připojení k internetu může být špatné. možná používáte proxy. web může být blokován bránou firewall</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Někdy potřebujete Bridge, abyste se dostali do Tor network"</string>
+     <string name="LANDING_MORE" translatable="true">"ŘEKNĚTE VÍCE"</string>
+     <string name="LANDING_HELLO" translatable="true">"Ahoj"</string>
+-    <string name="LANDING_WELCOME" translatable="true">„Vítejte na Orion v mobilu.“</string>
++    <string name="LANDING_WELCOME" translatable="true">„Vítejte na LeOS-Genesis v mobilu.“</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">„Bezpečně a bezpečně procházejte internet.“</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">„Žádné sledování. Žádná cenzura.“</string>
+ 
+@@ -87,8 +87,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">protokoly proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informace o systémovém protokolu</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">pokud se při spuštění Orion potýkáte s problémem s připojením, zkopírujte prosím následující kód a vyhledejte problém online nebo nám jej pošlete, abychom se vám mohli pokusit pomoci</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">pokud se při spuštění LeOS-Genesis potýkáte s problémem s připojením, zkopírujte prosím následující kód a vyhledejte problém online nebo nám jej pošlete, abychom se vám mohli pokusit pomoci</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">přizpůsobit proxy</string>
+@@ -126,7 +126,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Restartovat</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Karta Je Zavřená</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Otevřena nová karta</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy server Orion se připojuje ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy server LeOS-Genesis se připojuje ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Paměť je plná ➔ Karta Vymazání</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Vyskakovací okno blokováno</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Otevřít Chybové Protokoly</string>
+@@ -214,7 +214,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Systémové nastavení</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">nastav si Orion jako výchozí prohlížeč</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">nastav si LeOS-Genesis jako výchozí prohlížeč</string>
+     <string name="SETTING_HEADER" translatable="true">Systémové nastavení</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">vyhledávač</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">zobrazit procházené webové odkazy</string>
+@@ -286,7 +286,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">chránit vaši online identitu</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">udržujte svoji identitu v soukromí. můžeme vás chránit před několika sledovači, kteří vás sledují online. toto nastavení systému lze také použít k blokování reklamy</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">zachraňte se před ochranou Survelance uživatele</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion řekne webům, aby mě nesledovaly</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis řekne webům, aby mě nesledovaly</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">řekni webu, aby mě nesledoval</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Ochrana sledování uživatele</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">povolit uživateli Survelance Protection poskytovanou Orion</string>
+@@ -492,7 +492,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">zde se zobrazí otevřené karty</string>
+ 
+ 
+@@ -514,7 +514,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Nedávné karty</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nová identita</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Zásady ochrany osobních údajů</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Zásady ochrany osobních údajů Orion Browser</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Zásady ochrany osobních údajů LeOS-Genesis Browser</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Nahlásit web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Nahlásit nelegální web</string>
+     <string name="SETTING_SITEMAP" translatable="true">zveřejněte svůj web</string>
+diff --git a/app/src/main/res/values-de/strings.xml b/app/src/main/res/values-de/strings.xml
+index 1ecab8cd..994c0eb2 100644
+--- a/app/src/main/res/values-de/strings.xml
++++ b/app/src/main/res/values-de/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! etwas ist schief gelaufen</string>
+     <string name="GENERAL_TODO" translatable="true">alles</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">digitale Freiheit</string>
+     <string name="GENERAL_RELOAD" translatable="true">neu laden</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">Sie stehen vor einem der folgenden Probleme. Webseite oder Website funktioniert möglicherweise nicht. Ihre Internetverbindung ist möglicherweise schlecht. Möglicherweise verwenden Sie einen Proxy. Die Website wird möglicherweise von der Firewall blockiert</string>
+@@ -54,13 +54,13 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Manchmal braucht man eine Brücke, um zum Tor-Netzwerk zu gelangen"</string>
+     <string name="LANDING_MORE" translatable="true">"ERZÄHL MIR MEHR"</string>
+     <string name="LANDING_HELLO" translatable="true">"Hallo"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Willkommen bei Orion auf dem Handy."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Willkommen bei LeOS-Genesis auf dem Handy."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Durchsuchen Sie das Internet sicher und geschützt."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Keine Verfolgung. Keine Zensur."</string>
+ 
+     <!-- Alert Defaukt Browser -->
+     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Standardbrowser</string>
+-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">Orion als Standardbrowser festlegen</string>
++    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">LeOS-Genesis als Standardbrowser festlegen</string>
+     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">IT-Standard festlegen</string>
+ 
+     <!-- Alert TOR -->
+@@ -87,8 +87,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">Proxy-Protokolle</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Systemprotokollinformationen</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">Wenn beim Starten von Orion Konnektivitätsprobleme auftreten, kopieren Sie bitte den folgenden Code und suchen Sie das Problem online oder senden Sie es an uns, damit wir versuchen können, Ihnen zu helfen</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">Wenn beim Starten von LeOS-Genesis Konnektivitätsprobleme auftreten, kopieren Sie bitte den folgenden Code und suchen Sie das Problem online oder senden Sie es an uns, damit wir versuchen können, Ihnen zu helfen</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">Proxy anpassen</string>
+@@ -115,7 +115,7 @@
+     <!-- Alert Advance Log -->
+     <string name="SETTING_ADVANCE_LOG_HEADER" translatable="true">Ändern Sie die Darstellung des Systemprotokolls</string>
+     <string name="SETTING_ADVANCE_STATUS_HEADER" translatable="true">Protokoll mit moderner Listenansicht anzeigen</string>
+-    <string name="SETTING_ADVANCE_STATUS_INFO" translatable="true">Google zwischen klassischer und moderner Listenansicht</string>
++    <string name="SETTING_ADVANCE_STATUS_INFO" translatable="true">LeOSearch zwischen klassischer und moderner Listenansicht</string>
+ 
+     <!-- Generic Toast Alerts -->
+     <string name="TOAST_ALERT_BOOKMARK_REMOVED" translatable="true">Lesezeichen entfernt</string>
+@@ -214,7 +214,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Systemeinstellung</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Machen Sie Orion zu Ihrem Standardbrowser</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Machen Sie LeOS-Genesis zu Ihrem Standardbrowser</string>
+     <string name="SETTING_HEADER" translatable="true">Systemeinstellung</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">Suchmaschine</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">Geplante Weblinks anzeigen</string>
+@@ -286,10 +286,10 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">Schützen Sie Ihre Online-Identität</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">Halte deine Identität privat. Wir können Sie vor mehreren Trackern schützen, die Ihnen online folgen. Diese Systemeinstellung kann auch zum Blockieren von Werbung verwendet werden</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">Schützen Sie sich vor dem Survelance Protection des Benutzers</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion weist Websites an, mich nicht zu verfolgen</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis weist Websites an, mich nicht zu verfolgen</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Sagen Sie der Website, dass sie mich nicht verfolgen soll</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Benutzerüberwachungsschutz</string>
+-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Aktivieren Sie den von Orion bereitgestellten Benutzer-Survelance-Schutz</string>
++    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Aktivieren Sie den von LeOS-Genesis bereitgestellten Benutzer-Survelance-Schutz</string>
+     <string name="SETTING_PRIVACY_COOKIES" translatable="true">website cookies</string>
+     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">Wählen Sie die Einstellungen für Website-Cookies entsprechend Ihren Sicherheitsanforderungen aus</string>
+     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">Private Daten beim Beenden löschen</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">Hier werden geöffnete Registerkarten angezeigt</string>
+ 
+ 
+@@ -515,7 +515,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Den letzten Tabs</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Neue Identität</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Datenschutz-Bestimmungen</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser Datenschutzbestimmungen</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser Datenschutzbestimmungen</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Website melden</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Illegale Website melden</string>
+     <string name="SETTING_SITEMAP" translatable="true">Veröffentlichen Sie Ihre Website</string>
+diff --git a/app/src/main/res/values-el/strings.xml b/app/src/main/res/values-el/strings.xml
+index ceb78ea7..880cca26 100644
+--- a/app/src/main/res/values-el/strings.xml
++++ b/app/src/main/res/values-el/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">αντίθετα! κάτι πήγε στραβά</string>
+     <string name="GENERAL_TODO" translatable="true">τα παντα</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">ψηφιακή ελευθερία</string>
+     <string name="GENERAL_RELOAD" translatable="true">φορτώνω πάλι</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">αντιμετωπίζετε ένα από τα ακόλουθα προβλήματα. η ιστοσελίδα ή ο ιστότοπος ενδέχεται να μην λειτουργούν. η σύνδεσή σας στο Διαδίκτυο μπορεί να είναι κακή. μπορεί να χρησιμοποιείτε διακομιστή μεσολάβησης. Ο ιστότοπος ενδέχεται να αποκλειστεί από το τείχος προστασίας</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Μερικές φορές χρειάζεστε ένα Bridge για να φτάσετε στο Tor network"</string>
+     <string name="LANDING_MORE" translatable="true">"ΠΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ"</string>
+     <string name="LANDING_HELLO" translatable="true">"Γεια"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Καλώς ήλθατε στο Orion σε κινητό."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Καλώς ήλθατε στο LeOS-Genesis σε κινητό."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Περιηγηθείτε στο Διαδίκτυο με ασφάλεια και ασφάλεια."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Χωρίς παρακολούθηση. Χωρίς λογοκρισία."</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">αρχεία καταγραφής διακομιστή μεσολάβησης</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Πληροφορίες καταγραφής συστήματος</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">εάν αντιμετωπίζετε πρόβλημα συνδεσιμότητας κατά την έναρξη του Genesis, αντιγράψτε τον ακόλουθο κώδικα και βρείτε το πρόβλημα στο διαδίκτυο ή στείλτε τον σε εμάς, ώστε να μπορούμε να σας βοηθήσουμε</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">προσαρμογή διακομιστή μεσολάβησης</string>
+@@ -150,7 +150,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Επανεκκίνηση</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Η καρτέλα είναι κλειστή</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Άνοιξε η νέα καρτέλα</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy που συνδέει ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis proxy που συνδέει ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Η μνήμη είναι πλήρης tab Καρτέλα Εκκαθάριση</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Το αναδυόμενο παράθυρο αποκλείστηκε</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Άνοιγμα αρχείων καταγραφής σφαλμάτων</string>
+@@ -216,7 +216,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Ρυθμίσεις συστήματος</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ορίστε το Orion το προεπιλεγμένο πρόγραμμα περιήγησής σας</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ορίστε το LeOS-Genesis το προεπιλεγμένο πρόγραμμα περιήγησής σας</string>
+     <string name="SETTING_HEADER" translatable="true">Ρυθμίσεις συστήματος</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">μηχανή αναζήτησης</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -245,7 +245,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">εμφάνιση συνδέσμων ιστού που έχετε περιηγηθεί</string>
+@@ -288,7 +288,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">προστατεύστε την ηλεκτρονική σας ταυτότητα</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">κρατήστε την ταυτότητά σας απόρρητη. μπορούμε να σας προστατέψουμε από διάφορους ιχνηλάτες που σας ακολουθούν στο διαδίκτυο. Αυτή η ρύθμιση συστήματος μπορεί επίσης να χρησιμοποιηθεί για τον αποκλεισμό διαφημίσεων</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">σώστε τον εαυτό σας από την προστασία Survelance χρήστη</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Το Orion θα πει στους ιστότοπους να μην με παρακολουθούν</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Το LeOS-Genesis θα πει στους ιστότοπους να μην με παρακολουθούν</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">πείτε στον ιστότοπο να μην με παρακολουθεί</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Προστασία επιτήρησης χρήστη</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">ενεργοποιήστε την προστασία Survelance χρήστη που παρέχεται από το Genesis</string>
+@@ -495,7 +495,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">θα ανοίξουν οι καρτέλες εδώ</string>
+ 
+ 
+@@ -517,7 +517,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Πρόσφατες καρτέλες</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Νέα ταυτότητα</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Πολιτική απορρήτου</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser πολιτική απορρήτου</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser πολιτική απορρήτου</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Αναφορά ιστότοπου</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Αναφορά παράνομου ιστότοπου</string>
+     <string name="SETTING_SITEMAP" translatable="true">δημοσιεύστε τον ιστότοπό σας</string>
+diff --git a/app/src/main/res/values-fr/strings.xml b/app/src/main/res/values-fr/strings.xml
+index 309292cc..64ce495c 100644
+--- a/app/src/main/res/values-fr/strings.xml
++++ b/app/src/main/res/values-fr/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! quelque chose s\'est mal passé</string>
+     <string name="GENERAL_TODO" translatable="true">tout</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">liberté numérique</string>
+     <string name="GENERAL_RELOAD" translatable="true">recharger</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">vous êtes confronté à l\'un des problèmes suivants. la page Web ou le site Web peut ne pas fonctionner. votre connexion Internet est peut-être mauvaise. vous utilisez peut-être un proxy. le site Web peut être bloqué par le pare-feu</string>
+@@ -28,7 +28,7 @@
+     <string name="HOME_DESCRIPTION_TEXT_5">Aucun cache local stocké</string>
+     <string name="HOME_DESCRIPTION_TEXT_6">Cookies gérables sécurisés</string>
+     <string name="HOME_DESCRIPTION_TEXT_7">Sécurisé par Tor Network</string>
+-    <string name="HOME_DESCRIPTION_TEXT_8">Moteur de recherche Orion intégré</string>
++    <string name="HOME_DESCRIPTION_TEXT_8">Moteur de recherche LeOS-Genesis intégré</string>
+     <string name="HOME_DESCRIPTION_TEXT_9">Aucun enregistrement et empreinte numérique</string>
+     <string name="HOME_CONNECT_NO_TOR">Navigation normale</string>
+     <string name="HOME_CONNECT_TOR">Naviguer sur Tor</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Parfois, vous avez besoin d'un Pont pour accéder au Réseau Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"DITES MOI PLUS"</string>
+     <string name="LANDING_HELLO" translatable="true">"Bonjour"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Bienvenue au Orion sur mobile."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Bienvenue au LeOS-Genesis sur mobile."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">« Naviguer sur Internet en toute sécurité. »</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Pas de suivi. Pas de censure."</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">journaux proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informations du journal système</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">si vous rencontrez un problème de connectivité lors du démarrage de Genesis, veuillez copier le code suivant et trouver le problème en ligne ou nous l\'envoyer, afin que nous puissions essayer de vous aider</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">proxy personnaliser</string>
+@@ -215,7 +215,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Paramètres système</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faire de Orion votre navigateur par défaut</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faire de LeOS-Genesis votre navigateur par défaut</string>
+     <string name="SETTING_HEADER" translatable="true">Paramètres système</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">moteur de recherche</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">afficher les liens Web consultés</string>
+@@ -287,7 +287,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">protégez votre identité en ligne</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">gardez votre identité privée. nous pouvons vous protéger de plusieurs trackers qui vous suivent en ligne. ce paramètre système peut également être utilisé pour bloquer la publicité</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">vous épargner de la protection de surveillance des utilisateurs</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion dira aux sites de ne pas me suivre</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis dira aux sites de ne pas me suivre</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">dire au site Web de ne pas me suivre</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">User Surveillance Protection</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">activer la protection de survelance de l\'utilisateur fournie par Genesis</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">les onglets ouverts s\'afficheront ici</string>
+ 
+ 
+@@ -516,7 +516,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Onglets récents</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nouvelle identité</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Politique de confidentialité</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser Politique de confidentialité</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser Politique de confidentialité</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Signaler le site Web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Signaler un site Web illégal</string>
+     <string name="SETTING_SITEMAP" translatable="true">publier votre site web</string>
+diff --git a/app/src/main/res/values-hu/strings.xml b/app/src/main/res/values-hu/strings.xml
+index 02402a3e..bb076743 100644
+--- a/app/src/main/res/values-hu/strings.xml
++++ b/app/src/main/res/values-hu/strings.xml
+@@ -1,14 +1,14 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+ 
+     <!-- Application Strings -->
+-    <string name="app_name" translatable="false">Orion Browser</string>
++    <string name="app_name" translatable="false">LeOS-Genesis Browser</string>
+     <string name="GENERAL_SEARCH_HINT" translatable="true">keresni valamiben, vagy beírni egy weblinket</string>
+     <string name="GENERAL_FIND_HINT" translatable="true">megtalálja az oldalon</string>
+     <string name="GENERAL_SEARCH_ENGINE" translatable="true">keresőmotor</string>
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! valami elromlott</string>
+     <string name="GENERAL_TODO" translatable="true">minden</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">digitális szabadság</string>
+     <string name="GENERAL_RELOAD" translatable="true">újratöltés</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">a következő probléma egyikével áll szemben. előfordulhat, hogy egy weboldal vagy webhely nem működik. gyenge lehet az internetkapcsolat. lehet, hogy proxyt használ. előfordulhat, hogy a webhelyet tűzfal blokkolja</string>
+@@ -65,7 +65,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">Váltás Tor-ra</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Ezzel válthat a normál böngészés között a duckduckgo használatával, vagy előmozdíthatja a biztonságos sötét webböngészést az Orion keresővel</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Ezzel válthat a normál böngészés között a duckduckgo használatával, vagy előmozdíthatja a biztonságos sötét webböngészést az LeOS-Genesis keresővel</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">Váltsd át</string>
+ 
+     <!-- Alert Secure -->
+@@ -87,8 +87,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">proxy naplók</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Rendszernapló információ</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">Ha kapcsolódási problémával néz szembe az Orion indítása közben, kérjük, másolja a következő kódot, és keresse meg online a problémát, vagy küldje el nekünk, így megpróbálhatunk segíteni</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">Ha kapcsolódási problémával néz szembe az LeOS-Genesis indítása közben, kérjük, másolja a következő kódot, és keresse meg online a problémát, vagy küldje el nekünk, így megpróbálhatunk segíteni</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">proxy testreszabása</string>
+@@ -127,7 +127,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Újraindítás</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">A Lap Bezárva</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Új lap megnyílt</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy összekötő ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis proxy összekötő ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">A memória megtelt ➔ Törlés fül</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Előugró ablak</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Hiba Naplók Megnyitása</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">böngészett weblinkek megjelenítése</string>
+@@ -287,10 +287,10 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">védje online identitását</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">személyazonosságát tartsa magán. megvédhetünk több nyomkövetőtől, amelyek online nyomon követnek. ez a rendszerbeállítás a reklám blokkolására is használható</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">mentse meg magát a Survelance Protection felhasználójától</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Az Orion megmondja az oldalaknak, hogy ne kövessenek engem</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Az LeOS-Genesis megmondja az oldalaknak, hogy ne kövessenek engem</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">mondd a weboldalnak, hogy ne kövessen nyomon</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Felhasználói felügyeleti védelem</string>
+-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">engedélyezze a felhasználói Survelance Protection szolgáltatást, amelyet az Orion biztosít</string>
++    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">engedélyezze a felhasználói Survelance Protection szolgáltatást, amelyet az LeOS-Genesis biztosít</string>
+     <string name="SETTING_PRIVACY_COOKIES" translatable="true">weboldal sütik</string>
+     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">a biztonsági igényeinek megfelelően válassza ki a weboldal sütik beállításait</string>
+     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">törölje a személyes adatokat a kilépéskor</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">a megnyitott lapok itt jelennek meg</string>
+ 
+ 
+@@ -515,7 +515,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Legutóbbi lapok</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Új identitás</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Adatvédelmi irányelvek</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser adatvédelmi irányelvek</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser adatvédelmi irányelvek</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Webhely jelentése</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Illegális weboldal bejelentése</string>
+     <string name="SETTING_SITEMAP" translatable="true">tegye közzé webhelyét</string>
+diff --git a/app/src/main/res/values-in-rID/strings.xml b/app/src/main/res/values-in-rID/strings.xml
+index 87840934..5ecf4ae2 100644
+--- a/app/src/main/res/values-in-rID/strings.xml
++++ b/app/src/main/res/values-in-rID/strings.xml
+@@ -19,12 +19,12 @@
+     <!-- Home Splash Screen -->
+     <string name="HOME_DESCRIPTION_TEXT_1">Diamankan oleh Jaringan Tor</string>
+     <string name="HOME_DESCRIPTION_TEXT_2">Tanpa Rekam dan Sidik Jari Digital</string>
+-    <string name="HOME_DESCRIPTION_TEXT_3">Mesin Pencari Orion bawaan</string>
++    <string name="HOME_DESCRIPTION_TEXT_3">Mesin Pencari LeOS-Genesis bawaan</string>
+     <string name="HOME_DESCRIPTION_TEXT_4">Perlindungan Pelacakan</string>
+     <string name="HOME_DESCRIPTION_TEXT_5">Tidak Ada Cache Lokal yang Tersimpan</string>
+     <string name="HOME_DESCRIPTION_TEXT_6">Cookie Aman yang Dapat Dikelola</string>
+     <string name="HOME_DESCRIPTION_TEXT_7">Diamankan oleh Jaringan Tor</string>
+-    <string name="HOME_DESCRIPTION_TEXT_8">Mesin Pencari Orion bawaan</string>
++    <string name="HOME_DESCRIPTION_TEXT_8">Mesin Pencari LeOS-Genesis bawaan</string>
+     <string name="HOME_DESCRIPTION_TEXT_9">Tanpa Rekam dan Sidik Jari Digital</string>
+     <string name="HOME_CONNECT_NO_TOR">Penjelajahan Biasa</string>
+     <string name="HOME_CONNECT_TOR">Penjelajahan Tor</string>
+@@ -50,7 +50,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Terkadang Anda memerlukan Jembatan untuk sampai ke jaringan Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"KATAKAN LEBIH BANYAKNYA"</string>
+     <string name="LANDING_HELLO" translatable="true">"Halo"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Selamat datang di Orion di ponsel."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Selamat datang di LeOS-Genesis di ponsel."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Jelajahi internet dengan aman dan aman."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Tidak ada pelacakan. Tidak ada sensor."</string>
+ 
+@@ -83,8 +83,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">als u een verbindingsprobleem ondervindt bij het starten van Genesis, kopieer dan de volgende code en zoek het probleem online of stuur het naar ons, zodat we kunnen proberen u te helpen</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Orbot logboeken</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">if you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">if you are facing connectivity issue while starting LeOS-Genesis please copy the following code and find issue online or send it to us, so we can try to help you out </string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Setting -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">te klikken proxy aanpassen</string>
+@@ -128,7 +128,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Mulai ulang</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Tab Ditutup</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Tab baru dibuka</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proksi Orion menghubungkan ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proksi LeOS-Genesis menghubungkan ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Memori penuh Menghapus tab</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Munculan diblokir</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Buka Log Kesalahan</string>
+@@ -211,7 +211,7 @@
+ 
+     <!-- Settings -->
+     <string name="SETTING_BASIC_SETTING" translatable="true">Systeeminstelling</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">maak Orion uw standaardbrowser</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">maak LeOS-Genesis uw standaardbrowser</string>
+     <string name="SETTING_HEADER" translatable="true">Systeeminstelling</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">zoekmachine</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -277,7 +277,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">bescherm uw online identiteit</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">houd uw identiteit privé. we kunnen je beschermen tegen verschillende trackers die je online volgen. deze systeeminstelling kan ook worden gebruikt om advertenties te blokkeren</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">bespaar uzelf van Survelance Protection</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion zal sites vertellen mij niet te volgen</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis zal sites vertellen mij niet te volgen</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">vertel de website om mij niet te volgen</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Bescherming Van Gebruikersbewaking</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Schakel Survelance Protection voor gebruikers in die wordt geboden door Genesis</string>
+@@ -505,7 +505,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Tab terbaru</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Identitas baru</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Kebijakan pribadi</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser kebijakan privasi</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser kebijakan privasi</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Laporkan Situs Web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Laporkan situs web ilegal</string>
+     <string name="SETTING_SITEMAP" translatable="true">publikasikan situs web Anda</string>
+@@ -542,7 +542,7 @@
+         <item>Allow Visited</item>
+         <item>Allow Non Tracker</item>
+     </string-array>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+ 
+ 
+ </resources>
+\ No newline at end of file
+diff --git a/app/src/main/res/values-it/strings.xml b/app/src/main/res/values-it/strings.xml
+index b988d80d..bec70110 100644
+--- a/app/src/main/res/values-it/strings.xml
++++ b/app/src/main/res/values-it/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! orion è andato storto</string>
+     <string name="GENERAL_TODO" translatable="true">qualunque cosa</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">libertà digitale</string>
+     <string name="GENERAL_RELOAD" translatable="true">ricaricare</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">stai affrontando uno dei seguenti problemi. la pagina web o il sito web potrebbero non funzionare. la tua connessione Internet potrebbe essere scarsa. potresti utilizzare un proxy. il sito Web potrebbe essere bloccato dal firewall</string>
+@@ -23,12 +23,12 @@
+     <!-- Home Splash Screen -->
+     <string name="HOME_DESCRIPTION_TEXT_1">Protetto dalla rete Tor</string>
+     <string name="HOME_DESCRIPTION_TEXT_2">Nessun record e impronte digitali</string>
+-    <string name="HOME_DESCRIPTION_TEXT_3">Motore di ricerca Orion integrato</string>
++    <string name="HOME_DESCRIPTION_TEXT_3">Motore di ricerca LeOS-Genesis integrato</string>
+     <string name="HOME_DESCRIPTION_TEXT_4">Protezione da tracciamento</string>
+     <string name="HOME_DESCRIPTION_TEXT_5">Nessuna cache locale memorizzata</string>
+     <string name="HOME_DESCRIPTION_TEXT_6">Cookie gestibili sicuri</string>
+     <string name="HOME_DESCRIPTION_TEXT_7">Protetto dalla rete Tor</string>
+-    <string name="HOME_DESCRIPTION_TEXT_8">Motore di ricerca Orion integrato</string>
++    <string name="HOME_DESCRIPTION_TEXT_8">Motore di ricerca LeOS-Genesis integrato</string>
+     <string name="HOME_DESCRIPTION_TEXT_9">Nessun record e impronte digitali</string>
+     <string name="HOME_CONNECT_NO_TOR">Navigazione normale</string>
+     <string name="HOME_CONNECT_TOR">Navigazione Tor</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"A volte hai bisogno di un Bridge per arrivare a Tor network"</string>
+     <string name="LANDING_MORE" translatable="true">"Dimmi Di Più"</string>
+     <string name="LANDING_HELLO" translatable="true">"Ciao"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Benvenuto al Orion sul cellulare."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Benvenuto al LeOS-Genesis sul cellulare."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Naviga in Internet in modo sicuro e protetto."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Nessun monitoraggio. Nessuna censura."</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">registri proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informazioni sul registro di sistema</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">se stai riscontrando problemi di connettività durante l\'avvio di Genesis, copia il seguente codice e trova il problema online o invialo a noi, così possiamo provare ad aiutarti</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">personalizzazione proxy</string>
+@@ -127,7 +127,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Riavvia</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">La Scheda è Chiusa</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Nuova scheda aperta</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy Orion che si connette...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy LeOS-Genesis che si connette...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">La memoria è piena ➔ Scheda Cancellazione</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup bloccato</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Apri Log Errori</string>
+@@ -215,7 +215,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Impostazioni di sistema</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">imposta Orion come browser predefinito</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">imposta LeOS-Genesis come browser predefinito</string>
+     <string name="SETTING_HEADER" translatable="true">Impostazioni di sistema</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">motore di ricerca</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">mostra i collegamenti web esplorati</string>
+@@ -287,7 +287,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">proteggere la tua identità online</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">mantieni la tua identità privata. possiamo proteggerti da diversi tracker che ti seguono online. questa impostazione di sistema può essere utilizzata anche per bloccare la pubblicità</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">salvati dalla protezione della sorveglianza degli utenti</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion dirà ai siti di non rintracciarmi</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis dirà ai siti di non rintracciarmi</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">dì al sito web di non seguirmi</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Protezione della sorveglianza degli utenti</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">abilitare la protezione della sorveglianza dell\'utente fornita da Genesis</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">le schede aperte verranno visualizzate qui</string>
+ 
+ 
+@@ -515,7 +515,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Schede recenti</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nuova identità</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">politica sulla riservatezza</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser informativa sulla privacy</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser informativa sulla privacy</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Segnala sito web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Segnala sito web illegale</string>
+     <string name="SETTING_SITEMAP" translatable="true">pubblica il tuo sito web</string>
+diff --git a/app/src/main/res/values-ja-rJP/strings.xml b/app/src/main/res/values-ja-rJP/strings.xml
+index 04876739..cfa11ad3 100644
+--- a/app/src/main/res/values-ja-rJP/strings.xml
++++ b/app/src/main/res/values-ja-rJP/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">おっと！何かがうまくいかなかった</string>
+     <string name="GENERAL_TODO" translatable="true">すべて</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">デジタルの自由</string>
+     <string name="GENERAL_RELOAD" translatable="true">リロード</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">次のいずれかの問題が発生しています。ウェブページまたはウェブサイトが機能していない可能性があります。インターネット接続が悪い可能性があります。プロキシを使用している可能性があります。ウェブサイトがファイアウォールによってブロックされている可能性があります</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">「Torネットワーク」にアクセスするために「ブリッジ」が必要になる場合があります</string>
+     <string name="LANDING_MORE" translatable="true">「もっと教えて」</string>
+     <string name="LANDING_HELLO" translatable="true">「こんにちは」</string>
+-    <string name="LANDING_WELCOME" translatable="true">「モバイルで Orion へようこそ。」</string>
++    <string name="LANDING_WELCOME" translatable="true">「モバイルで LeOS-Genesis へようこそ。」</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">「インターネットを安全かつ確実に閲覧してください。」</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">「追跡なし。検閲なし。」</string>
+ 
+@@ -65,7 +65,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">Torに切り替えます</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">これを使用すると、duckduckgo を使用した通常のブラウジングと、Orion 検索を使用した高度な安全なダーク Web ブラウジングを切り替えることができます</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">これを使用すると、duckduckgo を使用した通常のブラウジングと、LeOS-Genesis 検索を使用した高度な安全なダーク Web ブラウジングを切り替えることができます</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">切り替えます</string>
+ 
+     <!-- Alert Secure -->
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">プロキシログ</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">システムログ情報</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">Genesisの開始中に接続の問題が発生した場合は、次のコードをコピーしてオンラインで問題を見つけるか、送信してください。サポートを提供します。</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">プロキシのカスタマイズ</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">閲覧したWebリンクを表示する</string>
+@@ -379,7 +379,7 @@
+     <string name="ALERT_SECURE" translatable="false">https://</string>
+     <string name="ALERT_REPORT" translatable="true">報告する</string>
+     <string name="ALERT_REPORT_URL" translatable="true">レポートのウェブサイト</string>
+-    <string name="ALERT_REPORT_URL_INFO" translatable="true">このURLが違法または迷惑であると思われる場合は、Googleに報告してください。そうすれば、法的措置を取ることができます。</string>
++    <string name="ALERT_REPORT_URL_INFO" translatable="true">このURLが違法または迷惑であると思われる場合は、LeOSearchに報告してください。そうすれば、法的措置を取ることができます。</string>
+     <string name="ALERT_REPORT_URL_SUCCESS" translatable="true">正常に報告されました</string>
+     <string name="ALERT_REPORT_URL_SUCCESS_INFO" translatable="true">URLが正常に報告されました。何かが見つかった場合、法的措置が取られます</string>
+     <string name="ALERT_LANGUAGE_SUPPORT_FAILURE" translatable="true">言語はサポートされていません</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">開いているタブがここに表示されます</string>
+ 
+ 
+@@ -507,7 +507,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">最近のタブ</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">新しいアイデンティティ</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">個人情報保護方針</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser プライバシーポリシー</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser プライバシーポリシー</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">レポートのウェブサイト</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">違法なウェブサイトを報告する</string>
+     <string name="SETTING_SITEMAP" translatable="true">あなたのウェブサイトを公開する</string>
+diff --git a/app/src/main/res/values-ko/strings.xml b/app/src/main/res/values-ko/strings.xml
+index 2dac8ab9..b171df9a 100644
+--- a/app/src/main/res/values-ko/strings.xml
++++ b/app/src/main/res/values-ko/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! 뭔가 잘못 됐어</string>
+     <string name="GENERAL_TODO" translatable="true">모두</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">디지털 자유</string>
+     <string name="GENERAL_RELOAD" translatable="true">재 장전</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">다음 문제 중 하나에 직면하고 있습니다. 웹 페이지 또는 웹 사이트가 작동하지 않을 수 있습니다. 인터넷 연결 상태가 좋지 않을 수 있습니다. 프록시를 사용하고있을 수 있습니다. 웹 사이트가 방화벽에 의해 차단 될 수 있음</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"때때로 Tor 네트워크에 도달하려면 브리지가 필요합니다."</string>
+     <string name="LANDING_MORE" translatable="true">"추가 정보"</string>
+     <string name="LANDING_HELLO" translatable="true">"안녕하세요"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"모바일 Orion 에 오신 것을 환영합니다."</string>
++    <string name="LANDING_WELCOME" translatable="true">"모바일 LeOS-Genesis 에 오신 것을 환영합니다."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"안전하고 안전하게 인터넷을 탐색하십시오."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"추적 없음. 검열 없음."</string>
+ 
+@@ -65,7 +65,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">토르로 전환합니다</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">이를 사용하여 duckduckgo를 사용하여 일반 브라우징을 전환하거나 Orion 검색을 사용하여 고급 보안 다크 웹 브라우징을 진행할 수 있습니다</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">이를 사용하여 duckduckgo를 사용하여 일반 브라우징을 전환하거나 LeOS-Genesis 검색을 사용하여 고급 보안 다크 웹 브라우징을 진행할 수 있습니다</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">전환하십시오</string>
+ 
+     <!-- Alert Secure -->
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">프록시 로그</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">시스템 로그 정보</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">Genesis을 시작하는 동안 연결 문제가 발생하는 경우 다음 코드를 복사하여 온라인에서 문제를 찾거나 저희에게 보내 주시면 도움을 드릴 수 있습니다.</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">프록시 사용자 정의</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">탐색 한 웹 링크 표시</string>
+@@ -379,7 +379,7 @@
+     <string name="ALERT_SECURE" translatable="false">https://</string>
+     <string name="ALERT_REPORT" translatable="true">보고서</string>
+     <string name="ALERT_REPORT_URL" translatable="true">웹 사이트 신고</string>
+-    <string name="ALERT_REPORT_URL_INFO" translatable="true">이 URL이 불법이거나 방해가된다고 생각되는 경우 Google에 신고하여 법적 조치를 취할 수 있습니다.</string>
++    <string name="ALERT_REPORT_URL_INFO" translatable="true">이 URL이 불법이거나 방해가된다고 생각되는 경우 LeOSearch에 신고하여 법적 조치를 취할 수 있습니다.</string>
+     <string name="ALERT_REPORT_URL_SUCCESS" translatable="true">성공적으로보고되었습니다</string>
+     <string name="ALERT_REPORT_URL_SUCCESS_INFO" translatable="true">URL이 성공적으로보고되었습니다. 무언가가 발견되면 법적 조치가 취해질 것입니다.</string>
+     <string name="ALERT_LANGUAGE_SUPPORT_FAILURE" translatable="true">지원되지 않는 언어</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">열린 탭이 여기에 표시됩니다.</string>
+ 
+ 
+@@ -547,7 +547,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">최근 탭</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">새로운 정체성</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">개인 정보 정책</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser 개인 정보 보호 정책</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser 개인 정보 보호 정책</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">웹 사이트 신고</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">불법 웹 사이트 신고</string>
+     <string name="SETTING_SITEMAP" translatable="true">웹 사이트 게시</string>
+diff --git a/app/src/main/res/values-nl/strings.xml b/app/src/main/res/values-nl/strings.xml
+index 2be21d5d..5f508455 100644
+--- a/app/src/main/res/values-nl/strings.xml
++++ b/app/src/main/res/values-nl/strings.xml
+@@ -50,7 +50,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Soms heb je een Bridge nodig om bij Tor-netwerk te komen"</string>
+     <string name="LANDING_MORE" translatable="true">"VERTEL ME MEER"</string>
+     <string name="LANDING_HELLO" translatable="true">"Hallo"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Welkom bij Orion op mobiel."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Welkom bij LeOS-Genesis op mobiel."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Browse veilig op internet."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Geen tracking. Geen censuur."</string>
+ 
+@@ -83,8 +83,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">Proxylogboeken</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Logboeken Info</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">Orion op standby op dit moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting LeOS-Genesis please copy the following code and find issue online or send it to us, so we can try to help you out </string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">LeOS-Genesis op standby op dit moment</string>
+ 
+     <!-- Orbot View -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">Te Drukken Proxy-instellingen</string>
+@@ -198,7 +198,7 @@
+     <!-- Settings -->
+     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Blader vrij door artikelen</string>
+     <string name="SETTING_SEARCH_NAME_BING" translatable="true">Zoek van microsoft</string>
+-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Zoek via Google</string>
++    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Zoek via LeOSearch</string>
+     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">Volgbeveiliging zoeken</string>
+ 
+     <string name="SETTING_PRIVACY_POPUP" translatable="true">Pop-up blokkeren | Schakel over om pop-upadvertentie uit te schakelen</string>
+@@ -210,7 +210,7 @@
+ 
+     <!-- Settings -->
+     <string name="SETTING_BASIC_SETTING" translatable="true">Basisinstellingen</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Stel Orion in als uw standaardbrowser</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Stel LeOS-Genesis in als uw standaardbrowser</string>
+     <string name="SETTING_HEADER" translatable="true">Instellingen</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">Zoekmachine</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">Javascript</string>
+@@ -275,7 +275,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">Bescherm uw online identiteit</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">Houd uw identiteit voor uzelf. We kunnen je beschermen tegen verschillende trackers die volgen wat je online doet. Trackingbeveiliging kan ook worden gebruikt om advertenties te blokkeren</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">Niet Volgen</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion zal sites vertellen dat u niet wilt worden gevolgd</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis zal sites vertellen dat u niet wilt worden gevolgd</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Volg geen marker voor website</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Bescherming Tegen Volgen</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Schakel trackingbeveiliging in die wordt geboden door Genesis</string>
+@@ -485,7 +485,7 @@
+ 
+     <!-- Home View -->
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+-    <string name="HOME_LOADING" translatable="true">Idle | Orion on standby at the moment</string>
++    <string name="HOME_LOADING" translatable="true">Idle | LeOS-Genesis on standby at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">Open tabbladen worden hier weergegeven</string>
+ 
+     <!-- Error Page -->
+@@ -507,7 +507,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Recente tabbladen</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nieuwe identiteit</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Privacybeleid</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser privacybeleid</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser privacybeleid</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Website melden</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Meld illegale website</string>
+     <string name="SETTING_SITEMAP" translatable="true">publiceer uw website</string>
+@@ -528,7 +528,7 @@
+ 
+     <string-array name="search_engines" translatable="true">
+         <item>Hidden Web</item>
+-        <item>Google</item>
++        <item>LeOSearch</item>
+         <item>Duck Duck Go</item>
+     </string-array>
+ 
+diff --git a/app/src/main/res/values-pt/strings.xml b/app/src/main/res/values-pt/strings.xml
+index 6bb8035f..2d4bb265 100644
+--- a/app/src/main/res/values-pt/strings.xml
++++ b/app/src/main/res/values-pt/strings.xml
+@@ -1,14 +1,14 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+ 
+     <!-- Application Strings -->
+-    <string name="app_name" translatable="false">Orion Browser</string>
++    <string name="app_name" translatable="false">LeOS-Genesis Browser</string>
+     <string name="GENERAL_SEARCH_HINT" translatable="true">pesquise algo ou digite um link da web</string>
+     <string name="GENERAL_FIND_HINT" translatable="true">encontrar na página</string>
+     <string name="GENERAL_SEARCH_ENGINE" translatable="true">motor de busca</string>
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! algo deu errado</string>
+     <string name="GENERAL_TODO" translatable="true">todo</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis Search Engine</string>
+     <string name="GENERAL_LOADING" translatable="true">digital freedom</string>
+     <string name="GENERAL_RELOAD" translatable="true">recarregar</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">você está enfrentando um dos seguintes problemas. página da Web ou site pode não estar funcionando. sua conexão com a internet pode estar ruim. você pode estar usando um proxy. site pode estar bloqueado por firewall</string>
+@@ -23,12 +23,12 @@
+     <!-- Home Splash Screen -->
+     <string name="HOME_DESCRIPTION_TEXT_1">Protegido pela Rede Tor</string>
+     <string name="HOME_DESCRIPTION_TEXT_2">Sem registro e impressão digital</string>
+-    <string name="HOME_DESCRIPTION_TEXT_3">Mecanismo de busca Orion integrado</string>
++    <string name="HOME_DESCRIPTION_TEXT_3">Mecanismo de busca LeOS-Genesis integrado</string>
+     <string name="HOME_DESCRIPTION_TEXT_4">Proteção de rastreamento</string>
+     <string name="HOME_DESCRIPTION_TEXT_5">Nenhum cache local armazenado</string>
+     <string name="HOME_DESCRIPTION_TEXT_6">Cookies gerenciáveis ​​seguros</string>
+     <string name="HOME_DESCRIPTION_TEXT_7">Protegido pela Rede Tor</string>
+-    <string name="HOME_DESCRIPTION_TEXT_8">Mecanismo de busca Orion integrado</string>
++    <string name="HOME_DESCRIPTION_TEXT_8">Mecanismo de busca LeOS-Genesis integrado</string>
+     <string name="HOME_DESCRIPTION_TEXT_9">Sem registro e impressão digital</string>
+     <string name="HOME_CONNECT_NO_TOR">Navegação Normal</string>
+     <string name="HOME_CONNECT_TOR">Navegação Tor</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Às vezes você precisa de uma ponte para chegar ao Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"DIGA-ME MAIS"</string>
+     <string name="LANDING_HELLO" translatable="true">"Olá"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Bem-vindo ao Orion no celular."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Bem-vindo ao LeOS-Genesis no celular."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Navegue na Internet com segurança e segurança."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Sem rastreamento. Sem censura."</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">logs de proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informações de registro do sistema</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">se você estiver enfrentando problemas de conectividade ao iniciar o Orion, copie o código a seguir e encontre o problema online ou envie-o para nós, para que possamos tentar ajudá-lo</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">personalização de proxy</string>
+@@ -127,7 +127,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Reiniciar</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">A Guia Está Fechada</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Nova guia aberta</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy Orion conectando ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Proxy LeOS-Genesis conectando ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">A memória está cheia ➔ Guia Limpar</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup bloqueado</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Abrir Registros De Erros</string>
+@@ -215,7 +215,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Configuração de sistema</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faça do Orion seu navegador padrão</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faça do LeOS-Genesis seu navegador padrão</string>
+     <string name="SETTING_HEADER" translatable="true">Configuração de sistema</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">motor de busca</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">mostrar links da web navegados</string>
+@@ -287,7 +287,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">proteja sua identidade online</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">mantenha sua identidade privada. podemos protegê-lo de vários rastreadores que o seguem online. esta configuração do sistema também pode ser usada para bloquear anúncios</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">salve-se do usuário Survelance Protection</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion dirá aos sites para não me rastrear</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis dirá aos sites para não me rastrear</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">diga ao site para não me rastrear</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Proteção de Vigilância do Usuário</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">habilitar o usuário Survelance Protection fornecido pelo Orion</string>
+@@ -409,7 +409,7 @@
+     <string name="ALERT_DATA_CLEARED" translatable="true">dados apagados | é necessário reiniciar</string>
+ 
+ 
+-    <string name="HOME_MENU__ORBOT_LOGS" translatable="true">Orion Logs</string>
++    <string name="HOME_MENU__ORBOT_LOGS" translatable="true">LeOS-Genesis Logs</string>
+     <string name="HOME_MENU__NEW_TABS" translatable="true">novas guias</string>
+     <string name="HOME_MENU_CLOSE_TABS" translatable="true">aba fechada</string>
+     <string name="HOME_MENU_OPEN_RECENT_TABS" translatable="true">abrir abas recentes</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">abas abertas serão mostradas aqui</string>
+ 
+ 
+@@ -508,7 +508,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Guia recente</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nova identidade</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Política de privacidade</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser política de privacidade</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser política de privacidade</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Site Do Relatório</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Denunciar sites ilegais</string>
+     <string name="SETTING_SITEMAP" translatable="true">publique seu site</string>
+diff --git a/app/src/main/res/values-ro/strings.xml b/app/src/main/res/values-ro/strings.xml
+index 9eeb549e..79f91516 100644
+--- a/app/src/main/res/values-ro/strings.xml
++++ b/app/src/main/res/values-ro/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! ceva nu a mers bine</string>
+     <string name="GENERAL_TODO" translatable="true">Tot</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">libertatea digitală</string>
+     <string name="GENERAL_RELOAD" translatable="true">reîncărcați</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">vă confruntați cu una dintre următoarele probleme. este posibil ca pagina web sau site-ul web să nu funcționeze. conexiunea la internet ar putea fi slabă. s-ar putea să utilizați un proxy. site-ul web ar putea fi blocat de firewall</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Uneori aveți nevoie de un Bridge pentru a ajunge la rețeaua Tor”</string>
+     <string name="LANDING_MORE" translatable="true">„SPUNEȚI-MA MAI MULT”</string>
+     <string name="LANDING_HELLO" translatable="true">„Bună ziua”</string>
+-    <string name="LANDING_WELCOME" translatable="true">„Bun venit la Orion pe mobil”.</string>
++    <string name="LANDING_WELCOME" translatable="true">„Bun venit la LeOS-Genesis pe mobil”.</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">„Răsfoiți internetul în siguranță.”</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Fără urmărire. Fără cenzură."</string>
+ 
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">jurnale proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Informații jurnal sistem</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">dacă vă confruntați cu o problemă de conectivitate în timp ce începeți Genesis, vă rugăm să copiați următorul cod și să găsiți problema online sau să ni-l trimiteți, astfel încât să putem încerca să vă ajutăm</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">personalizare proxy</string>
+@@ -127,7 +127,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Reporniți</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Fila Este închisă</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">S-a deschis o filă nouă</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Conectarea proxy-ului Orion ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Conectarea proxy-ului LeOS-Genesis ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Memoria este plină tab fila Clearing</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup blocat</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Deschideți Jurnalele De Erori</string>
+@@ -215,7 +215,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Setarea sistemului</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faceți din Orion browserul dvs. implicit</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">faceți din LeOS-Genesis browserul dvs. implicit</string>
+     <string name="SETTING_HEADER" translatable="true">Setarea sistemului</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">motor de căutare</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">afișați link-uri web navigate</string>
+@@ -287,7 +287,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">protejează-ți identitatea online</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">păstrați-vă identitatea privată. vă putem proteja de mai mulți trackere care vă urmăresc online. această setare de sistem poate fi utilizată și pentru a bloca reclama</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">salvați-vă de protecția împotriva supravegherii utilizatorului</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion le va spune site-urilor să nu mă urmărească</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis le va spune site-urilor să nu mă urmărească</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">spuneți site-ului web să nu mă urmărească</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Protecția supravegherii utilizatorilor</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">activați protecția împotriva supravegherii utilizatorului oferită de Genesis</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">filele deschise se vor afișa aici</string>
+ 
+ 
+@@ -516,7 +516,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Filele recente</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Identitate nouă</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Politica de confidențialitate</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser politica de confidențialitate</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser politica de confidențialitate</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Raportați site-ul web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Raportați site-ul ilegal</string>
+     <string name="SETTING_SITEMAP" translatable="true">publică-ți site-ul web</string>
+diff --git a/app/src/main/res/values-ru/strings.xml b/app/src/main/res/values-ru/strings.xml
+index dd7b8d5a..f5ac10e5 100644
+--- a/app/src/main/res/values-ru/strings.xml
++++ b/app/src/main/res/values-ru/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">опп! что-то пошло не так</string>
+     <string name="GENERAL_TODO" translatable="true">все</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">цифровая свобода</string>
+     <string name="GENERAL_RELOAD" translatable="true">перезагрузить</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">вы столкнулись с одной из следующих проблем. веб-страница или веб-сайт могут не работать. ваше интернет-соединение может быть плохим. вы можете использовать прокси. веб-сайт может быть заблокирован брандмауэром</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">Иногда вам нужен Мост, чтобы попасть в сеть Tor.</string>
+     <string name="LANDING_MORE" translatable="true">"РАССКАЗАТЬ БОЛЬШЕ"</string>
+     <string name="LANDING_HELLO" translatable="true">«Привет»</string>
+-    <string name="LANDING_WELCOME" translatable="true">«Добро пожаловать в Orion на мобильном телефоне».</string>
++    <string name="LANDING_WELCOME" translatable="true">«Добро пожаловать в LeOS-Genesis на мобильном телефоне».</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">«Работайте в Интернете безопасно и надежно».</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">«Без отслеживания. Без цензуры».</string>
+ 
+@@ -87,7 +87,7 @@
+     <string name="ORBOT_LOG" translatable="true">журналы прокси</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Информация системного журнала</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">Если вы столкнулись с проблемой подключения при запуске Genesis, скопируйте следующий код и найдите проблему в Интернете или отправьте ее нам, чтобы мы могли помочь вам</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">прокси настроить</string>
+@@ -126,7 +126,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Перезагрузка</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Вкладка закрыта</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Открыта новая вкладка</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Прокси Orion подключается ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Прокси LeOS-Genesis подключается ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Память заполнена ➔ Вкладка «Очистка»</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Всплывающее окно заблокировано</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Открыть журнал ошибок</string>
+@@ -214,7 +214,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Системные настройки</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">сделайте Orion браузером по умолчанию</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">сделайте LeOS-Genesis браузером по умолчанию</string>
+     <string name="SETTING_HEADER" translatable="true">Системные настройки</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">поисковый движок</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">показать просмотренные веб-ссылки</string>
+@@ -286,7 +286,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">защитить свою личность в Интернете</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">сохраняйте свою личность в тайне. мы можем защитить вас от нескольких трекеров, которые следят за вами в Интернете. эту Системную настройку также можно использовать для блокировки рекламы</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">спасти себя от защиты от неожиданности пользователя</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion скажет сайтам не отслеживать меня</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis скажет сайтам не отслеживать меня</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">скажи сайту не отслеживать меня</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Защита пользователей от наблюдения</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">включить защиту от скрытности пользователей, предоставляемую Genesis</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">открытые вкладки будут отображаться здесь</string>
+ 
+ 
+@@ -514,7 +514,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Недавние вкладки</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Новая личность</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Политика конфиденциальности</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Политика конфиденциальности Orion Browser</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Политика конфиденциальности LeOS-Genesis Browser</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Веб-сайт отчета</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Сообщить о незаконном веб-сайте</string>
+     <string name="SETTING_SITEMAP" translatable="true">опубликуйте свой сайт</string>
+diff --git a/app/src/main/res/values-th/strings.xml b/app/src/main/res/values-th/strings.xml
+index c0258b02..3172f605 100644
+--- a/app/src/main/res/values-th/strings.xml
++++ b/app/src/main/res/values-th/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">อป! มีบางอย่างผิดพลาด</string>
+     <string name="GENERAL_TODO" translatable="true">ทุกอย่าง</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">เสรีภาพดิจิทัล</string>
+     <string name="GENERAL_RELOAD" translatable="true">โหลดใหม่</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">คุณกำลังประสบปัญหาอย่างใดอย่างหนึ่งต่อไปนี้ หน้าเว็บหรือเว็บไซต์อาจไม่ทำงาน การเชื่อมต่ออินเทอร์เน็ตของคุณอาจไม่ดี คุณอาจใช้พร็อกซี เว็บไซต์อาจถูกปิดกั้นโดยไฟร์วอลล์</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"บางครั้งคุณต้องการ สะพาน เพื่อไปที่ เครือข่ายทอร์"</string>
+     <string name="LANDING_MORE" translatable="true">"บอกฉันเพิ่มเติม"</string>
+     <string name="LANDING_HELLO" translatable="true">"สวัสดี"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"ยินดีต้อนรับสู่ Orion บนมือถือ"</string>
++    <string name="LANDING_WELCOME" translatable="true">"ยินดีต้อนรับสู่ LeOS-Genesis บนมือถือ"</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"ท่องอินเทอร์เน็ตอย่างปลอดภัย"</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"ไม่มีการติดตาม ไม่มีการเซ็นเซอร์"</string>
+ 
+@@ -87,8 +87,8 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">บันทึกพร็อกซี</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">ข้อมูลบันทึกระบบ</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">หากคุณประสบปัญหาการเชื่อมต่อในขณะที่เริ่มต้น Orion โปรดคัดลอกรหัสต่อไปนี้และค้นหาปัญหาทางออนไลน์หรือส่งมาให้เราเพื่อที่เราจะได้ช่วยเหลือคุณ</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">หากคุณประสบปัญหาการเชื่อมต่อในขณะที่เริ่มต้น LeOS-Genesis โปรดคัดลอกรหัสต่อไปนี้และค้นหาปัญหาทางออนไลน์หรือส่งมาให้เราเพื่อที่เราจะได้ช่วยเหลือคุณ</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">ปรับแต่งพร็อกซี</string>
+@@ -127,7 +127,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">เริ่มใหม่</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">แท็บถูกปิด</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">เปิดแท็บใหม่แล้ว</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">การเชื่อมต่อพร็อกซี Orion ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">การเชื่อมต่อพร็อกซี LeOS-Genesis ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">หน่วยความจำเต็ม ➔ กำลังล้างแท็บ</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">ป๊อปอัปถูกบล็อก</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">เปิดบันทึกข้อผิดพลาด</string>
+@@ -214,7 +214,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">การตั้งค่าระบบ</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ทำให้ Orion เป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">ทำให้ LeOS-Genesis เป็นเบราว์เซอร์เริ่มต้นของคุณ</string>
+     <string name="SETTING_HEADER" translatable="true">การตั้งค่าระบบ</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">เครื่องมือค้นหา</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">จาวาสคริปต์</string>
+@@ -243,7 +243,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">แสดงลิงค์เว็บที่เรียกดู</string>
+@@ -286,7 +286,7 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">ปกป้องตัวตนออนไลน์ของคุณ</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">รักษาตัวตนของคุณไว้เป็นส่วนตัว เราสามารถปกป้องคุณจากเครื่องมือติดตามต่างๆที่ติดตามคุณทางออนไลน์ การตั้งค่าระบบนี้ยังสามารถใช้เพื่อบล็อกโฆษณา</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">ช่วยตัวเองจาก Survelance Protection ของผู้ใช้</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion จะบอกไซต์ต่างๆไม่ให้ติดตามฉัน</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis จะบอกไซต์ต่างๆไม่ให้ติดตามฉัน</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">บอกเว็บไซต์อย่าติดตามฉัน</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">การป้องกันการเฝ้าระวังผู้ใช้</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">เปิดใช้งาน Survelance Protection ของผู้ใช้โดย Genesis</string>
+@@ -493,7 +493,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">แท็บที่เปิดจะแสดงที่นี่</string>
+ 
+ 
+@@ -515,7 +515,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">แท็บล่าสุด</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">เอกลักษณ์ใหม่</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">นโยบายความเป็นส่วนตัว</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser นโยบายความเป็นส่วนตัว</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser นโยบายความเป็นส่วนตัว</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">รายงานเว็บไซต์</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">รายงานเว็บไซต์ที่ผิดกฎหมาย</string>
+     <string name="SETTING_SITEMAP" translatable="true">เผยแพร่เว็บไซต์ของคุณ</string>
+diff --git a/app/src/main/res/values-tr/strings.xml b/app/src/main/res/values-tr/strings.xml
+index 25353455..eb22ea28 100644
+--- a/app/src/main/res/values-tr/strings.xml
++++ b/app/src/main/res/values-tr/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! bir şeyler ters gitti</string>
+     <string name="GENERAL_TODO" translatable="true">her şey</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">dijital özgürlük</string>
+     <string name="GENERAL_RELOAD" translatable="true">Tekrar yükle</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">aşağıdaki problemlerden biriyle karşı karşıyasınız. web sayfası veya web sitesi çalışmıyor olabilir. İnternet bağlantınız zayıf olabilir. bir proxy kullanıyor olabilirsiniz. web sitesi güvenlik duvarı tarafından engelleniyor olabilir</string>
+@@ -38,7 +38,7 @@
+     <string name="SHORTCUT_ERASE_LONG_LABEL" translatable="false">Taranan web sitesini sil</string>
+     <string name="SHORTCUT_ERASE_AND_OPEN_SHORT_LABEL" translatable="false">Verilerinizi silin ve tarayıcıyı açın</string>
+     <string name="SHORTCUT_ERASE_AND_OPEN_LONG_LABEL" translatable="false">Tarayıcı önbelleğini sil</string>
+-    <string name="SHORTCUT_OPEN" translatable="false">Orion tarayıcısını yeniden başlatın</string>
++    <string name="SHORTCUT_OPEN" translatable="false">LeOS-Genesis tarayıcısını yeniden başlatın</string>
+     <string name="SHORTCUT_OPEN_LONG" translatable="false">Tarayıcınızı Yeniden Başlatın</string>
+ 
+     <!-- Bookmark Setting -->
+@@ -65,7 +65,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">Tor\'a Geç</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Bunu kullanarak, Duckduckgo\'yu kullanarak normal tarama arasında geçiş yapabilir veya Orion aramayı kullanarak gelişmiş güvenli karanlık web taraması yapabilirsiniz</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Bunu kullanarak, Duckduckgo\'yu kullanarak normal tarama arasında geçiş yapabilir veya LeOS-Genesis aramayı kullanarak gelişmiş güvenli karanlık web taraması yapabilirsiniz</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">Değiştir</string>
+ 
+     <!-- Alert Secure -->
+@@ -88,7 +88,7 @@
+     <string name="ORBOT_LOG" translatable="true">proxy günlükleri</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Sistem Günlüğü bilgisi</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">Genesis\'e başlarken bağlantı sorunu yaşıyorsanız, lütfen aşağıdaki kodu kopyalayın ve çevrimiçi sorunu bulun veya bize gönderin, böylece size yardımcı olmaya çalışabiliriz</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">proxy özelleştirmek</string>
+@@ -124,7 +124,7 @@
+     <!-- Settings -->
+     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Makalelere özgürce göz atın</string>
+     <string name="SETTING_SEARCH_NAME_BING" translatable="true">Microsoft\'tan arayın</string>
+-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Google\'dan arayın</string>
++    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">LeOSearch\'dan arayın</string>
+     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">İzleme koruması araması</string>
+ 
+     <string name="SETTING_PRIVACY_POPUP" translatable="true">Açılır Pencereyi Engelle | Açılır Reklamı Devre Dışı Bırakmak için Geçiş Yap</string>
+@@ -149,7 +149,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Yeniden Başlat</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Sekme Kapalı</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Yeni sekme açıldı</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy bağlanıyor...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis proxy bağlanıyor...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Bellek dolu ➔ Sekme temizleniyor</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Pop-up engellendi</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Hata Günlüklerini Aç</string>
+@@ -244,7 +244,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">taranan web bağlantılarını göster</string>
+@@ -287,10 +287,10 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">çevrimiçi kimliğinizi koruyun</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">kimliğinizi gizli tutun. Sizi çevrimiçi olarak takip eden birkaç izleyiciden koruyabiliriz. bu Sistem Ayarı, reklamı engellemek için de kullanılabilir</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">kendinizi kullanıcı Survelance Protection\'dan kurtarın</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion sitelere beni izlememelerini söyleyecek</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis sitelere beni izlememelerini söyleyecek</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">web sitesine beni takip etmemesini söyle</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Kullanıcı Gözetim Koruması</string>
+-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Orion tarafından sağlanan kullanıcı Survelance Protection\'ı etkinleştirin</string>
++    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">LeOS-Genesis tarafından sağlanan kullanıcı Survelance Protection\'ı etkinleştirin</string>
+     <string name="SETTING_PRIVACY_COOKIES" translatable="true">web sitesi çerezleri</string>
+     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">güvenlik ihtiyaçlarınıza göre web sitesi çerez tercihlerini seçin</string>
+     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">çıkışta özel verileri temizle</string>
+@@ -494,7 +494,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">açık sekmeler burada gösterilecek</string>
+ 
+ 
+@@ -515,7 +515,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Son sekmeler</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Yeni kimlik</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Gizlilik Politikası</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser gizlilik ilkesi</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser gizlilik ilkesi</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Web sitesini bildir</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Yasadışı web sitesini bildirin</string>
+     <string name="SETTING_SITEMAP" translatable="true">web sitenizi yayınlayın</string>
+diff --git a/app/src/main/res/values-uk/strings.xml b/app/src/main/res/values-uk/strings.xml
+index 849b0a5c..8e481777 100644
+--- a/app/src/main/res/values-uk/strings.xml
++++ b/app/src/main/res/values-uk/strings.xml
+@@ -51,7 +51,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Іноді вам потрібен Міст, щоб дістатися до мережі Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"РОЗКАЖІТЬ БІЛЬШЕ"</string>
+     <string name="LANDING_HELLO" translatable="true">"Привіт"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Ласкаво просимо до Orion на мобільному."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Ласкаво просимо до LeOS-Genesis на мобільному."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Переглядайте Інтернет безпечно та надійно."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Без відстеження. Без цензури."</string>
+ 
+@@ -83,7 +83,7 @@
+     <!-- Orbot Log -->
+     <string name="ORBOT_LOG" translatable="true">Журнали проксі</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Інформація про журнали</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
++    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting LeOS-Genesis please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+     <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">Буття в режимі очікування на даний момент</string>
+ 
+     <!-- Orbot View -->
+@@ -199,7 +199,7 @@
+     <!-- Settings -->
+     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Переглядайте статті вільно</string>
+     <string name="SETTING_SEARCH_NAME_BING" translatable="true">Пошук від microsoft</string>
+-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Шукайте в Google</string>
++    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Шукайте в LeOSearch</string>
+     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">Пошук захисту від стеження</string>
+ 
+     <string name="SETTING_PRIVACY_POPUP" translatable="true">Блокувати спливаюче вікно | Перемкніть, щоб Вимкнути спливаючу рекламу</string>
+@@ -486,7 +486,7 @@
+ 
+     <!-- Home View -->
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+-    <string name="HOME_LOADING" translatable="true">Idle | Orion on standby at the moment</string>
++    <string name="HOME_LOADING" translatable="true">Idle | LeOS-Genesis on standby at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">Тут відкриються відкриті вкладки</string>
+ 
+     <!-- Error Page -->
+@@ -508,7 +508,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Останні вкладки</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Нова ідентичність</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Політика конфіденційності</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser Політика конфіденційності</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser Політика конфіденційності</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Веб-сайт звітів</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Повідомити про незаконний веб-сайт</string>
+     <string name="SETTING_SITEMAP" translatable="true">опублікуйте свій веб-сайт</string>
+@@ -529,7 +529,7 @@
+ 
+     <string-array name="search_engines" translatable="true">
+         <item>Hidden Web</item>
+-        <item>Google</item>
++        <item>LeOSearch</item>
+         <item>Duck Duck Go</item>
+     </string-array>
+ 
+diff --git a/app/src/main/res/values-ur/strings.xml b/app/src/main/res/values-ur/strings.xml
+index b2e88724..b60750c5 100644
+--- a/app/src/main/res/values-ur/strings.xml
++++ b/app/src/main/res/values-ur/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">اوپپس! کچھ غلط ہو گیا ہے</string>
+     <string name="GENERAL_TODO" translatable="true">سب کچھ</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis Search Engine</string>
+     <string name="GENERAL_LOADING" translatable="true">ڈیجیٹل آزادی</string>
+     <string name="GENERAL_RELOAD" translatable="true">دوبارہ لوڈ کریں</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">آپ کو مندرجہ ذیل میں سے ایک مسئلہ درپیش ہے۔ ہوسکتا ہے کہ ویب صفحہ یا ویب سائٹ کام نہیں کررہی ہے۔ ہوسکتا ہے کہ آپ کا انٹرنیٹ کنیکشن خراب ہو۔ آپ شاید ایک پراکسی استعمال کر رہے ہوں گے۔ ہوسکتا ہے کہ ویب سائٹ فائر وال کے ذریعے مسدود کردی جائے</string>
+@@ -54,7 +54,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"کبھی کبھی آپ کو ٹور نیٹ ورک جانے کے لئے برج کی ضرورت ہوتی ہے"</string>
+     <string name="LANDING_MORE" translatable="true">"مجھے مزید بتائیں"</string>
+     <string name="LANDING_HELLO" translatable="true">"ہیلو"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"موبائل پر Orion میں خوش آمدید۔"</string>
++    <string name="LANDING_WELCOME" translatable="true">"موبائل پر LeOS-Genesis میں خوش آمدید۔"</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"انٹرنیٹ کو محفوظ طریقے سے براؤز کریں۔"</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"کوئی ٹریکنگ نہیں۔ کوئی سنسرشپ نہیں ہے۔"</string>
+ 
+@@ -64,7 +64,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">ٹور پر سوئچ کریں۔</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">اس کا استعمال کرتے ہوئے آپ duckduckgo کا استعمال کرتے ہوئے عام براؤزنگ کے درمیان سوئچ کر سکتے ہیں یا Orion سرچ کا استعمال کرتے ہوئے محفوظ ڈارک ویب براؤزنگ کو آگے بڑھا سکتے ہیں۔</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">اس کا استعمال کرتے ہوئے آپ duckduckgo کا استعمال کرتے ہوئے عام براؤزنگ کے درمیان سوئچ کر سکتے ہیں یا LeOS-Genesis سرچ کا استعمال کرتے ہوئے محفوظ ڈارک ویب براؤزنگ کو آگے بڑھا سکتے ہیں۔</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">اسے سوئچ کریں۔</string>
+ 
+     <!-- Alert Secure -->
+@@ -87,7 +87,7 @@
+     <string name="ORBOT_LOG" translatable="true">پراکسی لاگز</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">سسٹم لاگ انفارمیشن</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">اگر آپ جینیسز کو شروع کرتے وقت رابطہ کے مسئلے کا سامنا کر رہے ہیں تو ، براہ کرم مندرجہ ذیل کوڈ کو کاپی کریں اور مسئلہ آن لائن تلاش کریں یا ہمیں بھیجیں ، لہذا ہم آپ کی مدد کرنے کی کوشش کر سکتے ہیں</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">پراکسی اپنی مرضی کے مطابق بنائیں</string>
+@@ -242,7 +242,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">جینیسز</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">براؤزڈ ویب لنکس دکھائیں</string>
+@@ -492,7 +492,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">کھلی ٹیبز یہاں دکھائی دیں گی</string>
+ 
+ 
+diff --git a/app/src/main/res/values-vi/strings.xml b/app/src/main/res/values-vi/strings.xml
+index 243871af..de9c722d 100644
+--- a/app/src/main/res/values-vi/strings.xml
++++ b/app/src/main/res/values-vi/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! có gì đó không ổn</string>
+     <string name="GENERAL_TODO" translatable="true">mọi điều</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">tự do kỹ thuật số</string>
+     <string name="GENERAL_RELOAD" translatable="true">tải lại</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">bạn đang phải đối mặt với một trong những vấn đề sau. trang web hoặc trang web có thể không hoạt động. kết nối internet của bạn có thể kém. bạn có thể đang sử dụng proxy. trang web có thể bị tường lửa chặn</string>
+@@ -53,7 +53,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">"Đôi khi bạn cần một Cầu nối để truy cập Mạng Tor"</string>
+     <string name="LANDING_MORE" translatable="true">"NÓI CHO TÔI THÊM"</string>
+     <string name="LANDING_HELLO" translatable="true">"Xin chào"</string>
+-    <string name="LANDING_WELCOME" translatable="true">"Chào mừng bạn đến với Orion trên điện thoại di động."</string>
++    <string name="LANDING_WELCOME" translatable="true">"Chào mừng bạn đến với LeOS-Genesis trên điện thoại di động."</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">"Duyệt Internet một cách an toàn và bảo mật."</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">"Không theo dõi. Không kiểm duyệt."</string>
+ 
+@@ -86,7 +86,7 @@
+     <string name="ORBOT_LOG" translatable="true">nhật ký proxy</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Thông tin nhật ký hệ thống</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">nếu bạn gặp sự cố kết nối khi khởi động Genesis, vui lòng sao chép mã sau và tìm sự cố trực tuyến hoặc gửi cho chúng tôi, để chúng tôi có thể cố gắng giúp bạn</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">tùy chỉnh proxy</string>
+@@ -125,7 +125,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Khởi động lại</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Tab Bị đóng</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">Tab mới đã mở</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy kết nối ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis proxy kết nối ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Bộ nhớ đầy ➔ Xóa tab</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Cửa sổ bật lên bị chặn</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Mở Nhật Ký Lỗi</string>
+@@ -212,7 +212,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Thiết lập hệ thống</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">đặt Orion làm trình duyệt mặc định của bạn</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">đặt LeOS-Genesis làm trình duyệt mặc định của bạn</string>
+     <string name="SETTING_HEADER" translatable="true">Thiết lập hệ thống</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">máy tìm kiếm</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
+@@ -241,7 +241,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">hiển thị các liên kết web đã duyệt</string>
+@@ -284,10 +284,10 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">bảo vệ danh tính trực tuyến của bạn</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">giữ bí mật danh tính của bạn. chúng tôi có thể bảo vệ bạn khỏi một số trình theo dõi theo dõi bạn trực tuyến. Cài đặt Hệ thống này cũng có thể được sử dụng để chặn quảng cáo</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">cứu bản thân khỏi tính năng Bảo vệ sự ngạc nhiên của người dùng</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion sẽ yêu cầu các trang web không theo dõi tôi</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis sẽ yêu cầu các trang web không theo dõi tôi</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">yêu cầu trang web không theo dõi tôi</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Bảo vệ giám sát người dùng</string>
+-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">kích hoạt tính năng Bảo vệ Survelance của người dùng do Orion cung cấp</string>
++    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">kích hoạt tính năng Bảo vệ Survelance của người dùng do LeOS-Genesis cung cấp</string>
+     <string name="SETTING_PRIVACY_COOKIES" translatable="true">cookie trang web</string>
+     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">chọn tùy chọn cookie trang web theo nhu cầu bảo mật của bạn</string>
+     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">xóa dữ liệu cá nhân khi thoát</string>
+@@ -491,7 +491,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">các tab đang mở sẽ hiển thị ở đây</string>
+ 
+ 
+@@ -513,7 +513,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">Các tab gần đây</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">Nhận dạng mới</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Chính sách bảo mật</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser chính sách về quyền riêng tư</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser chính sách về quyền riêng tư</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Báo cáo trang web</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Báo cáo trang web bất hợp pháp</string>
+     <string name="SETTING_SITEMAP" translatable="true">xuất bản trang web của bạn</string>
+diff --git a/app/src/main/res/values-zh/strings.xml b/app/src/main/res/values-zh/strings.xml
+index 6aaedd4f..12ba93a7 100644
+--- a/app/src/main/res/values-zh/strings.xml
++++ b/app/src/main/res/values-zh/strings.xml
+@@ -8,7 +8,7 @@
+     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">哎呀！出问题了</string>
+     <string name="GENERAL_TODO" translatable="true">一切</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
+     <string name="GENERAL_LOADING" translatable="true">数字自由</string>
+     <string name="GENERAL_RELOAD" translatable="true">重装</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">您正面临以下问题之一。网页或网站可能无法正常工作。您的互联网连接可能不佳。您可能正在使用代理。网站可能被防火墙阻止</string>
+@@ -53,7 +53,7 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">“有时你需要一个 桥 来访问 Tor 网络 ”</string>
+     <string name="LANDING_MORE" translatable="true">“告诉我更多”</string>
+     <string name="LANDING_HELLO" translatable="true">“你好”</string>
+-    <string name="LANDING_WELCOME" translatable="true">“欢迎使用手机拨打 Orion 。”</string>
++    <string name="LANDING_WELCOME" translatable="true">“欢迎使用手机拨打 LeOS-Genesis 。”</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">“安全可靠地浏览互联网。”</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">“没有跟踪。没有审查。”</string>
+ 
+@@ -63,7 +63,7 @@
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">切换到 Tor</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">使用它，您可以在使用 duckduckgo 进行正常浏览或使用 Orion 搜索进行高级安全暗网浏览之间切换</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">使用它，您可以在使用 duckduckgo 进行正常浏览或使用 LeOS-Genesis 搜索进行高级安全暗网浏览之间切换</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">切换它</string>
+ 
+     <!-- Alert Secure -->
+@@ -86,7 +86,7 @@
+     <string name="ORBOT_LOG" translatable="true">代理日志</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">系统日志信息</string>
+     <string name="ORBOT_LOG_INFO" translatable="true">如果您在开始Genesis时遇到连接问题，请复制以下代码并在线查找问题或发送给我们，以便我们为您提供帮助</string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">代理自定义</string>
+@@ -125,7 +125,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">重启</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">标签已关闭</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">新标签打开</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion 代理连接...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis 代理连接...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">内存已满 ➔ 清除选项卡</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">弹出窗口被阻止</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">打开错误日志</string>
+@@ -241,7 +241,7 @@
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">default</string>
+     <string name="SETTING_SEARCH_GENESIS" translatable="false">Genesis</string>
+     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
+     <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
+     <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_HISTORY" translatable="true">显示浏览的网页链接</string>
+@@ -491,7 +491,7 @@
+ 
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">connect</string>
+-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
++    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">打开的标签将显示在这里</string>
+ 
+ 
+@@ -512,7 +512,7 @@
+     <string name="HOME_MENU_OPEN_RECENT_TAB" translatable="true">最近的标签</string>
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">新身份</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">隐私政策</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion Browser 隐私政策</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis Browser 隐私政策</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">报告网站</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">举报非法网站</string>
+     <string name="SETTING_SITEMAP" translatable="true">发布您的网站</string>
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index f3d9ed11..9d4966f8 100755
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -15,22 +15,22 @@
+ 
+     <!-- Application Strings -->
+     <string name="mode" translatable="false">Day</string>
+-    <string name="app_name" translatable="false">Orion Browser</string>
++    <string name="app_name" translatable="false">LeOS-Genesis Browser</string>
+     <string name="GENERAL_DEFAULT_TEXT" translatable="false">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+     <string name="GENERAL_SEARCH_HINT" translatable="true">Search or type a web address</string>
+     <string name="GENERAL_FIND_HINT" translatable="true">Find in page</string>
+     <string name="GENERAL_SEARCH_ENGINE" translatable="true">Search Engine</string>
+-    <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
++    <string name="GENERAL_HOME_URL" translatable="false">http://62.178.96.192:5000/</string>
+     <string name="GENERAL_ERROR_TITLE" translatable="true">\u0020\u0020\u0020Opps! Something Went Wrong</string>
+     <string name="GENERAL_TODO" translatable="false">TODO</string>
+-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion Search Engine</string>
++    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis Search Engine</string>
+     <string name="GENERAL_LOADING" translatable="true">Online Freedom</string>
+     <string name="GENERAL_RELOAD" translatable="true">Reload</string>
+     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">These might be the problems you are facing \n\n• Webpage or Website might be down \n• Your Internet connection might be poor \n• You might be using a proxy \n• Website might be blocked by firewall</string>
+     <string name="GENERAL_FILE_PROVIDER_AUTHORITY" translatable="false">com.hiddenservices.onionservices.provider</string>
+     <string name="GENERAL_DEFAULT_HINT_SUGGESTION" translatable="false">BBC | Israel Strikes Again</string>
+     <string name="GENERAL_HIDDEN_WEB" translatable="false">Search the web ...</string>
+-    <string name="GENERAL_SUPPORT_ORION_BROWSER" translatable="true">Support Orion Browser</string>
++    <string name="GENERAL_SUPPORT_ORION_BROWSER" translatable="true">Support LeOS-Genesis Browser</string>
+     <string name="GENERAL_FIX" translatable="true">Fix Browser</string>
+     <string name="GENERAL_FIX_DESCRIPTION" translatable="true">Reset browser to default settings</string>
+     <string name="GENERAL_CICADA" translatable="true">Cicada 3301</string>
+@@ -39,12 +39,12 @@
+     <!-- Home Splash Screen -->
+     <string name="HOME_DESCRIPTION_TEXT_1">Secured by Tor Network</string>
+     <string name="HOME_DESCRIPTION_TEXT_2">No Record and Digital Fingerprinting</string>
+-    <string name="HOME_DESCRIPTION_TEXT_3">Builtin Orion Search Engine</string>
++    <string name="HOME_DESCRIPTION_TEXT_3">Builtin LeOS-Genesis Search Engine</string>
+     <string name="HOME_DESCRIPTION_TEXT_4">Tracking Protection</string>
+     <string name="HOME_DESCRIPTION_TEXT_5">No Local Cache Stored</string>
+     <string name="HOME_DESCRIPTION_TEXT_6">Secure Manageable Cookies</string>
+     <string name="HOME_DESCRIPTION_TEXT_7">Secured by Tor Network</string>
+-    <string name="HOME_DESCRIPTION_TEXT_8">Builtin Orion Search Engine</string>
++    <string name="HOME_DESCRIPTION_TEXT_8">Builtin LeOS-Genesis Search Engine</string>
+     <string name="HOME_DESCRIPTION_TEXT_9">No Record and Digital Fingerprinting</string>
+     <string name="HOME_CONNECT_NO_TOR">Secure w/o TOR</string>
+     <string name="HOME_CONNECT_TOR">Dark Web - VPN</string>
+@@ -74,18 +74,18 @@
+     <string name="LANDING_BRIDGES_INFO" translatable="true">Sometimes you need a Bridge to get to Tor Network</string>
+     <string name="LANDING_MORE" translatable="true">TELL ME MORE</string>
+     <string name="LANDING_HELLO" translatable="true">Hello"</string>
+-    <string name="LANDING_WELCOME" translatable="true">Welcome to Orion on mobile</string>
++    <string name="LANDING_WELCOME" translatable="true">Welcome to LeOS-Genesis on mobile</string>
+     <string name="LANDING_BROWSE_INFO" translatable="true">Browse the internet how you expect you should</string>
+     <string name="LANDING_NO_TRACKING" translatable="true">No tracking. No censorship</string>
+ 
+     <!-- Alert Defaukt Browser -->
+     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Defaut Browser</string>
+-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">set orion as your default browser</string>
++    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">set LeOS-Genesis as your default browser</string>
+     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">Set Default</string>
+ 
+     <!-- Alert TOR -->
+     <string name="ALERT_TOR_HEADER" translatable="true">Switch Tor</string>
+-    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Using this you can switch between normal browsing using tory io or advance secure dark web browsing using Orion search</string>
++    <string name="ALERT_TOR_DESCRIPTION" translatable="true">Using this you can switch between normal browsing using tory io or advance secure dark web browsing using LeOS-Genesis search</string>
+     <string name="ALERT_TOR_TRIGGER" translatable="true">Switch</string>
+ 
+     <!-- Alert Secure -->
+@@ -100,9 +100,9 @@
+     <string name="ALERT_SECURE_INFO_JAVASCRIPT_HEADER" translatable="true">Javascript</string>
+     <string name="ALERT_SECURE_INFO_JAVASCRIPT_INFO" translatable="true">Keep your identity safe and use the options below</string>
+     <string name="ALERT_SECURE_INFO_NONTRACKING_HEADER" translatable="true">Do Not Track</string>
+-    <string name="ALERT_SECURE_INFO_NONTRACKING_INFO" translatable="true">Orion will tell sites that you do not want to be tracked</string>
++    <string name="ALERT_SECURE_INFO_NONTRACKING_INFO" translatable="true">LeOS-Genesis will tell sites that you do not want to be tracked</string>
+     <string name="ALERT_SECURE_INFO_TRACKING_HEADER" translatable="true">Tracking Protection</string>
+-    <string name="ALERT_SECURE_INFO_TRACKING_INFO" translatable="true">Enable tracking protection provided by Orion</string>
++    <string name="ALERT_SECURE_INFO_TRACKING_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis</string>
+     <string name="ALERT_SECURE_INFO_CERTIFICATE" translatable="true">Certificate</string>
+ 
+     <!-- Alert Certificate -->
+@@ -111,8 +111,8 @@
+     <!-- Orbot Logs -->
+     <string name="ORBOT_LOG" translatable="true">Proxy Logs</string>
+     <string name="ORBOT_LOG_HEADER" translatable="true">Logs Info</string>
+-    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting Orion please copy the following code and find issue online or send it to us, so we can try to help you out </string>
+-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">~&#160;Orion on standby at the moment</string>
++    <string name="ORBOT_LOG_INFO" translatable="true">If you are facing connectivity issue while starting LeOS-Genesis please copy the following code and find issue online or send it to us, so we can try to help you out </string>
++    <string name="ORBOT_LOG_LOADING_STATIC" translatable="true">~&#160;LeOS-Genesis on standby at the moment</string>
+ 
+     <!-- Orbot Settings -->
+     <string name="ORBOT_SETTING_HEADER" translatable="true">Proxy Settings</string>
+@@ -153,7 +153,7 @@
+     <string name="TOAST_ALERT_RESTART" translatable="true">Restart</string>
+     <string name="TOAST_ALERT_UNDO_INFO" translatable="true">Tab Closed</string>
+     <string name="TOAST_ALERT_OPEN_NEW_TAB" translatable="true">New tab opened</string>
+-    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">Orion proxy connecting ...</string>
++    <string name="TOAST_ALERT_ORBOT_LOADING" translatable="true" tools:ignore="TypographyEllipsis">LeOS-Genesis proxy connecting ...</string>
+     <string name="TOAST_ALERT_MAX_TAB_POPUP" translatable="true">Memory full &#160; ➔ &#160; Clearing tab</string>
+     <string name="TOAST_ALERT_SETTING_PRIVACY_POPUP" translatable="true">Popup blocked</string>
+     <string name="TOAST_ALERT_ORBOT_LOADING_BUTTON" translatable="true">Open Logs</string>
+@@ -231,8 +231,8 @@
+     <!-- Settings -->
+     <string name="SETTING_SEARCH_NAME_WIKIPEDIA_Name" translatable="false">Wikipedia</string>
+     <string name="SETTING_SEARCH_NAME_WIKIPEDIA" translatable="true">Browse articles freely</string>
+-    <string name="SETTING_SEARCH_NAME_BING" translatable="true">Search from microsoft</string>
+-    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">Search from google</string>
++    <string name="SETTING_SEARCH_NAME_BING" translatable="true">Search from Swisscows</string>
++    <string name="SETTING_SEARCH_NAME_GOOGLE" translatable="true">You</string>
+     <string name="SETTING_SEARCH_NAME_DUCKDUCKGO" translatable="true">Tracking protection search</string>
+ 
+     <string name="SETTING_PRIVACY_POPUP" translatable="true">Block Popup | Toggle to Disable Popup Advert</string>
+@@ -244,7 +244,7 @@
+ 
+     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
+     <string name="SETTING_BASIC_SETTING" translatable="true">Basic Settings</string>
+-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Make Orion your default browser</string>
++    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Make LeOS-Genesis your default browser</string>
+     <string name="SETTING_HEADER" translatable="true">Settings</string>
+     <string name="SETTING_SEARCH_ENGINE" translatable="true">Search Engine</string>
+     <string name="SETTING_JAVASCRIPT" translatable="true">Javascript</string>
+@@ -271,12 +271,11 @@
+     <string name="SETTING_SEARCH_HEADER_2" translatable="true">Search setting</string>
+     <string name="SETTING_SEARCH_HEADER_2_INFO" translatable="true">Manage how searches appear</string>
+     <string name="SETTING_SEARCH_DEFAULT" translatable="false">Default Engine (Recommended)</string>
+-    <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
+-    <string name="SETTING_SEARCH_DUCK" translatable="false">Duckduckgo (Recommended)</string>
+-    <string name="SETTING_SEARCH_GOOGLE" translatable="false">Google by Google inc</string>
+-    <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing by Microsoft</string>
+-    <string name="SETTING_SEARCH_BING" translatable="false">Browse articles freely</string>
+-    <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>
++    <string name="SETTING_SEARCH_DUCK" translatable="false">LeOSearch (Recommended)</string>
++    <string name="SETTING_SEARCH_GOOGLE" translatable="false">You  </string>
++    <string name="SETTING_SEARCH_GENESIS" translatable="false">DDG</string>
++    <string name="SETTING_SEARCH_AMAZON" translatable="false">Swisscows</string>
++   <string name="SETTING_SEARCH_HISTORY" translatable="true">Show search history</string>
+     <string name="SETTING_SEARCH_SUGGESTIONS" translatable="true">Show search suggestions</string>
+     <string name="SETTING_SEARCH_HISTORY_INFO" translatable="true">Suggestions from search history appear when you type in the search bar</string>
+     <string name="SETTING_SEARCH_SUGGESTION_INFO" translatable="true">Focused suggestions appear when you type in the search bar</string>
+@@ -316,10 +315,10 @@
+     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">Protect your online identity</string>
+     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">Keep your identity to your self. We can protect you from several trackers that follow what you do online. Tracking protection can also be used to block advertisement</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">Do Not Track</string>
+-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion will tell sites that you do not want to be tracked</string>
++    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis will tell sites that you do not want to be tracked</string>
+     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Do not track marker for website</string>
+     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Tracking Protection</string>
+-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Enable tracking protection provided by Orion</string>
++    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Enable tracking protection provided by LeOS-Genesis</string>
+     <string name="SETTING_PRIVACY_COOKIES" translatable="true">Cookies</string>
+     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">Select cookies preferences according to your security needs</string>
+     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">Clear private data on exit</string>
+@@ -362,11 +361,11 @@
+     <string name="SETTING_ADVANCE_IMAGE_OPTION_3" translatable="true">Block all images</string>
+     <string name="SETTING_ADVANCE" translatable="true">Advanced</string>
+     <string name="SETTING_ADVANCE_INFO" translatable="true">Restore tabs, data saver, developer tools</string>
+-    <string name="SETTING_PROXY" translatable="true">Orion Proxy Status</string>
+-    <string name="SETTING_PROXY_INFO" translatable="true">Check orion network or status</string>
++    <string name="SETTING_PROXY" translatable="true">LeOS-Genesis Proxy Status</string>
++    <string name="SETTING_PROXY_INFO" translatable="true">Check LeOS-Genesis network or status</string>
+     <string name="SETTING_REPORT" translatable="true">Report website</string>
+     <string name="SETTING_PRIVACY_POLICY" translatable="true">Privacy Policy</string>
+-    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">Orion browser privacy policy</string>
++    <string name="SETTING_PRIVACY_POLICY_INFO" translatable="true">LeOS-Genesis browser privacy policy</string>
+     <string name="SETTING_REPORT_WEBSITE" translatable="true">Report Website</string>
+     <string name="SETTING_REPORT_WEBSITE_INFO" translatable="true">Report website you find disturbing</string>
+     <string name="SETTING_SITEMAP" translatable="true">Sitemap</string>
+@@ -418,7 +417,7 @@
+     <string name="ALERT_REPORT_URL_SUCCESS_INFO" translatable="true">URL was reported successfully. If something found, legal action will be taken</string>
+     <string name="ALERT_LANGUAGE_SUPPORT_FAILURE" translatable="true">Language not supported</string>
+     <string name="ALERT_LANGUAGE_SUPPORT_FAILURE_INFO" translatable="true">System language is not supported by this application. We are working to include it soon</string>
+-    <string name="ALERT_ORBOT_INIT" translatable="true">Initializing Orion</string>
++    <string name="ALERT_ORBOT_INIT" translatable="true">Initializing LeOS-Genesis</string>
+     <string name="ALERT_NOT_SUPPORTED" translatable="true">Action not supported</string>
+     <string name="ALERT_NOT_SUPPORTED_INFO" translatable="true">No application found to handle the following command</string>
+     <string name="ALERT_WELCOME_MESSAGE" translatable="true">Welcome | Hidden  Web Gateway</string>
+@@ -442,14 +441,14 @@
+     <string name="ALERT_DATA_CLEARED" translatable="true">Data Cleared | Restart Required</string>
+     <string name="ALERT_DATA_CLEARED_SHORTCUT" translatable="false">Data Cleared Successfully</string>
+     <string name="ALERT_DATA_CLEARED_INFO_SHORTCUT" translatable="false">Private data cleared successfully. Application will close in a moment. Now you can safely continue browsing</string>
+-    <string name="ALERT_DATA_CLEARED_BUTTON" translatable="false">Closing Orion Please Wait ...</string>
+-    <string name="ALERT_ORBOT_LOADING" translatable="false">Orion Connecting ...</string>
++    <string name="ALERT_DATA_CLEARED_BUTTON" translatable="false">Closing LeOS-Genesis Please Wait ...</string>
++    <string name="ALERT_ORBOT_LOADING" translatable="false">LeOS-Genesis Connecting ...</string>
+     <string name="ALERT_CRASH" translatable="false">Application closed unexpectedly</string>
+     <string name="ALERT_CRASH_INFO" translatable="false"><b><font color='#f32323'>Request New Bridge &#160;</font></b>&#160;Application crashed due to unexpected error. We are looking into the issue mean while you can continue with this application</string>
+ 
+     <!-- Popup Menu -->
+     <string name="HOME_MENU__NEW_CIRCUIT" translatable="true">New identity</string>
+-    <string name="HOME_MENU__ORBOT_LOGS" translatable="true">Orion Logs</string>
++    <string name="HOME_MENU__ORBOT_LOGS" translatable="true">LeOS-Genesis Logs</string>
+     <string name="HOME_MENU__NEW_TABS" translatable="true">New tabs</string>
+     <string name="HOME_MENU_CLOSE_TABS" translatable="true">Close Tab</string>
+     <string name="HOME_MENU_OPEN_RECENT_TABS" translatable="true">Open Recent Tabs</string>
+@@ -498,7 +497,7 @@
+ 
+     <!-- Help -->
+     <string name="HELP_RETRY" translatable="true">Retry</string>
+-    <string name="HELP_RETRY_INFO" translatable="true">Opps! Network  connection error\nOrion not connected</string>
++    <string name="HELP_RETRY_INFO" translatable="true">Opps! Network  connection error\nLeOS-Genesis not connected</string>
+     <string name="HELP_TITLE" translatable="true">Support</string>
+ 
+     <!-- Language Manager Manager -->
+@@ -524,8 +523,8 @@
+     <!-- Proxy Status -->
+     <string name="PROXY_STATUS_HEADER" translatable="true">Proxy Status</string>
+     <string name="ORBOT_PROXY_STATUS_INFO" translatable="true">Current status of orbot proxy</string>
+-    <string name="PROXY_SUB_HEADER1" translatable="true">orion Proxy Status</string>
+-    <string name="PROXY_SUB_HEADER2" translatable="true">orion &amp; Bridges Status</string>
++    <string name="PROXY_SUB_HEADER1" translatable="true">LeOS-Genesis Proxy Status</string>
++    <string name="PROXY_SUB_HEADER2" translatable="true">LeOS-Genesis &amp; Bridges Status</string>
+     <string name="PROXY_VPN_STATUS" translatable="true">VPN connectivity status</string>
+     <string name="PROXY_BRIDGE_STATUS" translatable="true">Bridge connectivity status</string>
+     <string name="PROXY_SUB_HEADER3" translatable="true">INFO | Change Settings</string>
+@@ -538,8 +537,8 @@
+     <!-- Home View -->
+     <string name="HOME_TAB_TEXT" translatable="true">1</string>
+     <string name="HOME_CONNECT" translatable="false">Connect</string>
+-    <string name="HOME_COPYRIGHT" translatable="false">Copyright © by Orion Technologies | Built 1.0.2.2</string>
+-    <string name="HOME_LOADING" translatable="true">Idle | Orion on standby at the moment</string>
++    <string name="HOME_COPYRIGHT" translatable="false">Copyright © by Orion Technologies/harvey186 | Built 1.6.2</string>
++    <string name="HOME_LOADING" translatable="true">Idle | LeOS-Genesis on standby at the moment</string>
+     <string name="HOME_TAB_EMPTY" translatable="true">Open tabs will show here</string>
+ 
+     <!-- Error Page -->
+@@ -573,7 +572,7 @@
+ 
+     <string-array name="search_engines" translatable="true">
+         <item>Hidden Web</item>
+-        <item>Google</item>
++        <item>LeOSearch</item>
+         <item>Duck Duck Go</item>
+     </string-array>
+ 
+@@ -596,4 +595,4 @@
+         <item>Allow Non Tracker</item>
+     </string-array>
+ 
+-</resources>
+\ No newline at end of file
++</resources>
+diff --git a/orbotmanager/src/main/res/values/strings.xml b/orbotmanager/src/main/res/values/strings.xml
+index 133ddede..758b72b8 100644
+--- a/orbotmanager/src/main/res/values/strings.xml
++++ b/orbotmanager/src/main/res/values/strings.xml
+@@ -1,13 +1,13 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <string name="app_name">Orion</string>
+-    <string name="orbot_vpn">Orion VPN</string>
+-    <string name="app_description">Orion is a free proxy app that empowers other apps to use the internet more securely. Orion uses Tor to encrypt your Internet traffic and then hides it by bouncing through a series of computers around the world. Tor is free software and an open network that helps you defend against a form of network surveillance that threatens personal freedom and privacy, confidential business activities and relationships, and state security known as traffic analysis.</string>
+-    <string name="status_starting_up">Orion is Starting&#8230;</string>
++    <string name="app_name">LeOS-Genesis</string>
++    <string name="orbot_vpn">LeOS-Genesis VPN</string>
++    <string name="app_description">LeOS-Genesis is a free proxy app that empowers other apps to use the internet more securely. LeOS-Genesis uses Tor to encrypt your Internet traffic and then hides it by bouncing through a series of computers around the world. Tor is free software and an open network that helps you defend against a form of network surveillance that threatens personal freedom and privacy, confidential business activities and relationships, and state security known as traffic analysis.</string>
++    <string name="status_starting_up">LeOS-Genesis is Starting&#8230;</string>
+     <string name="status_activated">Connected to the Tor Network</string>
+-    <string name="status_disabled">Orion is Deactivated</string>
++    <string name="status_disabled">LeOS-Genesis is Deactivated</string>
+     <string name="open_orbot_to_connect_to_tor">Connecting with tor network</string>
+-    <string name="status_shutting_down">Orion is Shutting Down</string>
++    <string name="status_shutting_down">LeOS-Genesis is Shutting Down</string>
+     <string name="connect_to_tor">Connect to Tor</string>
+ 
+     <string name="couldn_t_start_tor_process_">Couldn\'t start Tor process: </string>
+-- 
+2.34.1
+

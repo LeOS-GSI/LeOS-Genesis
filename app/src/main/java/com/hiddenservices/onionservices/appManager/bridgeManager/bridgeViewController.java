@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import com.hiddenservices.onionservices.constants.strings;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 
@@ -44,8 +44,11 @@ class bridgeViewController {
         this.mBridgeSettingBridgeCustom = pBridgeSettingBridgeCustom;
         this.mBridgeSettingCustomBridgeBlocker = pBridgeSettingCustomBridgeBlocker;
         this.mBridgeSettingBridgeSnowflake = pBridgeSettingBridgeSnowflake;
-
         initPostUI();
+    }
+
+    protected void onInit(){
+
     }
 
     private void initPostUI() {

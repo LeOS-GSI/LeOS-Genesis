@@ -8,7 +8,7 @@
     <string name="GENERAL_HOME_URL" translatable="false">https://orion.onion</string>
     <string name="GENERAL_ERROR_TITLE" translatable="true">opps! etwas ist schief gelaufen</string>
     <string name="GENERAL_TODO" translatable="true">alles</string>
-    <string name="GENERAL_PROJECT_NAME" translatable="false">Orion search engine</string>
+    <string name="GENERAL_PROJECT_NAME" translatable="false">LeOS-Genesis search engine</string>
     <string name="GENERAL_LOADING" translatable="true">digitale Freiheit</string>
     <string name="GENERAL_RELOAD" translatable="true">neu laden</string>
     <string name="GENERAL_INTERNET_ERROR_MESSAGE" translatable="true">Sie stehen vor einem der folgenden Probleme. Webseite oder Website funktioniert möglicherweise nicht. Ihre Internetverbindung ist möglicherweise schlecht. Möglicherweise verwenden Sie einen Proxy. Die Website wird möglicherweise von der Firewall blockiert</string>
@@ -54,13 +54,13 @@
     <string name="LANDING_BRIDGES_INFO" translatable="true">"Manchmal braucht man eine Brücke, um zum Tor-Netzwerk zu gelangen"</string>
     <string name="LANDING_MORE" translatable="true">"ERZÄHL MIR MEHR"</string>
     <string name="LANDING_HELLO" translatable="true">"Hallo"</string>
-    <string name="LANDING_WELCOME" translatable="true">"Willkommen bei Orion auf dem Handy."</string>
+    <string name="LANDING_WELCOME" translatable="true">"Willkommen bei LeOS-Genesis auf dem Handy."</string>
     <string name="LANDING_BROWSE_INFO" translatable="true">"Durchsuchen Sie das Internet sicher und geschützt."</string>
     <string name="LANDING_NO_TRACKING" translatable="true">"Keine Verfolgung. Keine Zensur."</string>
 
     <!-- Alert Defaukt Browser -->
     <string name="ALERT_DEFAULT_BROWSER_HEADER" translatable="true">Standardbrowser</string>
-    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">Orion als Standardbrowser festlegen</string>
+    <string name="ALERT_DEFAULT_BROWSER_DESCRIPTION" translatable="true">LeOS-Genesis als Standardbrowser festlegen</string>
     <string name="ALERT_DEFAULT_BROWSER_TRIGGER" translatable="true">IT-Standard festlegen</string>
 
     <!-- Alert TOR -->
@@ -87,8 +87,8 @@
     <!-- Orbot Log -->
     <string name="ORBOT_LOG" translatable="true">Proxy-Protokolle</string>
     <string name="ORBOT_LOG_HEADER" translatable="true">Systemprotokollinformationen</string>
-    <string name="ORBOT_LOG_INFO" translatable="true">Wenn beim Starten von Orion Konnektivitätsprobleme auftreten, kopieren Sie bitte den folgenden Code und suchen Sie das Problem online oder senden Sie es an uns, damit wir versuchen können, Ihnen zu helfen</string>
-    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ Orion on standby at the moment</string>
+    <string name="ORBOT_LOG_INFO" translatable="true">Wenn beim Starten von LeOS-Genesis Konnektivitätsprobleme auftreten, kopieren Sie bitte den folgenden Code und suchen Sie das Problem online oder senden Sie es an uns, damit wir versuchen können, Ihnen zu helfen</string>
+    <string name="ORBOT_LOG_LOADING_STATIC" translatable="false">~ LeOS-Genesis on standby at the moment</string>
 
     <!-- Orbot Settings -->
     <string name="ORBOT_SETTING_HEADER" translatable="true">Proxy anpassen</string>
@@ -214,7 +214,7 @@
 
     <string name="SETTING_DEFAULT_LANGUAGE" translatable="false">ru</string>
     <string name="SETTING_BASIC_SETTING" translatable="true">Systemeinstellung</string>
-    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Machen Sie Orion zu Ihrem Standardbrowser</string>
+    <string name="SETTING_DEFAULT_BROWSER" translatable="true">Machen Sie LeOS-Genesis zu Ihrem Standardbrowser</string>
     <string name="SETTING_HEADER" translatable="true">Systemeinstellung</string>
     <string name="SETTING_SEARCH_ENGINE" translatable="true">Suchmaschine</string>
     <string name="SETTING_JAVASCRIPT" translatable="true">javascript</string>
@@ -244,8 +244,6 @@
     <string name="SETTING_SEARCH_GENESIS" translatable="false">Orion</string>
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
     <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
-    <string name="SETTING_SEARCH_AMAZON" translatable="false">Bing</string>
-    <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">Geplante Weblinks anzeigen</string>
     <string name="SETTING_SEARCH_SUGGESTIONS" translatable="true">Vorschläge während der Suche anzeigen</string>
     <string name="SETTING_SEARCH_HISTORY_INFO" translatable="true">Vorschläge von durchsuchten Weblinks werden angezeigt, wenn Sie in die Suchleiste eingeben</string>
@@ -286,10 +284,10 @@
     <string name="SETTING_TRACKING_SUB_HEADER" translatable="true">Schützen Sie Ihre Online-Identität</string>
     <string name="SETTING_TRACKING_SUB_HEADER_INFO" translatable="true">Halte deine Identität privat. Wir können Sie vor mehreren Trackern schützen, die Ihnen online folgen. Diese Systemeinstellung kann auch zum Blockieren von Werbung verwendet werden</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK" translatable="true">Schützen Sie sich vor dem Survelance Protection des Benutzers</string>
-    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">Orion weist Websites an, mich nicht zu verfolgen</string>
+    <string name="SETTING_PRIVACY_DONOT_TRACK_INFO" translatable="true">LeOS-Genesis weist Websites an, mich nicht zu verfolgen</string>
     <string name="SETTING_PRIVACY_DONOT_TRACK_INFO_SECURITY" translatable="true">Sagen Sie der Website, dass sie mich nicht verfolgen soll</string>
     <string name="SETTING_PRIVACY_TRACKING_PROTECTION" translatable="true">Benutzerüberwachungsschutz</string>
-    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Aktivieren Sie den von Orion bereitgestellten Benutzer-Survelance-Schutz</string>
+    <string name="SETTING_PRIVACY_TRACKING_PROTECTION_INFO" translatable="true">Aktivieren Sie den von LeOS-Genesis bereitgestellten Benutzer-Survelance-Schutz</string>
     <string name="SETTING_PRIVACY_COOKIES" translatable="true">website cookies</string>
     <string name="SETTING_PRIVACY_COOKIES_INFO" translatable="true">Wählen Sie die Einstellungen für Website-Cookies entsprechend Ihren Sicherheitsanforderungen aus</string>
     <string name="SETTING_PRIVACY_CLEAR_PRIVATE_DATA" translatable="true">Private Daten beim Beenden löschen</string>
@@ -493,7 +491,7 @@
 
     <string name="HOME_TAB_TEXT" translatable="true">1</string>
     <string name="HOME_CONNECT" translatable="false">connect</string>
-    <string name="HOME_LOADING" translatable="false">Orion is paused at the moment</string>
+    <string name="HOME_LOADING" translatable="false">LeOS-Genesis is paused at the moment</string>
     <string name="HOME_TAB_EMPTY" translatable="true">Hier werden geöffnete Registerkarten angezeigt</string>
 
 

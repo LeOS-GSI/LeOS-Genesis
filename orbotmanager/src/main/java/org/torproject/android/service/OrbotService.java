@@ -4,6 +4,12 @@
 package org.torproject.android.service;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_HEALTH;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MANIFEST;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK;
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE;
 import static org.torproject.android.service.TorServiceConstants.CMD_SETTING;
 import static org.torproject.jni.TorService.ACTION_ERROR;
 
@@ -38,10 +44,8 @@ import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-
 import net.freehaven.tor.control.TorControlCommands;
 import net.freehaven.tor.control.TorControlConnection;
-
 import org.torproject.android.service.util.CustomTorResourceInstaller;
 import org.torproject.android.service.util.PowerConnectionReceiver;
 import org.torproject.android.service.util.Prefs;
@@ -52,7 +56,6 @@ import org.torproject.android.service.wrapper.logRowModel;
 import org.torproject.android.service.wrapper.orbotExternalCommands;
 import org.torproject.android.service.wrapper.orbotLocalConstants;
 import org.torproject.jni.TorService;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -66,7 +69,6 @@ import java.io.PrintWriter;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Objects;
@@ -74,12 +76,10 @@ import java.util.StringTokenizer;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 import IPtProxy.IPtProxy;
 import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 @SuppressWarnings("StringConcatenationInsideStringBufferAppend")
@@ -197,9 +197,10 @@ public class OrbotService extends VpnService implements OrbotConstants {
         orbotLocalConstants.mNotificationStatus = 1;
         showToolbarNotification("Connected to the Tor network", NOTIFY_ID, R.mipmap.ic_stat_tor_logo);
     }
+
     boolean mConnectivity = true;
     public void enableNotification(){
-        if(mConnectivity && orbotLocalConstants.mIsTorInitialized){
+        if(mConnectivity){
             orbotLocalConstants.mNotificationStatus = 1;
             showToolbarNotification(0+"kbps ⇣ / " +0+"kbps ⇡", NOTIFY_ID, R.mipmap.ic_stat_tor_logo);
         }
@@ -307,11 +308,17 @@ public class OrbotService extends VpnService implements OrbotConstants {
         if(orbotLocalConstants.mNotificationStatus != 0){
             if(orbotLocalConstants.mNotificationStatus != 0){
                 try {
-                    startForeground(NOTIFY_ID, mNotifyBuilder.build());
-                }catch (Exception ex){}
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU) {
+                        startForeground(NOTIFY_ID, mNotifyBuilder.build());
+                    } else {
+                        startForeground(NOTIFY_ID, mNotifyBuilder.build());
+                    }
+                }catch (Exception ex){
+                    int e=0;
+                    e=1;
+                }
             }
         }
-
     }
 
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -346,7 +353,6 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 unregisterReceiver(mActionBroadcastReceiver);
             }
         }catch (Exception ex){
-            Log.i("sad","asd");
             ex.printStackTrace();
         }
     }
@@ -364,7 +370,6 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 unregisterReceiver(mActionBroadcastReceiver);
             }
         }catch (Exception ex){
-            Log.i("sad","asd");
             ex.printStackTrace();
         }
 
@@ -390,7 +395,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
         if (connectionPathway.equals(Prefs.PATHWAY_SNOWFLAKE) || Prefs.getPrefSmartTrySnowflake()) {
             IPtProxy.stopSnowflake();
         } else if (connectionPathway.equals(Prefs.PATHWAY_CUSTOM) || Prefs.getPrefSmartTryObfs4() != null) {
-            IPtProxy.stopObfs4Proxy();
+            IPtProxy.stopLyrebird();
         }
 
         try {
@@ -449,22 +454,12 @@ public class OrbotService extends VpnService implements OrbotConstants {
     }
 
 
-    private void startSnowflakeClientDomainFronting() {
-        //this is using the current, default Tor snowflake infrastructure
-        var target = getCdnFront("snowflake-target");
-        var front = getCdnFront("snowflake-front");
-        var stunServer = getCdnFront("snowflake-stun");
-
-        IPtProxy.startSnowflake(stunServer, target, front, null,
-                null, true, false, false, 1);
-    }
-
     @SuppressWarnings("ConstantConditions")
     public void enableSnowflakeProxy () { // This is to host a snowflake entrance node / bridge
         var capacity = 1;
         var keepLocalAddresses = false;
         var unsafeLogging = false;
-        var stunUrl = "stun:stun.l.g**gle.com:19302";
+        var stunUrl = "stun:stun.l.google.com:19302";
         var relayUrl = "wss://snowflake.bamsoftware.com";
         var natProbeUrl = "https://snowflake-broker.torproject.net:8443/probe";
         var brokerUrl = "https://snowflake-broker.torproject.net/";
@@ -612,7 +607,6 @@ public class OrbotService extends VpnService implements OrbotConstants {
             enableSnowflakeProxy();
         }
 
-        Log.i("OrbotService", "onCreate end");
     }
 
     protected String getCurrentStatus() {
@@ -854,7 +848,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 } else {
                     sendSmartStatusToActivity(SMART_STATUS_NO_DIRECT);
                 }
-                stopTorAsync(true);
+                //stopTorAsync(true);
             } else {
                 // tor was connected in the allotted time
                 var obfs4 = Prefs.getPrefSmartTryObfs4();
@@ -1181,9 +1175,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 }
             };
         }catch (Exception ex){
-            Log.i("asd","asd");
         }
-        Log.i("asd","asd");
     }
 
     protected void sendCallbackBandwidth(long lastWritten, long lastRead, long totalWritten, long totalRead) {
@@ -1456,8 +1448,8 @@ public class OrbotService extends VpnService implements OrbotConstants {
     private String writeDNSFile() throws IOException {
         var file = new File(appBinHome, "resolv.conf");
         var bw = new PrintWriter(new FileWriter(file));
-        bw.println("nameserver 9.9.9.9");
-        bw.println("nameserver 9.9.9.9");
+        bw.println("nameserver 8.8.8.8");
+        bw.println("nameserver 8.8.4.4");
         bw.close();
         return file.getCanonicalPath();
     }
@@ -1494,7 +1486,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 break;
 
             case TRIM_MEMORY_UI_HIDDEN:
-                stopTorAsync(true);
+                //stopTorAsync(true);
                 break;
         }
     }
@@ -1588,11 +1580,11 @@ public class OrbotService extends VpnService implements OrbotConstants {
     }
 
     private void startSnowflakeClientAmpRendezvous() {
-        var stunServers = "stun:stun.l.g**gle.com:19302,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478";
-        var target = "https://snowflake-broker.torproject.net/";
-        var front = "www.g**gle.com";
-        var ampCache ="https://cdn.ampproject.org/";
-        IPtProxy.startSnowflake(stunServers, target, front, ampCache, null, true, false, false, 1);
+        var stunServers = getCdnFront("snowflake-stun");
+        var target = getCdnFront("snowflake-target-direct");//"https://snowflake-broker.torproject.net/";
+        var front = getCdnFront("snowflake-amp-front");//"www.google.com";
+        var ampCache = getCdnFront("snowflake-amp-cache");//"https://cdn.ampproject.org/";
+        IPtProxy.startSnowflake(stunServers, target, front, ampCache, null, null, true, false, false, 1);
     }
 
     private class IncomingIntentRouter implements Runnable {
@@ -1610,7 +1602,7 @@ public class OrbotService extends VpnService implements OrbotConstants {
                 case ACTION_START:
                     if (Prefs.bridgesEnabled()) {
                         if (useIPtObfsMeekProxy())
-                            IPtProxy.startObfs4Proxy("DEBUG", false, false, null);
+                            IPtProxy.startLyrebird("DEBUG", false, false, null);
                         else if (useIPtSnowflakeProxyDomainFronting())
                             startSnowflakeClientAmpRendezvous();
                         else if (useIPtSnowflakeProxyAMPRendezvous())

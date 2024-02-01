@@ -4,19 +4,21 @@ import android.view.View;
 
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 
 class settingAdvanceModel {
     /*Variable Declaration*/
 
-    private eventObserver.eventListener mEvent;
 
     /*Initializations*/
 
-    settingAdvanceModel(eventObserver.eventListener mEvent) {
-        this.mEvent = mEvent;
+    settingAdvanceModel(eventObserver.eventListener ignoredMEvent) {
+
+    }
+
+    protected void onInit(){
     }
 
     /*Helper Methods*/

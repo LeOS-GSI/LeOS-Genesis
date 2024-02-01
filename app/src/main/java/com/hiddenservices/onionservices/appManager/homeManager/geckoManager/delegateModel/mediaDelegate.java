@@ -17,7 +17,7 @@ import android.widget.RemoteViews;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.hiddenservices.onionservices.constants.enums;
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.helperManager.helperMethod;
@@ -52,7 +52,7 @@ public class mediaDelegate implements GeckoSession.MediaDelegate {
     @SuppressLint("InlinedApi")
     public void showNotification(Context context, String title, String url, Bitmap mediaImage, boolean media_status) {
         NotificationManager mNotificationManager = (NotificationManager) mContext.get().getSystemService( NOTIFICATION_SERVICE ) ;
-        if(title.length()<=0 || !status.sBackgroundMusic){
+        if(title.length() == 0 || !status.sBackgroundMusic){
             return;
         }
         RemoteViews contentView;

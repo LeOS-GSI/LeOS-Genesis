@@ -20,7 +20,7 @@ import com.hiddenservices.onionservices.eventObserver;
 import com.hiddenservices.onionservices.helperManager.sharedUIMethod;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -106,8 +106,11 @@ public class bookmarkSettingController extends AppCompatActivity {
         int mBookmarkID = getIntent().getIntExtra(keys.BOOKMARK_SETTING_ID, -1);
 
         mBookmarkSettingViewController = new bookmarkSettingViewController(this, new bookmarkSettingViewCallback(), mBookmarName, mBookmarURL);
+        mBookmarkSettingViewController.onInit();
+
         mBookmarkSettingViewController.onTrigger(bookmarkSettingEnums.eBookmarkSettingViewCommands.M_INITIALIZE, Arrays.asList(mBookmarkName, mBookmarkURL));
         mBookmarkSettingModel = new bookmarkSettingModelController(this, new bookmarkSettingModelCallback(), mBookmarkID, mBookmarkURL);
+        mBookmarkSettingModel.onInit();
     }
 
     private void initCallableResponse(bookmarkSettingEnums.eActivityResponseCommands pResponse) {
@@ -131,7 +134,7 @@ public class bookmarkSettingController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();
@@ -146,6 +149,7 @@ public class bookmarkSettingController extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         onCloseTrigger(null);
+        super.onBackPressed();
     }
 
     /* UI Redirection */

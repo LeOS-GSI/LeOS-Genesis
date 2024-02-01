@@ -83,7 +83,7 @@
     <string name="SETTING_SEARCH_DUCK" translatable="false">DuckDuckGo</string>
     <string name="SETTING_SEARCH_GOOGLE" translatable="false">LeOSearch</string>
     <string name="SETTING_SEARCH_AMAZON" translatable="false">Ecosia</string>
-    <string name="SETTING_SEARCH_BING" translatable="false">Wikipedia</string>
+    <string name="SETTING_SEARCH_WIKIPEDIA" translatable="false">Wikipedia</string>
     <string name="SETTING_SEARCH_HISTORY" translatable="true">show browsed web links</string>
     <string name="SETTING_SEARCH_SUGGESTIONS" translatable="true">show suggestions during
         searching

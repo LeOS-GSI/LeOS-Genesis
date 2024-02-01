@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.hiddenservices.onionservices.constants.status;
 import com.hiddenservices.onionservices.eventObserver;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 
 import java.util.List;
 
@@ -16,12 +16,15 @@ import static org.mozilla.geckoview.ContentBlocking.CookieBehavior.ACCEPT_NON_TR
 class settingPrivacyModel {
     /*Variable Declaration*/
 
-    private eventObserver.eventListener mEvent;
 
     /*Initializations*/
 
-    settingPrivacyModel(eventObserver.eventListener mEvent) {
-        this.mEvent = mEvent;
+    settingPrivacyModel(eventObserver.eventListener ignoredMEvent) {
+
+    }
+
+    protected void onInit(){
+
     }
 
     /*Helper Methods*/

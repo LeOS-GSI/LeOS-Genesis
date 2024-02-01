@@ -19,7 +19,7 @@ import com.hiddenservices.onionservices.helperManager.helperMethod;
 import com.hiddenservices.onionservices.appManager.activityThemeManager;
 import com.hiddenservices.onionservices.pluginManager.pluginController;
 import com.hiddenservices.onionservices.pluginManager.pluginEnums;
-import com.leos.onionservices.R;
+import com.hiddenservices.onionservices.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Arrays;
@@ -68,7 +68,10 @@ public class settingLogController extends AppCompatActivity {
 
         mSettingLogViewController = new settingLogViewController(this, new settingLogViewCallback(), mSettingLogStatusSwitch);
         mSettingLogViewController.onTrigger(settingLogEnums.eLogViewController.M_INIT_VIEW, Collections.singletonList(status.sLogThemeStyleAdvanced));
+        mSettingLogViewController.onInit();
+
         mSettingLogModel = new settingLogModel(new settingLogModelCallback());
+        mSettingLogModel.onInit();
     }
 
     /*View Callbacks*/
@@ -95,7 +98,7 @@ public class settingLogController extends AppCompatActivity {
 
     @Override
     public void onResume() {
-        activityContextManager.getInstance().onCheckPurgeStack();
+        activityContextManager.getInstance().onPurgeStack();
         pluginController.getInstance().onLanguageInvoke(Collections.singletonList(this), pluginEnums.eLangManager.M_RESUME);
         activityContextManager.getInstance().setCurrentActivity(this);
         super.onResume();

@@ -10,17 +10,13 @@ import android.app.job.JobService;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import androidx.annotation.VisibleForTesting;
-import android.util.Log;
-
 import org.leos.telemetry.Telemetry;
 import org.leos.telemetry.TelemetryHolder;
 import org.leos.telemetry.config.TelemetryConfiguration;
 import org.leos.telemetry.net.TelemetryClient;
 import org.leos.telemetry.ping.TelemetryPingBuilder;
 import org.leos.telemetry.storage.TelemetryStorage;
-
 import java.util.Calendar;
-
 import mozilla.components.support.base.log.logger.Logger;
 
 public class TelemetryJobService extends JobService {
