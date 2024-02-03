@@ -16,7 +16,7 @@
         }
       ],
       "attributes": [],
-      "versionCode": 580,
+      "versionCode": 590,
       "versionName": "Build | LeOS-Genesis v1.6.3",
       "outputFile": "app-orion-armeabi-v7a-release.apk"
     },
@@ -29,7 +29,7 @@
         }
       ],
       "attributes": [],
-      "versionCode": 580,
+      "versionCode": 590,
       "versionName": "Build | LeOS-Genesis v1.6.3",
       "outputFile": "app-orion-arm64-v8a-release.apk"
     }
